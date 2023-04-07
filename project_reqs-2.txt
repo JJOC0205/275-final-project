@@ -1,0 +1,37 @@
+You may have more lists and roles in your application, but not fewer.
+
+App User selects role: There are at least three different role edit levels, and each role has different powers to edit data. Super, Admin, User are the default terms here, rename for your domain.
+
+Item: An item has a name, description, and associated image and at least two more attributes. One of the attributes must be a list or other data structure. Has a numeric field editable by Users (like a rating or quantity). Items do not contain references to Users.
+
+Central item list (1): one of each item in the system.  Everyone can see this list and drag items to other lists they control. If an item is deleted here it is deleted from all lists everywhere. Only Super can add/delete new items to list. Super can sort/filter view by different item fields. Start with minimum 30 unique items. (Think of this as high-level inventory/catalog listing.)
+
+Admin list (1): can hold zero or one of any item. Think of this as a list of items to be reviewed or revised. Admin and Super can edit items from here. Editing an item here changes it in the Super list also.
+
+User list (1 per User): can hold zero or more of any item. Owned by one user. Only relevant User may edit list and add/remove/edit items in it. User can sort/filter by at least two fields. (Think of this as a shopping list or playlist.)
+
+List of Users: Only editable by Super. Create/delete Users (who then appear in role selection menu).
+
+
+Drag between lists, grays out when not droppable.
+Super: Create a new item (can use existing image from project files), delete an item.
+Super: Add more users. Each will have own user list and be available as choice in the role menu.
+Super, Admin: Edit an item, including the list attribute. Changes are reflected in Central and Admin lists.
+
+
+Items: click to edit. Items are clickable/draggable from any list by appropriate role.
+
+Testing: minimum five tests per component, more if complicated. Test for presence and absence.
+
+Additional features:
+- filter user list by description contains word, and/or by list attribute contains
+- User can edit list attribute of item, item only changes in their list.
+- Super: See all Users who have a certain item in their User List.
+- Item: Add a field that shows Super how many times item appears in User Lists. Only visible from Central.
+- User: has more than one User list
+
+First Day Deliverables: Describe domain, set up repo (add TAs and prof) with: README, some user stories as Issues
+Due 4/10 all user stories, product storyboards for user stories due 4/10 
+
+See especially Issues and Tasks
+https://docs.github.com/en/issues/tracking-your-work-with-issues/planning-and-tracking-work-for-your-team-or-project
