@@ -1,0 +1,13 @@
+PRODUCT BACKLOG:
+•	As a user, I want to be able to create a watched list, so I can keep track of what movies I have watched.
+•	As a user, I want to be able to create a yet-to-watch list, so I can keep track of what movies I plan to watch.
+•	As a user, I want to be able to filter my lists, so I can find whatever movie(s) I am looking for
+•	ADD MORE AS NEEDED
+
+User Personas:
+User 1
+•	Who are they: Any user wanting to use the services of the site.
+•	What is their goal: they want to create their personalized watched, yet-to-watch lists, etc.
+•	Barriers to achieving the goal: its complicated to manage the states of multiple lists, including their testing and 	reliability
+Admin
+Super
