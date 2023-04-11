@@ -1,9 +1,14 @@
 Personas For the Final Project:
 
-User 1
-- Who are they: Any person wanting to use the services of the site.
-- What is their goal: to organize their movies through their personalized watched, yet-to-watch lists, etc.
-- Barriers to achieving the goal: being unable to understand the services of the site due to poor design
+User Type 1: "Likes to watch movies all the time"
+- Watches movies all the time
+- Wants to have a place to organize what theyve watched
+- Wants to also have a place to organize what they will watch in the future
+
+User Type 2: "Casual movie watcher"
+- Likes to watch movies every now and then
+- Watches them mostly with friends
+- Wants to have a place to organize movies they've watch so they can better plan with their friends
 
 Admin
 - Who are they: people tasked with reviewing the attributes of particular movie(s)
