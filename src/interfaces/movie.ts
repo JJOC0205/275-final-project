@@ -4,4 +4,5 @@ export interface Movie {
     runtime: number;
     watched: boolean;
     description: string;
+    rating: number;
 }
