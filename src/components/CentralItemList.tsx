@@ -1,7 +1,7 @@
 import React from "react";
 import { Movie } from "../interfaces/movie";
 import { Stack } from "react-bootstrap";
-import { ShowMovieDetails } from "./moviePoster"
+import { ShowMovieDetails } from "./moviePoster";
 
 export function CentralItemList({ movies }: { movies: Movie[] }): JSX.Element {
     return (
