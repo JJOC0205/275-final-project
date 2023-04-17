@@ -5,4 +5,5 @@ export interface Movie {
     watched: boolean;
     description: string;
     rating: number;
+    poster: string;
 }
