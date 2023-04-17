@@ -7,7 +7,7 @@ export function ShowMovieDetails({ movie }: { movie: Movie }): JSX.Element {
     return (
         <div>
             <img
-                src="https://m.media-amazon.com/images/I/81Uk9cyj1-L.jpg"
+                src={movie.poster}
                 height="100px"
                 width="100px"
                 onClick={() => setVisible(!visible)}
