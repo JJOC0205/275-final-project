@@ -9,7 +9,8 @@ const MOVIES = [
         runtime: 60,
         watched: true,
         description: "test",
-        rating: 10
+        rating: 10,
+        poster: "https://m.media-amazon.com/images/I/81Uk9cyj1-L.jpg"
     },
     {
         title: "Test Movie",
@@ -17,7 +18,8 @@ const MOVIES = [
         runtime: 60,
         watched: true,
         description: "test",
-        rating: 10
+        rating: 10,
+        poster: "https://m.media-amazon.com/images/I/81Uk9cyj1-L.jpg"
     },
     {
         title: "Star Wars: All of Them",
@@ -25,7 +27,8 @@ const MOVIES = [
         runtime: 60,
         watched: true,
         description: "test",
-        rating: 10
+        rating: 10,
+        poster: "https://m.media-amazon.com/images/I/81Uk9cyj1-L.jpg"
     },
     {
         title: "Boss Baby",
@@ -33,7 +36,8 @@ const MOVIES = [
         runtime: 60,
         watched: true,
         description: "test",
-        rating: 10
+        rating: 10,
+        poster: "https://m.media-amazon.com/images/I/81Uk9cyj1-L.jpg"
     }
 ];
 
