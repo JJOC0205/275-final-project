@@ -1,19 +1,11 @@
-import React, { useState } from "react";
-import { Movie } from "./interfaces/movie";
-import { ShowMovieDetails } from "./components/moviePoster";
-const theMovie = {
-    title: "Test Movie",
-    released: 2005,
-    runtime: 60,
-    watched: true,
-    description: "test",
-    rating: 10
-};
+import React from "react";
+
 function App(): JSX.Element {
     const [movies] = useState<Movie>(theMovie);
     return (
         <div className="App">
             <header className="App-header">Test</header>
+            <h1>Jon O' Connell, Rachel Robins, Ani Naredla, Shreya Pamulapati</h1>
             <ShowMovieDetails movie={movies}></ShowMovieDetails>
         </div>
     );
