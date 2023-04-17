@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CentralItemList } from "./components/CentralItemLIst";
+import { CentralItemList } from "./components/CentralItemList";
 import { Movie } from "./interfaces/movie";
 
 const MOVIES = [
