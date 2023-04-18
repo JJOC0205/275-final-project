@@ -44,8 +44,10 @@ const MOVIES = [
 function App(): JSX.Element {
     const [movies] = useState<Movie[]>(MOVIES);
     return (
-        <div className="App">
+        <div className = "App">
             <header className="App-header">Test</header>
+            <h1>Jon O' Conell, Rachel Robins, Ani Naredla, Shreya Pamulapati</h1>
+
             <CentralItemList movies={movies}></CentralItemList>
         </div>
     );
