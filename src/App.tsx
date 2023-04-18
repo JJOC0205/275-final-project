@@ -1,55 +1,28 @@
-import React, { useState } from "react";
-import { CentralItemList } from "./components/CentralItemList";
-import { Movie } from "./interfaces/movie";
+import React from 'react';
+import './App.css';
+import { HTML5Backend } from "react-dnd-html5-backend";
+import { DndProvider } from 'react-dnd/dist/core';
+import Movie from './Movie';
+import UserList from './UserList';
+import { testMovies } from './Movie';
 
-const MOVIES = [
-    {
-        title: "Pride and Prejudice",
-        released: 2005,
-        runtime: 60,
-        watched: true,
-        description: "test",
-        rating: 10,
-        poster: "https://m.media-amazon.com/images/I/81Uk9cyj1-L.jpg"
-    },
-    {
-        title: "Test Movie",
-        released: 2005,
-        runtime: 60,
-        watched: true,
-        description: "test",
-        rating: 10,
-        poster: "https://m.media-amazon.com/images/I/81Uk9cyj1-L.jpg"
-    },
-    {
-        title: "Star Wars: All of Them",
-        released: 2005,
-        runtime: 60,
-        watched: true,
-        description: "test",
-        rating: 10,
-        poster: "https://m.media-amazon.com/images/I/81Uk9cyj1-L.jpg"
-    },
-    {
-        title: "Boss Baby",
-        released: 2005,
-        runtime: 60,
-        watched: true,
-        description: "test",
-        rating: 10,
-        poster: "https://m.media-amazon.com/images/I/81Uk9cyj1-L.jpg"
-    }
-];
-
-function App(): JSX.Element {
-    const [movies] = useState<Movie[]>(MOVIES);
-    return (
-        <div className="App">
-            <header className="App-header">Test</header>
-            <h1>Jon OConell, Rachel Robins, Ani Naredla, Shreya Pamulapati</h1>
-
-            <CentralItemList movies={movies}></CentralItemList>
+function App() {
+  return (
+    <>
+    <div className="App" style={{display: "flex"}}>
+      <DndProvider backend={HTML5Backend}>
+        <div style={{flex: "1"}}>
+          {testMovies.map((movie) => (<Movie title={movie.title} released={movie.released} runtime={movie.runtime} watched={movie.watched} description={movie.description} rating={movie.rating}></Movie>))}
         </div>
-    );
+        <div style={{flex: "1"}}>
+          {/* <div> */}
+          <UserList></UserList>
+          {/* </div> */}
+        </div>
+      </DndProvider>
+    </div>
+    </>
+  );
 }
+
 export default App;
