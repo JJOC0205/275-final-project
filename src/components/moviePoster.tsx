@@ -12,7 +12,7 @@ export function ShowMovieDetails({ movie }: { movie: Movie }): JSX.Element {
                 width="100px"
                 onClick={() => setVisible(!visible)}
             />
-            {visible && <div>{movie.title}</div>}
+            {visible && <div>{movie.rating}</div>}
         </div>
     );
 }
