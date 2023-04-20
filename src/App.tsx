@@ -15,10 +15,8 @@ function App(): JSX.Element {
     return (
         <div className="App">
             <header className="App-header">
-                Movie World
-                <h3>
-                    Jon OConell, Rachel Robins, Ani Naredla, Shreya Pamulapati
-                </h3>
+                <h3>Movie World</h3>
+                Jon OConell, Rachel Robins, Ani Naredla, Shreya Pamulapati
             </header>
             <CentralItemList movies={movies}></CentralItemList>
         </div>
