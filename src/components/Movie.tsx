@@ -55,27 +55,50 @@ export interface MovieProps {
     rating: number;
 }
 
-function Movie({title, released, runtime, watched, description, rating}: MovieProps): JSX.Element {
-    const [{isDragging}, drag] = useDrag({
+function Movie({
+    title,
+    released,
+    runtime,
+    watched,
+    description,
+    rating
+}: MovieProps): JSX.Element {
+    const [{ isDragging }, drag] = useDrag({
         type: ItemTypes.MOVIE,
-        item: {title: title, released: released, runtime: runtime, watched: watched, description: description, rating: rating},
+        item: {
+            title: title,
+            released: released,
+            runtime: runtime,
+            watched: watched,
+            description: description,
+            rating: rating
+        },
         collect: (monitor: DragSourceMonitor) => ({
             isDragging: !!monitor.isDragging()
         })
     });
 
     return (
-        <div ref={drag} style={{ opacity: isDragging ? 0.5 : 1, backgroundColor: "aqua", width:"500px", height:"275px", border:"1px solid#000"}}>
+        <div
+            ref={drag}
+            style={{
+                opacity: isDragging ? 0.5 : 1,
+                backgroundColor: "aqua",
+                width: "500px",
+                height: "275px",
+                border: "1px solid#000"
+            }}
+        >
             <p>Title: {title}</p>
             <p>Release Date: {released}</p>
             <p>Runtime in Minutes: {runtime}</p>
             <p>Watched: {watched.toString()}</p>
             <p>Description: {description}</p>
             <p>Rating out of 10: {rating}</p>
-            <div/>
+            <div />
             {/* <div><button>CLICK ME</button></div> */}
         </div>
-      )
+    );
 }
 
 export default Movie;
