@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import movies from "./data/movies.json";
 import { CentralItemList } from "./components/CentralItemList";
 import { Movie } from "./interfaces/movie";
+import "./App.css";
 
 const MOVIES = movies.map(
     (movie): Movie => ({
