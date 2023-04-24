@@ -3,6 +3,7 @@ import { Movie } from "../interfaces/movie";
 import { Stack } from "react-bootstrap";
 import { ShowMovieDetails } from "./moviePoster";
 import { EditMode } from "./EditUserMode";
+//import { MOVIES } from "../data/MovieList";
 
 export function CentralItemList({ movies }: { movies: Movie[] }): JSX.Element {
     return (
