@@ -1,15 +1,8 @@
-import React from "react";
-import { useState } from "react";
-import movies from "./data/movies.json";
+import React, { useState } from "react";
+import { MOVIES } from "./data/MovieList";
 import { CentralItemList } from "./components/CentralItemList";
 import { Movie } from "./interfaces/movie";
 import "./App.css";
-
-const MOVIES = movies.map(
-    (movie): Movie => ({
-        ...movie
-    })
-);
 
 function App(): JSX.Element {
     const [movies] = useState<Movie[]>(MOVIES);
