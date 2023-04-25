@@ -12,7 +12,7 @@ function App(): JSX.Element {
     return (
         <div className="App">
             <header className="App-header">
-                <h3>Movie World</h3>
+                <h3>Holly, Bolly, and Tolly</h3>
                 Jon OConell, Rachel Robins, Ani Naredla, Shreya Pamulapati
             </header>
             <DndProvider backend={HTML5Backend}>
