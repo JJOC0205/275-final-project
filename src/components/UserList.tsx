@@ -23,7 +23,7 @@ export function UserList(): JSX.Element {
 
     const [{ isOver }, drop] = useDrop({
         accept: MovieTypes.MOVIE,
-        drop: (item: Movie, monitor) => updateUserMovies(item),
+        drop: (item: Movie) => updateUserMovies(item),
         collect: (monitor) => ({
             isOver: monitor.isOver()
         })
