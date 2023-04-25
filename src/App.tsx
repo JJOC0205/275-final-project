@@ -1,14 +1,11 @@
 import React, { useState } from "react";
-import movies from "./data/movies.json";
+import { MOVIES } from "./data/MovieList";
 import { CentralItemList } from "./components/CentralItemList";
 import { Movie } from "./interfaces/movie";
 import "./App.css";
-
-const MOVIES = movies.map(
-    (movie): Movie => ({
-        ...movie
-    })
-);
+import UserList from "./components/UserList";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import { DndProvider } from "react-dnd/dist/core";
 
 function App(): JSX.Element {
     const [movies] = useState<Movie[]>(MOVIES);
@@ -18,7 +15,10 @@ function App(): JSX.Element {
                 <h3>Movie World</h3>
                 Jon OConell, Rachel Robins, Ani Naredla, Shreya Pamulapati
             </header>
-            <CentralItemList movies={movies}></CentralItemList>
+            <DndProvider backend={HTML5Backend}>
+                <CentralItemList movies={movies}></CentralItemList>
+                <UserList></UserList>
+            </DndProvider>
         </div>
     );
 }
