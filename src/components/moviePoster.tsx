@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { MovieTypes } from "../interfaces/MovieTypes";
 
 export function ShowMovieDetails({ movie }: { movie: Movie }): JSX.Element {
-    const [{ isDragging }, drag] = useDrag({
+    const [, drag] = useDrag({
         type: MovieTypes.MOVIE,
         item: {
             title: movie.title,

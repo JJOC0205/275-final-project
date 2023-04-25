@@ -17,13 +17,14 @@ export function UserList(): JSX.Element {
         const movieFilter = testMovies.filter(
             (movie) => newMovie.title === movie.title
         );
-        setUserMovies([...userMovies, movieFilter[0]]);
-        console.log(userMovies.length);
+        // setUserMovies([...userMovies, movieFilter[0]]);
+        newMovie.poster = movieFilter[0].poster;
+        setUserMovies([...userMovies, newMovie]);
     }
 
     const [{ isOver }, drop] = useDrop({
         accept: MovieTypes.MOVIE,
-        drop: (item: Movie, monitor) => updateUserMovies(item),
+        drop: (item: Movie) => updateUserMovies(item),
         collect: (monitor) => ({
             isOver: monitor.isOver()
         })
