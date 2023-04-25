@@ -22,6 +22,48 @@ export function UserList(): JSX.Element {
         setUserMovies([...userMovies, newMovie]);
     }
 
+    function sortRuntimeA() {
+        const newMovies = [...userMovies].sort((m1, m2) =>
+            m1.runtime < m2.runtime ? -1 : 1
+        );
+        setUserMovies(newMovies);
+    }
+
+    function sortRuntimeD() {
+        const newMovies = [...userMovies].sort((m1, m2) =>
+            m1.runtime > m2.runtime ? -1 : 1
+        );
+        setUserMovies(newMovies);
+    }
+
+    function sortAlphabeticalTitleA() {
+        const newMovies = [...userMovies].sort((m1, m2) =>
+            m1.title < m2.title ? -1 : 1
+        );
+        setUserMovies(newMovies);
+    }
+
+    function sortAlphabeticalTitleR() {
+        const newMovies = [...userMovies].sort((m1, m2) =>
+            m1.title > m2.title ? -1 : 1
+        );
+        setUserMovies(newMovies);
+    }
+
+    function sortReleaseDateA() {
+        const newMovies = [...userMovies].sort((m1, m2) =>
+            m1.released < m2.released ? -1 : 1
+        );
+        setUserMovies(newMovies);
+    }
+
+    function sortReleaseDateD() {
+        const newMovies = [...userMovies].sort((m1, m2) =>
+            m1.released > m2.released ? -1 : 1
+        );
+        setUserMovies(newMovies);
+    }
+
     const [{ isOver }, drop] = useDrop({
         accept: MovieTypes.MOVIE,
         drop: (item: Movie) => updateUserMovies(item),
@@ -31,23 +73,45 @@ export function UserList(): JSX.Element {
     });
 
     return (
-        <div
-            ref={drop}
-            style={{
-                backgroundColor: isOver ? "red" : "white",
-                width: "510px",
-                height: "1000px",
-                border: "1px solid#000"
-            }}
-        >
-            {userMovies.map((movie) => {
-                return (
-                    <div className="ListItem" key={movie.title}>
-                        <ShowMovieDetails movie={movie}></ShowMovieDetails>
-                    </div>
-                );
-            })}
-        </div>
+        <>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+                <button onClick={sortRuntimeA} className="sortButton">
+                    Sort by Runtime: Low-High
+                </button>
+                <button onClick={sortRuntimeD} className="sortButton">
+                    Sort by Runtime: High-Low
+                </button>
+                <button onClick={sortAlphabeticalTitleA} className="sortButton">
+                    Sort by Title: A-Z
+                </button>
+                <button onClick={sortAlphabeticalTitleR} className="sortButton">
+                    Sort by Title: Z-A
+                </button>
+                <button onClick={sortReleaseDateA} className="sortButton">
+                    Sort by Release Date: Old-New
+                </button>
+                <button onClick={sortReleaseDateD} className="sortButton">
+                    Sort by Release Date: New-Old
+                </button>
+            </div>
+            <div
+                ref={drop}
+                style={{
+                    backgroundColor: isOver ? "red" : "white",
+                    width: "510px",
+                    height: "1000px",
+                    border: "1px solid#000"
+                }}
+            >
+                {userMovies.map((movie) => {
+                    return (
+                        <div className="ListItem" key={movie.title}>
+                            <ShowMovieDetails movie={movie}></ShowMovieDetails>
+                        </div>
+                    );
+                })}
+            </div>
+        </>
     );
 }
 
