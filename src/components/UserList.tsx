@@ -13,6 +13,7 @@ interface UserListExport {
 
 export function UserList(): JSX.Element {
     const [userMovies, setUserMovies] = useState<Movie[]>([]);
+
     function updateUserMovies(newMovie: Movie) {
         const movieFilter = testMovies.filter(
             (movie) => newMovie.title === movie.title
@@ -64,6 +65,20 @@ export function UserList(): JSX.Element {
         setUserMovies(newMovies);
     }
 
+    function sortRatingA() {
+        const newMovies = [...userMovies].sort((m1, m2) =>
+            m1.rating < m2.rating ? -1 : 1
+        );
+        setUserMovies(newMovies);
+    }
+
+    function sortRatingD() {
+        const newMovies = [...userMovies].sort((m1, m2) =>
+            m1.rating > m2.rating ? -1 : 1
+        );
+        setUserMovies(newMovies);
+    }
+
     const [{ isOver }, drop] = useDrop({
         accept: MovieTypes.MOVIE,
         drop: (item: Movie) => updateUserMovies(item),
@@ -74,33 +89,57 @@ export function UserList(): JSX.Element {
 
     return (
         <>
-            <div style={{ display: "flex", flexDirection: "column" }}>
-                <button onClick={sortRuntimeA} className="sortButton">
-                    Sort by Runtime: Low-High
-                </button>
-                <button onClick={sortRuntimeD} className="sortButton">
-                    Sort by Runtime: High-Low
-                </button>
-                <button onClick={sortAlphabeticalTitleA} className="sortButton">
-                    Sort by Title: A-Z
-                </button>
-                <button onClick={sortAlphabeticalTitleR} className="sortButton">
-                    Sort by Title: Z-A
-                </button>
-                <button onClick={sortReleaseDateA} className="sortButton">
-                    Sort by Release Date: Old-New
-                </button>
-                <button onClick={sortReleaseDateD} className="sortButton">
-                    Sort by Release Date: New-Old
-                </button>
+            <div>
+                <h2>User List</h2>
+                <div style={{ display: "flex", flexDirection: "row" }}>
+                    <button onClick={sortRuntimeA} className="sortButton">
+                        Sort by Runtime: Low-High
+                    </button>
+                    <button onClick={sortRuntimeD} className="sortButton">
+                        Sort by Runtime: High-Low
+                    </button>
+                    <button
+                        onClick={sortAlphabeticalTitleA}
+                        className="sortButton"
+                    >
+                        Sort by Title: A-Z
+                    </button>
+                    <button
+                        onClick={sortAlphabeticalTitleR}
+                        className="sortButton"
+                    >
+                        Sort by Title: Z-A
+                    </button>
+                    <button onClick={sortReleaseDateA} className="sortButton">
+                        Sort by Release Date: Old-New
+                    </button>
+                    <button onClick={sortReleaseDateD} className="sortButton">
+                        Sort by Release Date: New-Old
+                    </button>
+                    <button onClick={sortRatingA} className="sortButton">
+                        Sort by Rating: Low-High
+                    </button>
+                    <button onClick={sortRatingD} className="sortButton">
+                        Sort by Rating: High-Low
+                    </button>
+                    <button
+                        style={{ backgroundColor: "#f44336" }}
+                        onClick={() => setUserMovies([])}
+                        className="sortButton"
+                    >
+                        CLEAR LIST
+                    </button>
+                </div>
             </div>
             <div
                 ref={drop}
                 style={{
-                    backgroundColor: isOver ? "red" : "white",
-                    width: "510px",
-                    height: "1000px",
-                    border: "1px solid#000"
+                    backgroundColor: isOver ? "lime" : "lightgray",
+                    width: "1500px",
+                    height: "100px",
+                    border: "2px dashed black",
+                    display: "flex",
+                    flexDirection: "row"
                 }}
             >
                 {userMovies.map((movie) => {
