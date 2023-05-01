@@ -15,12 +15,16 @@ export function UserList(): JSX.Element {
     const [userMovies, setUserMovies] = useState<Movie[]>([]);
 
     function updateUserMovies(newMovie: Movie) {
-        const movieFilter = testMovies.filter(
-            (movie) => newMovie.title === movie.title
+        const movieExists = userMovies.some(
+            (movie) => movie.title === newMovie.title
         );
-        // setUserMovies([...userMovies, movieFilter[0]]);
-        newMovie.poster = movieFilter[0].poster;
-        setUserMovies([...userMovies, newMovie]);
+        if (!movieExists) {
+            const movieFilter = testMovies.filter(
+                (movie) => newMovie.title === movie.title
+            );
+            newMovie.poster = movieFilter[0].poster;
+            setUserMovies([...userMovies, newMovie]);
+        }
     }
 
     function sortRuntimeA() {
