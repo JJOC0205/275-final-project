@@ -11,6 +11,7 @@ export function CentralItemList(): JSX.Element {
     const [allMovies, setAllMovies] = useState<Movie[]>(testMovies);
     const [runtimeRange, setRuntimeRange] = useState<number[]>([0, Infinity]);
     const [, setRatingLevel] = useState<number>(0);
+    const [movieDisplay, setMovieDisplay] = useState<Movie>(testMovies[6]);
 
     const handleRuntimeFilter = (min: number, max: number) => {
         setRuntimeRange([min, max]);
@@ -69,7 +70,8 @@ export function CentralItemList(): JSX.Element {
                     display: "flex",
                     flexDirection: "row",
                     marginBottom: "10px",
-                    marginTop: "10px"
+                    marginTop: "10px",
+                    justifyContent: "center"
                 }}
             >
                 <input
@@ -85,7 +87,14 @@ export function CentralItemList(): JSX.Element {
                     className="filterForm"
                 />
             </div>
-            <div style={{ display: "flex", flexDirection: "row" }}>
+            <div
+                style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "center",
+                    marginBottom: "10px"
+                }}
+            >
                 Filter by Runtime:
                 <button
                     style={{ marginLeft: "10px" }}
@@ -112,7 +121,8 @@ export function CentralItemList(): JSX.Element {
                 style={{
                     display: "flex",
                     flexDirection: "row",
-                    marginBottom: "10px"
+                    marginBottom: "10px",
+                    justifyContent: "center"
                 }}
             >
                 Filter by Minimum Rating:
@@ -150,19 +160,54 @@ export function CentralItemList(): JSX.Element {
                 <button
                     onClick={handleResetFilter}
                     className="filterButton2"
-                    style={{ backgroundColor: "#f44336" }}
+                    style={{
+                        backgroundColor: "#f44336",
+                        fontFamily: "serif"
+                    }}
                 >
                     RESET
                 </button>
             </div>
-            <Stack direction="horizontal" gap={3}>
-                {allMovies.map((movie: Movie) => (
-                    <div key={movie.title} className="bg-light-border">
-                        <ShowMovieDetails movie={movie}></ShowMovieDetails>
-                        <EditMode movie={movie}></EditMode>
-                    </div>
-                ))}
-            </Stack>
+            <div style={{ display: "flex", flexDirection: "row" }}>
+                <Stack
+                    direction="horizontal"
+                    gap={3}
+                    style={{
+                        marginLeft: "30px",
+                        backgroundColor: "lightseagreen",
+                        padding: "10px",
+                        overflow: "auto",
+                        width: "1300px"
+                    }}
+                >
+                    {allMovies.map((movie: Movie) => (
+                        <div
+                            key={movie.title}
+                            onClick={() => setMovieDisplay(movie)}
+                        >
+                            <ShowMovieDetails movie={movie}></ShowMovieDetails>
+                            <EditMode movie={movie}></EditMode>
+                        </div>
+                    ))}
+                </Stack>
+                <div
+                    style={{
+                        marginLeft: "25px",
+                        backgroundColor: "lightsteelblue",
+                        height: "325px",
+                        border: "3px dotted black",
+                        width: "530px",
+                        padding: "15px"
+                    }}
+                >
+                    <p>Title: {movieDisplay.title}</p>
+                    <p>Release Date: {movieDisplay.released}</p>
+                    <p>Runtime in Minutes: {movieDisplay.runtime}</p>
+                    <p>Watched: {movieDisplay.watched.toString()}</p>
+                    <p>Description: {movieDisplay.description}</p>
+                    <p>Rating out of 10: {movieDisplay.rating}</p>
+                </div>
+            </div>
         </>
     );
 }

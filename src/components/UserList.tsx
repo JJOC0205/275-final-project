@@ -94,8 +94,15 @@ export function UserList(): JSX.Element {
     return (
         <>
             <div>
-                <h2>User List</h2>
-                <div style={{ display: "flex", flexDirection: "row" }}>
+                <h2>User</h2>
+                <div
+                    style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        marginLeft: "10px",
+                        marginRight: "10px"
+                    }}
+                >
                     <button onClick={sortRuntimeA} className="sortButton">
                         Sort by Runtime: Low-High
                     </button>
@@ -139,16 +146,24 @@ export function UserList(): JSX.Element {
                 ref={drop}
                 style={{
                     backgroundColor: isOver ? "lime" : "lightgray",
-                    width: "1500px",
-                    height: "100px",
+                    width: "1400px",
+                    height: "110px",
                     border: "2px dashed black",
                     display: "flex",
-                    flexDirection: "row"
+                    flexDirection: "row",
+                    marginLeft: "10px",
+                    overflow: "auto",
+                    padding: "5px",
+                    marginTop: "10px"
                 }}
             >
                 {userMovies.map((movie) => {
                     return (
-                        <div className="ListItem" key={movie.title}>
+                        <div
+                            className="ListItem"
+                            key={movie.title}
+                            style={{ marginRight: "10px" }}
+                        >
                             <ShowMovieDetails movie={movie}></ShowMovieDetails>
                         </div>
                     );
@@ -161,5 +176,3 @@ export function UserList(): JSX.Element {
 export const userListExport: UserListExport = {
     userMovies: []
 };
-
-export default UserList;
