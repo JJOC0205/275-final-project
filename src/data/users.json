@@ -1,0 +1,14 @@
+[
+    {
+        "name": "user1",
+        "role": "user"
+    }
+    {
+        "name": "user2",
+        "role": "user"
+    }
+    {
+        "name": "super",
+        "role": "super"
+    }
+]
