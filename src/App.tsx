@@ -4,7 +4,7 @@ import users from "./data/users.json";
 import { CentralItemList } from "./components/CentralItemList";
 import { Movie } from "./interfaces/movie";
 import { UserSelect } from "./components/UserSelect";
-import { User } from "./interfaces/user"
+import { User } from "./interfaces/user";
 import "./App.css";
 import UserList from "./components/UserList";
 import { HTML5Backend } from "react-dnd-html5-backend";

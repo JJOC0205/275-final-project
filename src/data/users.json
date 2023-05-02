@@ -1,14 +1,19 @@
 [
     {
-        "name": "user1",
-        "role": "user"
-    }
-    {
-        "name": "user2",
-        "role": "user"
-    }
-    {
-        "name": "super",
+        "name": "Super User",
         "role": "super"
+    },
+    {
+        "name": "Administrator",
+        "role": "admin"
+    },
+    {
+        "name": "User1",
+        "role": "user"
+    },
+    {
+        "name": "User2",
+        "role": "user"
     }
+
 ]
