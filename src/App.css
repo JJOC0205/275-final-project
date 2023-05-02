@@ -1,5 +1,6 @@
 .App {
     text-align: center;
+    background: linear-gradient(to bottom, #697cc1, #376dc4);
 }
 
 .App-logo {
@@ -22,6 +23,7 @@
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
+    font-family:'Lucida Sans';
     color: white;
 }
 
