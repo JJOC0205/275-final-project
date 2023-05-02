@@ -18,7 +18,24 @@ const USERS = users.map(
 
 function App(): JSX.Element {
     const [movies] = useState<Movie[]>(MOVIES);
-    const [users] = useState<User[]>(USERS);
+    const [users, setUsers] = useState<User[]>(USERS);
+    const [currUser, setUser] = useState<User>(users[0]);
+
+    function setCurrentUser(id: number) {
+        users.map((user: User): User | void =>
+            id === currUser.id ? setUser(user) : user
+        );
+    }
+
+    function addUser(newUser: User) {
+        const existing = users.find(
+            (user: User): boolean => user.id === newUser.id
+        );
+        if (existing === undefined) {
+            setUsers([...users, newUser]);
+        }
+    }
+
     return (
         <div className="App">
             <header className="App-header">
@@ -26,10 +43,17 @@ function App(): JSX.Element {
                 Jon OConell, Rachel Robins, Ani Naredla, Shreya Pamulapati
             </header>
             <DndProvider backend={HTML5Backend}>
-                <CentralItemList movies={movies}></CentralItemList>
-            <UserSelect users={users}></UserSelect>
+                <CentralItemList
+                    movies={movies}
+                    user={currUser}
+                ></CentralItemList>
                 <UserList></UserList>
             </DndProvider>
+            <UserSelect
+                users={users}
+                user={currUser}
+                setCurrentUser={setCurrentUser}
+            ></UserSelect>
         </div>
     );
 }
