@@ -13,7 +13,6 @@ function App(): JSX.Element {
         <div className="App">
             <header className="App-header">
                 <h3>MOVIE MASH</h3>
-                Jon OConell, Rachel Robins, Ani Naredla, Shreya Pamulapati
             </header>
             <DndProvider backend={HTML5Backend}>
                 <CentralItemList></CentralItemList>
