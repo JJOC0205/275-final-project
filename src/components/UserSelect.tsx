@@ -1,22 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
 import { User } from "../interfaces/user";
 import { Form } from "react-bootstrap";
 
-export function UserSelect({ users }: { users: User[] }): JSX.Element {
-    const [ListofUsers] = useState<User[]>(users);
-    const [user, setUser] = useState<string>(ListofUsers[0].role);
-
-    function updateUser(event: React.ChangeEvent<HTMLSelectElement>) {
-        setUser(event.target.value);
-    }
-
+export function UserSelect({
+    users,
+    user,
+    setCurrentUser
+}: {
+    users: User[];
+    user: User;
+    setCurrentUser: (id: number) => void;
+}): JSX.Element {
     return (
         <div>
             <Form.Group controlId="userSelect">
                 <Form.Label>Select Your Role:</Form.Label>
-                <Form.Select value={user} onChange={updateUser}>
-                    {ListofUsers.map((currUser: User) => (
-                        <option key={currUser.role} value={currUser.role}>
+                <Form.Select
+                    value={user.id}
+                    onChange={(e) => setCurrentUser(parseInt(e.target.value))}
+                >
+                    {users.map((currUser: User) => (
+                        <option key={currUser.id} value={currUser.id}>
                             {currUser.name}
                         </option>
                     ))}

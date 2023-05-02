@@ -1,18 +1,22 @@
 [
     {
         "name": "Super User",
+        "id": 1,
         "role": "super"
     },
     {
         "name": "Administrator",
+        "id": 2,
         "role": "admin"
     },
     {
         "name": "User1",
+        "id": 3,
         "role": "user"
     },
     {
         "name": "User2",
+        "id": 4,
         "role": "user"
     }
 

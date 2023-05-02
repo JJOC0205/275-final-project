@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import { Movie } from "../interfaces/movie";
+import { User } from "../interfaces/user";
 
-export function EditMode({ movie }: { movie: Movie }): JSX.Element {
+export function EditMode({
+    movie,
+    user
+}: {
+    movie: Movie;
+    user: User;
+}): JSX.Element {
     const [mode, setMode] = useState<boolean>(false);
     const [userRating, setRating] = useState<string>("");
     function changeRating(event: React.ChangeEvent<HTMLInputElement>) {
@@ -22,7 +29,7 @@ export function EditMode({ movie }: { movie: Movie }): JSX.Element {
                 onChange={changeMode}
             />
             <div>
-                {mode ? (
+                {mode && user.role === "user" ? (
                     <Form.Group controlId="name">
                         <Form.Control
                             value={userRating}
