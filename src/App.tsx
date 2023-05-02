@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import { MOVIES } from "./data/MovieList";
+import React from "react";
+// import { useState } from "react";
 import { CentralItemList } from "./components/CentralItemList";
-import { Movie } from "./interfaces/movie";
 import "./App.css";
-import UserList from "./components/UserList";
+import { UserList } from "./components/UserList";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { DndProvider } from "react-dnd/dist/core";
+import { SuperList } from "./components/SuperList";
 
 function App(): JSX.Element {
-    const [movies] = useState<Movie[]>(MOVIES);
+    // const [showUser, setShowUser] = useState<boolean>(false);
     return (
         <div className="App">
             <header className="App-header">
@@ -16,8 +16,11 @@ function App(): JSX.Element {
                 Jon OConell, Rachel Robins, Ani Naredla, Shreya Pamulapati
             </header>
             <DndProvider backend={HTML5Backend}>
-                <CentralItemList movies={movies}></CentralItemList>
+                <CentralItemList></CentralItemList>
+                <hr></hr>
                 <UserList></UserList>
+                <hr></hr>
+                <SuperList></SuperList>
             </DndProvider>
         </div>
     );

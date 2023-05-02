@@ -14,7 +14,7 @@ export function EditMode({ movie }: { movie: Movie }): JSX.Element {
     }
     return (
         <div>
-            <h3>Rating</h3>
+            {/* <h3>Rating</h3> */}
             <Form.Check
                 type="switch"
                 id="change rating"
