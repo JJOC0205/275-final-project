@@ -6,6 +6,7 @@ import "./UserList.css";
 import { Movie } from "../interfaces/movie";
 import testMovies from "../data/movies.json";
 import { ShowMovieDetails } from "./moviePoster";
+import { }
 
 interface UserListExport {
     userMovies: Movie[];
