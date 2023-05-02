@@ -11,6 +11,8 @@ interface SuperListExport {
     superMovies: Movie[];
 }
 
+export const superMovies = testMovies;
+
 export function SuperList(): JSX.Element {
     const [superMovies, setSuperMovies] = useState<Movie[]>(testMovies);
 
@@ -23,7 +25,7 @@ export function SuperList(): JSX.Element {
 
     return (
         <>
-            <h2>SUPER</h2>
+            <h2>Super List</h2>
             <Stack
                 direction="horizontal"
                 gap={3}

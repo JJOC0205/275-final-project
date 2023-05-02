@@ -145,7 +145,7 @@ export function UserList(): JSX.Element {
             <div
                 ref={drop}
                 style={{
-                    backgroundColor: isOver ? "lime" : "lightgray",
+                    backgroundColor: isOver ? "lime" : "lightpink",
                     width: "1400px",
                     height: "110px",
                     border: "2px dashed black",
