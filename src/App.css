@@ -1,6 +1,6 @@
 .App {
     text-align: left;
-    background: linear-gradient(to bottom, #697cc1, #376dc4);
+    background: linear-gradient(to bottom, #707589, #376dc4);
 }
 
 .App-logo {
@@ -20,8 +20,8 @@
     height: 100px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: left;
+    justify-content: left;
     font-size: calc(10px + 2vmin);
     font-family:'Lucida Sans';
     color: white;
