@@ -87,19 +87,35 @@ export function CentralItemList({ cilMovies }: cilMovies): JSX.Element {
                 <div
                     style={{
                         marginLeft: "25px",
-                        backgroundColor: "lightsteelblue",
+                        backgroundColor: "darkslateblue",
                         height: "325px",
-                        border: "3px dotted black",
+                        border: "3px dotted lightgreen",
                         width: "530px",
                         padding: "15px"
                     }}
                 >
-                    <p>Title: {movieDisplay.title}</p>
-                    <p>Release Date: {movieDisplay.released}</p>
-                    <p>Runtime in Minutes: {movieDisplay.runtime}</p>
-                    <p>Watched: {movieDisplay.watched.toString()}</p>
-                    <p>Description: {movieDisplay.description}</p>
-                    <p>Rating out of 10: {movieDisplay.rating}</p>
+                    <div style={{ display: "flex", flexDirection: "row" }}>
+                        <img
+                            src={movieDisplay.poster}
+                            alt={movieDisplay.title}
+                            width="150px"
+                            height="150px"
+                        ></img>
+                        <div
+                            style={{ marginLeft: "25px", color: "whitesmoke" }}
+                        >
+                            <p>{movieDisplay.title}</p>
+                            <p>Release Date: {movieDisplay.released}</p>
+                            <p>Runtime in Minutes: {movieDisplay.runtime}</p>
+                            <p>Watched: {movieDisplay.watched.toString()}</p>
+                        </div>
+                    </div>
+                    <p style={{ marginLeft: "25px", color: "whitesmoke" }}>
+                        {movieDisplay.description}
+                    </p>
+                    <p style={{ marginLeft: "25px", color: "whitesmoke" }}>
+                        Rating: {movieDisplay.rating}/10
+                    </p>
                 </div>
             </div>
         </>
