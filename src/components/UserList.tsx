@@ -6,12 +6,13 @@ import "./UserList.css";
 import { Movie } from "../interfaces/movie";
 import testMovies from "../data/movies.json";
 import { ShowMovieDetails } from "./moviePoster";
+import { User } from "../interfaces/user";
 
 interface UserListExport {
     userMovies: Movie[];
 }
 
-export function UserList(): JSX.Element {
+export function UserList({ user }: { user: User }): JSX.Element {
     const [userMovies, setUserMovies] = useState<Movie[]>([]);
 
     function updateUserMovies(newMovie: Movie) {
@@ -92,84 +93,108 @@ export function UserList(): JSX.Element {
     });
 
     return (
-        <>
-            <div>
-                <h2>User</h2>
-                <div
-                    style={{
-                        display: "flex",
-                        flexDirection: "row",
-                        marginLeft: "10px",
-                        marginRight: "10px"
-                    }}
-                >
-                    <button onClick={sortRuntimeA} className="sortButton">
-                        Sort by Runtime: Low-High
-                    </button>
-                    <button onClick={sortRuntimeD} className="sortButton">
-                        Sort by Runtime: High-Low
-                    </button>
-                    <button
-                        onClick={sortAlphabeticalTitleA}
-                        className="sortButton"
-                    >
-                        Sort by Title: A-Z
-                    </button>
-                    <button
-                        onClick={sortAlphabeticalTitleR}
-                        className="sortButton"
-                    >
-                        Sort by Title: Z-A
-                    </button>
-                    <button onClick={sortReleaseDateA} className="sortButton">
-                        Sort by Release Date: Old-New
-                    </button>
-                    <button onClick={sortReleaseDateD} className="sortButton">
-                        Sort by Release Date: New-Old
-                    </button>
-                    <button onClick={sortRatingA} className="sortButton">
-                        Sort by Rating: Low-High
-                    </button>
-                    <button onClick={sortRatingD} className="sortButton">
-                        Sort by Rating: High-Low
-                    </button>
-                    <button
-                        style={{ backgroundColor: "#f44336" }}
-                        onClick={() => setUserMovies([])}
-                        className="sortButton"
-                    >
-                        CLEAR LIST
-                    </button>
-                </div>
-            </div>
-            <div
-                ref={drop}
-                style={{
-                    backgroundColor: isOver ? "lime" : "lightpink",
-                    width: "1400px",
-                    height: "110px",
-                    border: "2px dashed black",
-                    display: "flex",
-                    flexDirection: "row",
-                    marginLeft: "10px",
-                    overflow: "auto",
-                    padding: "5px",
-                    marginTop: "10px"
-                }}
-            >
-                {userMovies.map((movie) => {
-                    return (
+        <div>
+            {user.role === "user" ? (
+                <>
+                    <div>
+                        <h2>User</h2>
                         <div
-                            className="ListItem"
-                            key={movie.title}
-                            style={{ marginRight: "10px" }}
+                            style={{
+                                display: "flex",
+                                flexDirection: "row",
+                                marginLeft: "10px",
+                                marginRight: "10px"
+                            }}
                         >
-                            <ShowMovieDetails movie={movie}></ShowMovieDetails>
+                            <button
+                                onClick={sortRuntimeA}
+                                className="sortButton"
+                            >
+                                Sort by Runtime: Low-High
+                            </button>
+                            <button
+                                onClick={sortRuntimeD}
+                                className="sortButton"
+                            >
+                                Sort by Runtime: High-Low
+                            </button>
+                            <button
+                                onClick={sortAlphabeticalTitleA}
+                                className="sortButton"
+                            >
+                                Sort by Title: A-Z
+                            </button>
+                            <button
+                                onClick={sortAlphabeticalTitleR}
+                                className="sortButton"
+                            >
+                                Sort by Title: Z-A
+                            </button>
+                            <button
+                                onClick={sortReleaseDateA}
+                                className="sortButton"
+                            >
+                                Sort by Release Date: Old-New
+                            </button>
+                            <button
+                                onClick={sortReleaseDateD}
+                                className="sortButton"
+                            >
+                                Sort by Release Date: New-Old
+                            </button>
+                            <button
+                                onClick={sortRatingA}
+                                className="sortButton"
+                            >
+                                Sort by Rating: Low-High
+                            </button>
+                            <button
+                                onClick={sortRatingD}
+                                className="sortButton"
+                            >
+                                Sort by Rating: High-Low
+                            </button>
+                            <button
+                                style={{ backgroundColor: "#f44336" }}
+                                onClick={() => setUserMovies([])}
+                                className="sortButton"
+                            >
+                                CLEAR LIST
+                            </button>
                         </div>
-                    );
-                })}
-            </div>
-        </>
+                    </div>
+                    <div
+                        ref={drop}
+                        style={{
+                            backgroundColor: isOver ? "lime" : "lightpink",
+                            width: "1400px",
+                            height: "110px",
+                            border: "2px dashed black",
+                            display: "flex",
+                            flexDirection: "row",
+                            marginLeft: "10px",
+                            overflow: "auto",
+                            padding: "5px",
+                            marginTop: "10px"
+                        }}
+                    >
+                        {userMovies.map((movie) => {
+                            return (
+                                <div
+                                    className="ListItem"
+                                    key={movie.title}
+                                    style={{ marginRight: "10px" }}
+                                >
+                                    <ShowMovieDetails
+                                        movie={movie}
+                                    ></ShowMovieDetails>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </>
+            ) : null}
+        </div>
     );
 }
 
