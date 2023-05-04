@@ -4,11 +4,9 @@ import { Form } from "react-bootstrap";
 
 export function UserSelect({
     users,
-    user,
     setUser
 }: {
     users: User[];
-    user: User;
     setUser: React.Dispatch<React.SetStateAction<User>>;
 }): JSX.Element {
     function setCurrentUser(event: React.ChangeEvent<HTMLSelectElement>) {
