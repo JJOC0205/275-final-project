@@ -64,80 +64,97 @@ export function SuperList({
     return (
         <>
             <h2>Super List</h2>
-            <Stack
-                direction="horizontal"
-                gap={3}
-                style={{
-                    marginLeft: "30px",
-                    backgroundColor: "lightskyblue",
-                    padding: "10px",
-                    overflow: "auto",
-                    width: "1300px"
-                }}
-            >
-                {superMovies.map((movie: Movie) => (
-                    <div key={movie.title}>
-                        <ShowMovieDetails movie={movie}></ShowMovieDetails>
-                        <button
-                            style={{
-                                height: "30px",
-                                width: "75px",
-                                backgroundColor: "lightsalmon",
-                                marginTop: "10px"
-                            }}
-                            onClick={() => removeMovie(movie)}
-                        >
-                            Remove
-                        </button>
+            <div style={{ display: "flex", flexDirection: "row" }}>
+                <Stack
+                    direction="horizontal"
+                    gap={3}
+                    style={{
+                        marginLeft: "30px",
+                        marginRight: "30px",
+                        backgroundColor: "lightskyblue",
+                        padding: "10px",
+                        overflow: "auto",
+                        width: "1300px"
+                    }}
+                >
+                    {superMovies.map((movie: Movie) => (
+                        <div key={movie.title}>
+                            <ShowMovieDetails movie={movie}></ShowMovieDetails>
+                            <button
+                                style={{
+                                    height: "30px",
+                                    width: "75px",
+                                    backgroundColor: "lightsalmon",
+                                    marginTop: "10px"
+                                }}
+                                onClick={() => removeMovie(movie)}
+                            >
+                                Remove
+                            </button>
+                        </div>
+                    ))}
+                </Stack>
+                <div
+                    style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        width: "300px"
+                    }}
+                >
+                    <input
+                        type="text"
+                        placeholder="Enter Title"
+                        onChange={(e) => setTitle(e.target.value)}
+                        style={{ marginBottom: "5px" }}
+                    />
+                    <input
+                        type="number"
+                        placeholder="Enter Release Date"
+                        onChange={(e) => setReleased(parseInt(e.target.value))}
+                        style={{ marginBottom: "5px" }}
+                    />
+                    <input
+                        type="number"
+                        placeholder="Enter Runtime (minutes)"
+                        onChange={(e) => setRuntime(parseInt(e.target.value))}
+                        style={{ marginBottom: "5px" }}
+                    />
+                    <input
+                        type="text"
+                        placeholder="Enter 'true' if watched, 'false' if not"
+                        onChange={(e) => setWatched(e.target.checked)}
+                        style={{ marginBottom: "5px" }}
+                    />
+                    <input
+                        type="text"
+                        placeholder="Enter Description"
+                        onChange={(e) => setDescription(e.target.value)}
+                        style={{ marginBottom: "5px" }}
+                    />
+                    <input
+                        type="number"
+                        placeholder="Enter Rating"
+                        onChange={(e) => setRating(parseInt(e.target.value))}
+                        style={{ marginBottom: "5px" }}
+                    />
+                    <input
+                        type="text"
+                        placeholder="Enter Poster url"
+                        onChange={(e) => setPoster(e.target.value)}
+                        style={{ marginBottom: "5px" }}
+                    />
+                    <div
+                        style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            justifyContent: "center"
+                        }}
+                    >
+                        <button onClick={createNewMovie}>Create Movie</button>
+                        <button onClick={addMovie}>Add Movie</button>
                     </div>
-                ))}
-            </Stack>
-            <div>
-                <input
-                    type="text"
-                    placeholder="Enter Title"
-                    onChange={(e) => setTitle(e.target.value)}
-                    style={{ marginBottom: "10px" }}
-                />
-                <input
-                    type="number"
-                    placeholder="Enter Release Date"
-                    onChange={(e) => setReleased(parseInt(e.target.value))}
-                    style={{ marginBottom: "10px" }}
-                />
-                <input
-                    type="number"
-                    placeholder="Enter Runtime (minutes)"
-                    onChange={(e) => setRuntime(parseInt(e.target.value))}
-                    style={{ marginBottom: "10px" }}
-                />
-                <input
-                    type="text"
-                    placeholder="Enter 'true' if watched, 'false' if not"
-                    onChange={(e) => setWatched(e.target.checked)}
-                    style={{ marginBottom: "10px" }}
-                />
-                <input
-                    type="text"
-                    placeholder="Enter Description"
-                    onChange={(e) => setDescription(e.target.value)}
-                    style={{ marginBottom: "10px" }}
-                />
-                <input
-                    type="number"
-                    placeholder="Enter Rating"
-                    onChange={(e) => setRating(parseInt(e.target.value))}
-                    style={{ marginBottom: "10px" }}
-                />
-                <input
-                    type="text"
-                    placeholder="Enter Poster url"
-                    onChange={(e) => setPoster(e.target.value)}
-                    style={{ marginBottom: "10px" }}
-                />
+                </div>
             </div>
-            <button onClick={createNewMovie}>Create New Movie</button>
-            <button onClick={addMovie}>Add New Movie to List</button>
         </>
     );
 }
