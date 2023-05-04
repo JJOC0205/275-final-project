@@ -25,11 +25,7 @@ function App(): JSX.Element {
                 <UserList user={currUser}></UserList>
                 <hr></hr>
                 <SuperList user={currUser}></SuperList>
-                <UserSelect
-                    users={users}
-                    user={currUser}
-                    setUser={setUser}
-                ></UserSelect>
+                <UserSelect users={users} setUser={setUser}></UserSelect>
             </DndProvider>
         </div>
     );
