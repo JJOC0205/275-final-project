@@ -4,6 +4,7 @@ import { Movie } from "../interfaces/movie";
 import { ShowMovieDetails } from "./moviePoster";
 import { Stack } from "react-bootstrap";
 import { superMovies } from "../App";
+import { useState } from "react";
 
 export function SuperList({
     superMovies,
@@ -14,6 +15,50 @@ export function SuperList({
             (m) => m.title !== movie.title
         );
         setSuperMovies(updatedMovies);
+    }
+
+    const [title, setTitle] = useState<string>("");
+    const [released, setReleased] = useState<number>(0);
+    const [runtime, setRuntime] = useState<number>(0);
+    const [watched, setWatched] = useState<boolean>(false);
+    const [description, setDescription] = useState<string>("");
+    const [rating, setRating] = useState<number>(0);
+    const [poster, setPoster] = useState<string>("");
+
+    const [newMovie, setNewMovie] = useState<Movie>({
+        title: "",
+        released: 0,
+        runtime: 0,
+        watched: false,
+        description: "",
+        rating: 0,
+        poster: ""
+    });
+
+    function addMovie() {
+        setSuperMovies([...superMovies, newMovie]);
+        setNewMovie({
+            title: "",
+            released: 0,
+            runtime: 0,
+            watched: false,
+            description: "",
+            rating: 0,
+            poster: ""
+        });
+    }
+
+    function createNewMovie() {
+        const newMovie = {
+            title,
+            released,
+            runtime,
+            watched,
+            description,
+            rating,
+            poster
+        };
+        setNewMovie(newMovie);
     }
 
     return (
@@ -44,10 +89,55 @@ export function SuperList({
                         >
                             Remove
                         </button>
-                        {/* <EditMode movie={movie}></EditMode> */}
                     </div>
                 ))}
             </Stack>
+            <div>
+                <input
+                    type="text"
+                    placeholder="Enter Title"
+                    onChange={(e) => setTitle(e.target.value)}
+                    style={{ marginBottom: "10px" }}
+                />
+                <input
+                    type="number"
+                    placeholder="Enter Release Date"
+                    onChange={(e) => setReleased(parseInt(e.target.value))}
+                    style={{ marginBottom: "10px" }}
+                />
+                <input
+                    type="number"
+                    placeholder="Enter Runtime (minutes)"
+                    onChange={(e) => setRuntime(parseInt(e.target.value))}
+                    style={{ marginBottom: "10px" }}
+                />
+                <input
+                    type="text"
+                    placeholder="Enter 'true' if watched, 'false' if not"
+                    onChange={(e) => setWatched(e.target.checked)}
+                    style={{ marginBottom: "10px" }}
+                />
+                <input
+                    type="text"
+                    placeholder="Enter Description"
+                    onChange={(e) => setDescription(e.target.value)}
+                    style={{ marginBottom: "10px" }}
+                />
+                <input
+                    type="number"
+                    placeholder="Enter Rating"
+                    onChange={(e) => setRating(parseInt(e.target.value))}
+                    style={{ marginBottom: "10px" }}
+                />
+                <input
+                    type="text"
+                    placeholder="Enter Poster url"
+                    onChange={(e) => setPoster(e.target.value)}
+                    style={{ marginBottom: "10px" }}
+                />
+            </div>
+            <button onClick={createNewMovie}>Create New Movie</button>
+            <button onClick={addMovie}>Add New Movie to List</button>
         </>
     );
 }
