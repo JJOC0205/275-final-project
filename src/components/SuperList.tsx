@@ -1,21 +1,14 @@
 import React from "react";
-import { useState } from "react";
-// import { MovieTypes } from "../interfaces/MovieTypes";
 import "./UserList.css";
 import { Movie } from "../interfaces/movie";
-import testMovies from "../data/movies.json";
 import { ShowMovieDetails } from "./moviePoster";
 import { Stack } from "react-bootstrap";
+import { superMovies } from "../App";
 
-interface SuperListExport {
-    superMovies: Movie[];
-}
-
-export const superMovies = testMovies;
-
-export function SuperList(): JSX.Element {
-    const [superMovies, setSuperMovies] = useState<Movie[]>(testMovies);
-
+export function SuperList({
+    superMovies,
+    setSuperMovies
+}: superMovies): JSX.Element {
     function removeMovie(movie: Movie) {
         const updatedMovies = superMovies.filter(
             (m) => m.title !== movie.title
@@ -58,7 +51,3 @@ export function SuperList(): JSX.Element {
         </>
     );
 }
-
-export const superListExport: SuperListExport = {
-    superMovies: []
-};
