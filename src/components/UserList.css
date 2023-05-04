@@ -1,8 +1,7 @@
 .ListItem {
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
-}
+    align-items: center;}
 
 .sortButton {
     width: 300px;

@@ -6,6 +6,7 @@ import "./UserList.css";
 import { Movie } from "../interfaces/movie";
 import testMovies from "../data/movies.json";
 import { ShowMovieDetails } from "./moviePoster";
+import { Stack } from "react-bootstrap";
 
 interface UserListExport {
     userMovies: Movie[];
@@ -142,32 +143,35 @@ export function UserList(): JSX.Element {
                     </button>
                 </div>
             </div>
-            <div
-                ref={drop}
-                style={{
-                    backgroundColor: isOver ? "lime" : "lightpink",
-                    width: "1400px",
-                    height: "110px",
-                    border: "2px dashed black",
-                    display: "flex",
-                    flexDirection: "row",
-                    marginLeft: "10px",
-                    overflow: "auto",
-                    padding: "5px",
-                    marginTop: "10px"
-                }}
-            >
-                {userMovies.map((movie) => {
-                    return (
-                        <div
-                            className="ListItem"
-                            key={movie.title}
-                            style={{ marginRight: "10px" }}
-                        >
-                            <ShowMovieDetails movie={movie}></ShowMovieDetails>
-                        </div>
-                    );
-                })}
+            <div>
+                <Stack
+                    ref={drop}
+                    style={{
+                        backgroundColor: isOver ? "lime" : "lightpink",
+                        width: "1400px",
+                        height: "130px",
+                        border: "2px dashed black",
+                        display: "flex",
+                        flexDirection: "row",
+                        marginLeft: "10px",
+                        overflow: "auto",
+                        padding: "10px"
+                    }}
+                >
+                    {userMovies.map((movie) => {
+                        return (
+                            <div
+                                className="ListItem"
+                                key={movie.title}
+                                style={{ marginRight: "10px" }}
+                            >
+                                <ShowMovieDetails
+                                    movie={movie}
+                                ></ShowMovieDetails>
+                            </div>
+                        );
+                    })}
+                </Stack>
             </div>
         </>
     );

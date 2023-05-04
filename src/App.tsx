@@ -6,6 +6,7 @@ import { UserList } from "./components/UserList";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { DndProvider } from "react-dnd/dist/core";
 import { SuperList } from "./components/SuperList";
+import { AdminList } from "./components/AdminList";
 
 function App(): JSX.Element {
     // const [showUser, setShowUser] = useState<boolean>(false);
@@ -21,6 +22,8 @@ function App(): JSX.Element {
                 <UserList></UserList>
                 <hr></hr>
                 <SuperList></SuperList>
+                <hr></hr>
+                <AdminList></AdminList>
             </DndProvider>
         </div>
     );
