@@ -22,7 +22,7 @@ function App(): JSX.Element {
             <DndProvider backend={HTML5Backend}>
                 <CentralItemList></CentralItemList>
                 <hr></hr>
-                <UserList></UserList>
+                <UserList user={currUser}></UserList>
                 <hr></hr>
                 <SuperList user={currUser}></SuperList>
                 <UserSelect

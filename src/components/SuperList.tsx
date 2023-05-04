@@ -6,6 +6,7 @@ import { Movie } from "../interfaces/movie";
 import testMovies from "../data/movies.json";
 import { ShowMovieDetails } from "./moviePoster";
 import { Stack } from "react-bootstrap";
+import { User } from "../interfaces/user";
 
 interface SuperListExport {
     superMovies: Movie[];
@@ -13,7 +14,7 @@ interface SuperListExport {
 
 export const superMovies = testMovies;
 
-export function SuperList(): JSX.Element {
+export function SuperList({ user }: { user: User }): JSX.Element {
     const [superMovies, setSuperMovies] = useState<Movie[]>(testMovies);
 
     function removeMovie(movie: Movie) {
@@ -24,38 +25,44 @@ export function SuperList(): JSX.Element {
     }
 
     return (
-        <>
-            <h2>Super List</h2>
-            <Stack
-                direction="horizontal"
-                gap={3}
-                style={{
-                    marginLeft: "30px",
-                    backgroundColor: "lightskyblue",
-                    padding: "10px",
-                    overflow: "auto",
-                    width: "1300px"
-                }}
-            >
-                {superMovies.map((movie: Movie) => (
-                    <div key={movie.title}>
-                        <ShowMovieDetails movie={movie}></ShowMovieDetails>
-                        <button
-                            style={{
-                                height: "30px",
-                                width: "75px",
-                                backgroundColor: "lightsalmon",
-                                marginTop: "10px"
-                            }}
-                            onClick={() => removeMovie(movie)}
-                        >
-                            Remove
-                        </button>
-                        {/* <EditMode movie={movie}></EditMode> */}
-                    </div>
-                ))}
-            </Stack>
-        </>
+        <div>
+            {user.role === "super" ? (
+                <>
+                    <h2>Super List</h2>
+                    <Stack
+                        direction="horizontal"
+                        gap={3}
+                        style={{
+                            marginLeft: "30px",
+                            backgroundColor: "lightskyblue",
+                            padding: "10px",
+                            overflow: "auto",
+                            width: "1300px"
+                        }}
+                    >
+                        {superMovies.map((movie: Movie) => (
+                            <div key={movie.title}>
+                                <ShowMovieDetails
+                                    movie={movie}
+                                ></ShowMovieDetails>
+                                <button
+                                    style={{
+                                        height: "30px",
+                                        width: "75px",
+                                        backgroundColor: "lightsalmon",
+                                        marginTop: "10px"
+                                    }}
+                                    onClick={() => removeMovie(movie)}
+                                >
+                                    Remove
+                                </button>
+                                {/* <EditMode movie={movie}></EditMode> */}
+                            </div>
+                        ))}
+                    </Stack>
+                </>
+            ) : null}{" "}
+        </div>
     );
 }
 
