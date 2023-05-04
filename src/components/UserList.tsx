@@ -1,18 +1,18 @@
 import React from "react";
 import { useDrop } from "react-dnd";
-import { useState } from "react";
+// import { useState } from "react";
 import { MovieTypes } from "../interfaces/MovieTypes";
 import "./UserList.css";
 import { Movie } from "../interfaces/movie";
 import testMovies from "../data/movies.json";
 import { ShowMovieDetails } from "./moviePoster";
+import { userMovies } from "../App";
 
-interface UserListExport {
-    userMovies: Movie[];
-}
-
-export function UserList(): JSX.Element {
-    const [userMovies, setUserMovies] = useState<Movie[]>([]);
+export function UserList({
+    userMovies,
+    setUserMovies
+}: userMovies): JSX.Element {
+    // const [userMovies, setUserMovies] = useState<Movie[]>(movies);
 
     function updateUserMovies(newMovie: Movie) {
         const movieExists = userMovies.some(
@@ -146,12 +146,12 @@ export function UserList(): JSX.Element {
                 ref={drop}
                 style={{
                     backgroundColor: isOver ? "lime" : "lightpink",
-                    width: "1400px",
+                    width: "1300px",
                     height: "110px",
                     border: "2px dashed black",
                     display: "flex",
                     flexDirection: "row",
-                    marginLeft: "10px",
+                    marginLeft: "30px",
                     overflow: "auto",
                     padding: "5px",
                     marginTop: "10px"
@@ -172,7 +172,3 @@ export function UserList(): JSX.Element {
         </>
     );
 }
-
-export const userListExport: UserListExport = {
-    userMovies: []
-};

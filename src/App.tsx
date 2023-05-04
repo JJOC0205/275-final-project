@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { CentralItemList } from "./components/CentralItemList";
 import "./App.css";
 import { UserList } from "./components/UserList";
@@ -39,15 +38,35 @@ function App(): JSX.Element {
     return (
         <div className="App">
             <header className="App-header">
-                <h3>MOVIE MASH</h3>
+                <h3>Movie World</h3>
                 Jon OConell, Rachel Robins, Ani Naredla, Shreya Pamulapati
             </header>
             <DndProvider backend={HTML5Backend}>
-                <CentralItemList></CentralItemList>
+                <button onClick={updateCIL}>Click to Update CIL</button>
+                <CentralItemList
+                    cilMovies={cilMovies}
+                    setCilMovies={setCilMovies}
+                ></CentralItemList>
                 <hr></hr>
-                <UserList></UserList>
+                <button onClick={() => setUserListVisible(!userListVisible)}>
+                    {userListVisible ? "Hide User List" : "Show User List"}
+                </button>
+                {userListVisible && (
+                    <UserList
+                        userMovies={userMovies}
+                        setUserMovies={setUserMovies}
+                    />
+                )}
                 <hr></hr>
-                <SuperList></SuperList>
+                <button onClick={() => setSuperListVisible(!superListVisible)}>
+                    {superListVisible ? "Hide Super List" : "Show Super List"}
+                </button>
+                {superListVisible && (
+                    <SuperList
+                        superMovies={superMovies}
+                        setSuperMovies={setSuperMovies}
+                    />
+                )}
             </DndProvider>
         </div>
     );
