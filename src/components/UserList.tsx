@@ -4,26 +4,34 @@ import { useState } from "react";
 import { MovieTypes } from "../interfaces/MovieTypes";
 import "./UserList.css";
 import { Movie } from "../interfaces/movie";
-import testMovies from "../data/movies.json";
+// import testMovies from "../data/movies.json";
 import { ShowMovieDetails } from "./moviePoster";
-import { User } from "../interfaces/user";
+// import { User } from "../interfaces/user";
+import { userMovies } from "../App";
+import { EditMode } from "./EditUserMode";
 
-interface UserListExport {
-    userMovies: Movie[];
-}
-
-export function UserList({ user }: { user: User }): JSX.Element {
-    const [userMovies, setUserMovies] = useState<Movie[]>([]);
+export function UserList({
+    userMovies,
+    setUserMovies,
+    user
+}: userMovies): JSX.Element {
+    // const [userMovies, setUserMovies] = useState<Movie[]>([]);
+    const [movieDisplay, setMovieDisplay] = useState<Movie>({
+        title: "Interstellar",
+        released: 2014,
+        runtime: 169,
+        watched: false,
+        description:
+            "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+        rating: 0,
+        poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
+    });
 
     function updateUserMovies(newMovie: Movie) {
         const movieExists = userMovies.some(
             (movie) => movie.title === newMovie.title
         );
         if (!movieExists) {
-            const movieFilter = testMovies.filter(
-                (movie) => newMovie.title === movie.title
-            );
-            newMovie.poster = movieFilter[0].poster;
             setUserMovies([...userMovies, newMovie]);
         }
     }
@@ -163,41 +171,100 @@ export function UserList({ user }: { user: User }): JSX.Element {
                             </button>
                         </div>
                     </div>
-                    <div
-                        ref={drop}
-                        style={{
-                            backgroundColor: isOver ? "lime" : "lightpink",
-                            width: "1400px",
-                            height: "110px",
-                            border: "2px dashed black",
-                            display: "flex",
-                            flexDirection: "row",
-                            marginLeft: "10px",
-                            overflow: "auto",
-                            padding: "5px",
-                            marginTop: "10px"
-                        }}
-                    >
-                        {userMovies.map((movie) => {
-                            return (
+                    <div style={{ display: "flex", flexDirection: "row" }}>
+                        <div
+                            ref={drop}
+                            style={{
+                                backgroundColor: isOver ? "lime" : "lightpink",
+                                width: "1300px",
+                                height: "175px",
+                                border: "2px dashed black",
+                                display: "flex",
+                                flexDirection: "row",
+                                marginLeft: "30px",
+                                overflow: "auto",
+                                padding: "5px",
+                                marginTop: "10px"
+                            }}
+                        >
+                            {userMovies.map((movie) => {
+                                return (
+                                    <div
+                                        className="ListItem"
+                                        key={movie.title}
+                                        style={{ marginRight: "10px" }}
+                                        onClick={() => setMovieDisplay(movie)}
+                                    >
+                                        <ShowMovieDetails
+                                            movie={movie}
+                                        ></ShowMovieDetails>
+                                        <EditMode movie={movie}></EditMode>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                        <div
+                            style={{
+                                marginLeft: "25px",
+                                backgroundColor: "darkolivegreen",
+                                height: "325px",
+                                border: "3px dotted cyan",
+                                width: "530px",
+                                padding: "15px",
+                                marginTop: "10px"
+                            }}
+                        >
+                            <div
+                                style={{
+                                    display: "flex",
+                                    flexDirection: "row"
+                                }}
+                            >
+                                <img
+                                    style={{ marginLeft: "20px" }}
+                                    src={movieDisplay.poster}
+                                    alt={movieDisplay.title}
+                                    width="150px"
+                                    height="150px"
+                                ></img>
                                 <div
-                                    className="ListItem"
-                                    key={movie.title}
-                                    style={{ marginRight: "10px" }}
+                                    style={{
+                                        marginLeft: "25px",
+                                        color: "whitesmoke"
+                                    }}
                                 >
-                                    <ShowMovieDetails
-                                        movie={movie}
-                                    ></ShowMovieDetails>
+                                    <p>{movieDisplay.title}</p>
+                                    <p>Release Date: {movieDisplay.released}</p>
+                                    <p>
+                                        Runtime in Minutes:{" "}
+                                        {movieDisplay.runtime}
+                                    </p>
+                                    <p>
+                                        Watched:{" "}
+                                        {movieDisplay.watched.toString()}
+                                    </p>
                                 </div>
-                            );
-                        })}
+                            </div>
+                            <p
+                                style={{
+                                    marginLeft: "25px",
+                                    color: "whitesmoke"
+                                }}
+                            >
+                                {movieDisplay.description}
+                            </p>
+                            <p
+                                style={{
+                                    marginLeft: "25px",
+                                    color: "whitesmoke"
+                                }}
+                            >
+                                Rating: {movieDisplay.rating}/10
+                            </p>
+                        </div>
                     </div>
                 </>
             ) : null}
         </div>
     );
 }
-
-export const userListExport: UserListExport = {
-    userMovies: []
-};
