@@ -9,7 +9,8 @@ import { cilMovies } from "../App";
 
 export function CentralItemList({ cilMovies }: cilMovies): JSX.Element {
     const [movieDisplay, setMovieDisplay] = useState<Movie>(cilMovies[6]);
-    const [searchTerm, setSearchTerm] = useState("");
+    const [searchTermD, setSearchTermD] = useState("");
+    const [searchTermT, setSearchTermT] = useState("");
     const [minRating, setMinRating] = useState(0);
     const [minRuntime, setMinRuntime] = useState(0);
 
@@ -18,13 +19,13 @@ export function CentralItemList({ cilMovies }: cilMovies): JSX.Element {
             movie.title
                 .toLowerCase()
                 .split(" ")
-                .some((word) => word.includes(searchTerm.toLowerCase())) ||
-            (movie.description
+                .some((word) => word.includes(searchTermT.toLowerCase())) &&
+            movie.description
                 .toLowerCase()
                 .split(" ")
-                .some((word) => word.includes(searchTerm.toLowerCase())) &&
-                movie.rating >= minRating &&
-                movie.runtime >= minRuntime)
+                .some((word) => word.includes(searchTermD.toLowerCase())) &&
+            movie.rating >= minRating &&
+            movie.runtime >= minRuntime
     );
 
     return (
@@ -44,8 +45,14 @@ export function CentralItemList({ cilMovies }: cilMovies): JSX.Element {
                     <div style={{ display: "flex", flexDirection: "column" }}>
                         <input
                             type="text"
-                            placeholder="Search by movie title or description"
-                            onChange={(e) => setSearchTerm(e.target.value)}
+                            placeholder="Search by movie description"
+                            onChange={(e) => setSearchTermD(e.target.value)}
+                            style={{ marginBottom: "10px" }}
+                        />
+                        <input
+                            type="text"
+                            placeholder="Search by movie title"
+                            onChange={(e) => setSearchTermT(e.target.value)}
                             style={{ marginBottom: "10px" }}
                         />
                         <input
