@@ -7,6 +7,7 @@ import { Movie } from "../interfaces/movie";
 import testMovies from "../data/movies.json";
 import { ShowMovieDetails } from "./moviePoster";
 import { userMovies } from "../App";
+import { EditMode } from "./EditUserMode";
 
 export function UserList({
     userMovies,
@@ -28,12 +29,13 @@ export function UserList({
             (movie) => movie.title === newMovie.title
         );
         if (!movieExists) {
-            const movieFilter = testMovies.filter(
-                (movie) => newMovie.title === movie.title
-            );
-            newMovie.poster = movieFilter[0].poster;
+            // const movieFilter = testMovies.filter(
+            //     (movie) => newMovie.title === movie.title
+            // );
+            // newMovie.poster = movieFilter[0].poster;
             setUserMovies([...userMovies, newMovie]);
         }
+        console.log(newMovie.title);
     }
 
     function sortRuntimeA() {
@@ -157,7 +159,7 @@ export function UserList({
                     style={{
                         backgroundColor: isOver ? "lime" : "lightpink",
                         width: "1300px",
-                        height: "110px",
+                        height: "175px",
                         border: "2px dashed black",
                         display: "flex",
                         flexDirection: "row",
@@ -178,6 +180,7 @@ export function UserList({
                                 <ShowMovieDetails
                                     movie={movie}
                                 ></ShowMovieDetails>
+                                <EditMode movie={movie}></EditMode>
                             </div>
                         );
                     })}
