@@ -4,9 +4,7 @@ import { Movie } from "../interfaces/movie";
 import { Stack } from "react-bootstrap";
 import { ShowMovieDetails } from "./moviePoster";
 import { EditMode } from "./EditUserMode";
-// import testMovies from "../data/movies.json";
 import "./UserList.css";
-// import { superMovies } from "./SuperList";
 import { cilMovies } from "../App";
 
 export function CentralItemList({ cilMovies }: cilMovies): JSX.Element {
@@ -72,21 +70,15 @@ export function CentralItemList({ cilMovies }: cilMovies): JSX.Element {
                             style={{ marginBottom: "10px", marginLeft: "10px" }}
                         />
                     </div>
-                    {filteredMovies.length > 0 ? (
-                        filteredMovies.map((movie: Movie) => (
-                            <div
-                                key={movie.title}
-                                onClick={() => setMovieDisplay(movie)}
-                            >
-                                <ShowMovieDetails
-                                    movie={movie}
-                                ></ShowMovieDetails>
-                                <EditMode movie={movie}></EditMode>
-                            </div>
-                        ))
-                    ) : (
-                        <p>Current search does not match any results</p>
-                    )}
+                    {filteredMovies.map((movie: Movie) => (
+                        <div
+                            key={movie.title}
+                            onClick={() => setMovieDisplay(movie)}
+                        >
+                            <ShowMovieDetails movie={movie}></ShowMovieDetails>
+                            <EditMode movie={movie}></EditMode>
+                        </div>
+                    ))}
                 </Stack>
                 <div
                     style={{
