@@ -8,10 +8,6 @@ import { ShowMovieDetails } from "./moviePoster";
 import { Stack } from "react-bootstrap";
 import { User } from "../interfaces/user";
 
-interface SuperListExport {
-    superMovies: Movie[];
-}
-
 export const superMovies = testMovies;
 
 export function SuperList({ user }: { user: User }): JSX.Element {
@@ -65,7 +61,3 @@ export function SuperList({ user }: { user: User }): JSX.Element {
         </div>
     );
 }
-
-export const superListExport: SuperListExport = {
-    superMovies: []
-};

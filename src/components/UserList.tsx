@@ -4,13 +4,9 @@ import { useState } from "react";
 import { MovieTypes } from "../interfaces/MovieTypes";
 import "./UserList.css";
 import { Movie } from "../interfaces/movie";
-import testMovies from "../data/movies.json";
+// import testMovies from "../data/movies.json";
 import { ShowMovieDetails } from "./moviePoster";
 import { User } from "../interfaces/user";
-
-interface UserListExport {
-    userMovies: Movie[];
-}
 
 export function UserList({ user }: { user: User }): JSX.Element {
     const [userMovies, setUserMovies] = useState<Movie[]>([]);
@@ -20,10 +16,6 @@ export function UserList({ user }: { user: User }): JSX.Element {
             (movie) => movie.title === newMovie.title
         );
         if (!movieExists) {
-            const movieFilter = testMovies.filter(
-                (movie) => newMovie.title === movie.title
-            );
-            newMovie.poster = movieFilter[0].poster;
             setUserMovies([...userMovies, newMovie]);
         }
     }
@@ -197,7 +189,3 @@ export function UserList({ user }: { user: User }): JSX.Element {
         </div>
     );
 }
-
-export const userListExport: UserListExport = {
-    userMovies: []
-};

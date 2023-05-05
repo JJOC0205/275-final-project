@@ -12,7 +12,8 @@ export function ShowMovieDetails({ movie }: { movie: Movie }): JSX.Element {
             runtime: movie.runtime,
             watched: movie.watched,
             description: movie.description,
-            rating: movie.rating
+            rating: movie.rating,
+            poster: movie.poster
         },
         collect: (monitor: DragSourceMonitor) => ({
             isDragging: !!monitor.isDragging()
