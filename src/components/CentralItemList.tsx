@@ -17,12 +17,16 @@ export function CentralItemList({ cilMovies }: cilMovies): JSX.Element {
 
     const filteredMovies = cilMovies.filter(
         (movie: Movie) =>
-            movie.description
+            movie.title
+                .toLowerCase()
+                .split(" ")
+                .some((word) => word.includes(searchTerm.toLowerCase())) ||
+            (movie.description
                 .toLowerCase()
                 .split(" ")
                 .some((word) => word.includes(searchTerm.toLowerCase())) &&
-            movie.rating >= minRating &&
-            movie.runtime >= minRuntime
+                movie.rating >= minRating &&
+                movie.runtime >= minRuntime)
     );
 
     return (
@@ -96,6 +100,7 @@ export function CentralItemList({ cilMovies }: cilMovies): JSX.Element {
                 >
                     <div style={{ display: "flex", flexDirection: "row" }}>
                         <img
+                            style={{ marginLeft: "20px" }}
                             src={movieDisplay.poster}
                             alt={movieDisplay.title}
                             width="150px"

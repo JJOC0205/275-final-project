@@ -195,6 +195,7 @@ export function UserList({
                 >
                     <div style={{ display: "flex", flexDirection: "row" }}>
                         <img
+                            style={{ marginLeft: "20px" }}
                             src={movieDisplay.poster}
                             alt={movieDisplay.title}
                             width="150px"
