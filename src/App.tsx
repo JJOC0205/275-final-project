@@ -10,6 +10,7 @@ import { UserSelect } from "./components/UserSelect";
 import { USERS } from "./data/UsersList";
 import { User } from "./interfaces/user";
 import { Movie } from "./interfaces/movie";
+import testmovies from "./data/movies.json";
 
 export interface superMovies {
     superMovies: Movie[];
@@ -26,30 +27,45 @@ export interface userMovies {
 export interface cilMovies {
     cilMovies: Movie[];
     setCilMovies: (movies: Movie[]) => void;
-    user: User;
 }
 
 function App(): JSX.Element {
-    // const [showUser, setShowUser] = useState<boolean>(false);
-    // const [superMovies, setSuperMovies] = useState<Movie[]>(testmovies);
-    // const [cilMovies, setCilMovies] = useState<Movie[]>(testmovies);
-    // const [userMovies, setUserMovies] = useState<Movie[]>([]);
+    const [superMovies, setSuperMovies] = useState<Movie[]>(testmovies);
+    const [cilMovies, setCilMovies] = useState<Movie[]>(testmovies);
+    const [userMovies, setUserMovies] = useState<Movie[]>([]);
 
     const [users] = useState<User[]>(USERS);
     const [currUser, setUser] = useState<User>(users[0]);
+
+    function updateCIL() {
+        setCilMovies(superMovies);
+    }
+
     return (
         <div className="App">
-            <header className="App-header">
+            <header className="App-header" style={{ marginBottom: "25px" }}>
                 <h3>MOVIE MASH</h3>
             </header>
             <DndProvider backend={HTML5Backend}>
-                <CentralItemList></CentralItemList>
+                <button onClick={updateCIL}>Update CIL</button>
+                <CentralItemList
+                    cilMovies={cilMovies}
+                    setCilMovies={setCilMovies}
+                ></CentralItemList>
                 <hr></hr>
                 <UserSelect users={users} setUser={setUser}></UserSelect>
                 <hr></hr>
-                <UserList user={currUser}></UserList>
+                <UserList
+                    userMovies={userMovies}
+                    setUserMovies={setUserMovies}
+                    user={currUser}
+                ></UserList>
                 <hr></hr>
-                <SuperList user={currUser}></SuperList>
+                <SuperList
+                    superMovies={superMovies}
+                    setSuperMovies={setSuperMovies}
+                    user={currUser}
+                ></SuperList>
             </DndProvider>
         </div>
     );
