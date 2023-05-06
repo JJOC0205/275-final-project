@@ -16,6 +16,7 @@ export interface superMovies {
     superMovies: Movie[];
     setSuperMovies: (movies: Movie[]) => void;
     user: User;
+    setCilMovies: (movies: Movie[]) => void;
 }
 
 export interface userMovies {
@@ -37,9 +38,9 @@ function App(): JSX.Element {
     const [users] = useState<User[]>(USERS);
     const [currUser, setUser] = useState<User>(users[0]);
 
-    function updateCIL() {
-        setCilMovies(superMovies);
-    }
+    // function updateCIL() {
+    //     setCilMovies(superMovies);
+    // }
 
     return (
         <div className="App">
@@ -47,7 +48,7 @@ function App(): JSX.Element {
                 <h3>MOVIE MASH</h3>
             </header>
             <DndProvider backend={HTML5Backend}>
-                <button onClick={updateCIL}>Update CIL</button>
+                {/* <button onClick={updateCIL}>Update CIL</button> */}
                 <CentralItemList
                     cilMovies={cilMovies}
                     setCilMovies={setCilMovies}
@@ -65,6 +66,7 @@ function App(): JSX.Element {
                     superMovies={superMovies}
                     setSuperMovies={setSuperMovies}
                     user={currUser}
+                    setCilMovies={setCilMovies}
                 ></SuperList>
             </DndProvider>
         </div>
