@@ -11,6 +11,7 @@ import { USERS } from "./data/UsersList";
 import { User } from "./interfaces/user";
 import { Movie } from "./interfaces/movie";
 import testmovies from "./data/movies.json";
+import { SuperAddUser } from "./components/SuperAddUser";
 
 export interface superMovies {
     superMovies: Movie[];
@@ -30,17 +31,18 @@ export interface cilMovies {
     setCilMovies: (movies: Movie[]) => void;
 }
 
+export interface superAddUser {
+    users: User[];
+    setUsers: (users: User[]) => void;
+}
+
 function App(): JSX.Element {
     const [superMovies, setSuperMovies] = useState<Movie[]>(testmovies);
     const [cilMovies, setCilMovies] = useState<Movie[]>(testmovies);
     const [userMovies, setUserMovies] = useState<Movie[]>([]);
 
-    const [users] = useState<User[]>(USERS);
+    const [users, setUsers] = useState<User[]>(USERS);
     const [currUser, setUser] = useState<User>(users[0]);
-
-    // function updateCIL() {
-    //     setCilMovies(superMovies);
-    // }
 
     return (
         <div className="App">
@@ -48,13 +50,15 @@ function App(): JSX.Element {
                 <h3>MOVIE MASH</h3>
             </header>
             <DndProvider backend={HTML5Backend}>
-                {/* <button onClick={updateCIL}>Update CIL</button> */}
                 <CentralItemList
                     cilMovies={cilMovies}
                     setCilMovies={setCilMovies}
                 ></CentralItemList>
                 <hr></hr>
                 <UserSelect users={users} setUser={setUser}></UserSelect>
+                {currUser.role === "super" && (
+                    <SuperAddUser users={users} setUsers={setUsers} />
+                )}
                 <hr></hr>
                 <UserList
                     userMovies={userMovies}
