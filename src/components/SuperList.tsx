@@ -162,7 +162,7 @@ export function SuperList({
                                 }}
                             >
                                 <button onClick={createNewMovie}>
-                                    Create Movie
+                                    Create New Movie
                                 </button>
                                 <button onClick={addMovie}>Add Movie</button>
                             </div>
