@@ -33,7 +33,11 @@ export function UserList({
         );
         if (!movieExists) {
             setUserMovies([...userMovies, newMovie]);
+        } else {
+            newMovie.title = newMovie.title + " ";
+            setUserMovies([...userMovies, newMovie]);
         }
+        // setUserMovies([...userMovies, newMovie]);
     }
 
     function sortRuntimeA() {
