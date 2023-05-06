@@ -110,7 +110,8 @@ export function CentralItemList({ cilMovies }: cilMovies): JSX.Element {
                         height: "325px",
                         border: "3px dotted lightgreen",
                         width: "530px",
-                        padding: "15px"
+                        padding: "15px",
+                        overflow: "auto"
                     }}
                 >
                     <div style={{ display: "flex", flexDirection: "row" }}>

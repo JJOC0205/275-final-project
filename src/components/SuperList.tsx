@@ -106,6 +106,7 @@ export function SuperList({
                                 width: "300px"
                             }}
                         >
+                            Create and Add a New Movie
                             <input
                                 type="text"
                                 placeholder="Enter Title"

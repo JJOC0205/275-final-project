@@ -211,7 +211,8 @@ export function UserList({
                                 border: "3px dotted cyan",
                                 width: "530px",
                                 padding: "15px",
-                                marginTop: "10px"
+                                marginTop: "10px",
+                                overflow: "auto"
                             }}
                         >
                             <div
