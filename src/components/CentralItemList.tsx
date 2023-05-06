@@ -14,6 +14,22 @@ export function CentralItemList({ cilMovies }: cilMovies): JSX.Element {
     const [minRating, setMinRating] = useState(0);
     const [minRuntime, setMinRuntime] = useState(0);
 
+    function updateRating(rating: number) {
+        if (!isNaN(rating)) {
+            setMinRating(rating);
+        } else {
+            setMinRating(0);
+        }
+    }
+
+    function updateRuntime(runtime: number) {
+        if (!isNaN(runtime)) {
+            setMinRuntime(runtime);
+        } else {
+            setMinRuntime(0);
+        }
+    }
+
     const filteredMovies = cilMovies.filter(
         (movie: Movie) =>
             movie.title
@@ -62,7 +78,7 @@ export function CentralItemList({ cilMovies }: cilMovies): JSX.Element {
                             step="0.1"
                             placeholder="Minimum rating"
                             onChange={(e) =>
-                                setMinRating(parseFloat(e.target.value))
+                                updateRating(parseFloat(e.target.value))
                             }
                             style={{ marginBottom: "10px", marginLeft: "10px" }}
                         />
@@ -72,7 +88,7 @@ export function CentralItemList({ cilMovies }: cilMovies): JSX.Element {
                             max="1000"
                             placeholder="Minimum runtime (in minutes)"
                             onChange={(e) =>
-                                setMinRuntime(parseInt(e.target.value))
+                                updateRuntime(parseInt(e.target.value))
                             }
                             style={{ marginBottom: "10px", marginLeft: "10px" }}
                         />
