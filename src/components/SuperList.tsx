@@ -9,13 +9,15 @@ import { useState } from "react";
 export function SuperList({
     superMovies,
     setSuperMovies,
-    user
+    user,
+    setCilMovies
 }: superMovies): JSX.Element {
     function removeMovie(movie: Movie) {
         const updatedMovies = superMovies.filter(
             (m) => m.title !== movie.title
         );
         setSuperMovies(updatedMovies);
+        setCilMovies(updatedMovies);
     }
 
     const [title, setTitle] = useState<string>("");
@@ -38,6 +40,7 @@ export function SuperList({
 
     function addMovie() {
         setSuperMovies([...superMovies, newMovie]);
+        setCilMovies([...superMovies, newMovie]);
         setNewMovie({
             title: "",
             released: 0,
@@ -162,7 +165,7 @@ export function SuperList({
                                 }}
                             >
                                 <button onClick={createNewMovie}>
-                                    Create Movie
+                                    Create New Movie
                                 </button>
                                 <button onClick={addMovie}>Add Movie</button>
                             </div>
