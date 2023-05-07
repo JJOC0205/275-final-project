@@ -35,15 +35,32 @@ export function UserSelect({
     setUserMovies,
     userListPairs,
     setUser,
-    currUser: selectedUser
+    currUser
 }: userSelect): JSX.Element {
+    // function setCurrentUser(event: React.ChangeEvent<HTMLSelectElement>) {
+    //     setUser(users[parseInt(event.target.value)]);
+    //     const currUserMovies = userListPairs.filter(
+    //         (pairs: UserListPair) => selectedUser.name === pairs.username
+    //     );
+    //     const currUserList = currUserMovies[0].userList;
+    //     setUserMovies(currUserList);
+    //     // console.log(userListPairs.map((pair) => pair.userList));
+    //     // console.log(event.target.value);
+    //     console.log(currUserList);
+    // }
     function setCurrentUser(event: React.ChangeEvent<HTMLSelectElement>) {
-        setUser(users[parseInt(event.target.value)]);
+        const selectedUserId = parseInt(event.target.value);
+        const selectedUserName = users[selectedUserId].name;
+
+        setUser(users[selectedUserId]);
+
         const currUserMovies = userListPairs.filter(
-            (pairs: UserListPair) => selectedUser.name === pairs.username
+            (pairs: UserListPair) => selectedUserName === pairs.username
         );
         const currUserList = currUserMovies[0].userList;
         setUserMovies(currUserList);
+
+        console.log(currUserList);
     }
     return (
         <div>

@@ -29,31 +29,61 @@ export function UserList({
         poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
     });
 
+    // function updateUserMovies(newMovie: Movie) {
+    //     const movieExists = userMovies.some(
+    //         (movie) => movie.title === newMovie.title
+    //     );
+    //     if (!movieExists) {
+    //         setUserMovies([...userMovies, newMovie]);
+    //     } else {
+    //         newMovie.title = newMovie.title + " ";
+    //         setUserMovies([...userMovies, newMovie]);
+    //     }
+
+    //     const updateIdx = userListPairs.findIndex(
+    //         (userListPair) => user.name === userListPair.username
+    //     );
+    //     const newPair: UserListPair = {
+    //         username: user.name,
+    //         userList: userMovies
+    //     };
+
+    //     const updatedPairs = [
+    //         ...userListPairs.slice(0, updateIdx),
+    //         newPair,
+    //         ...userListPairs.slice(updateIdx + 1)
+    //     ];
+    //     setUserListPairs(updatedPairs);
+    // }
+
     function updateUserMovies(newMovie: Movie) {
         const movieExists = userMovies.some(
             (movie) => movie.title === newMovie.title
         );
+
+        let updatedUserMovies: Movie[];
+
         if (!movieExists) {
-            setUserMovies([...userMovies, newMovie]);
+            updatedUserMovies = [...userMovies, newMovie];
         } else {
-            newMovie.title = newMovie.title + " ";
-            setUserMovies([...userMovies, newMovie]);
+            updatedUserMovies = userMovies.map((movie) => {
+                if (movie.title === newMovie.title) {
+                    return { ...movie, watched: !movie.watched };
+                }
+                return movie;
+            });
         }
 
-        const updateIdx = userListPairs.findIndex(
-            (userListPair) => user.name === userListPair.username
-        );
-        const newPair: UserListPair = {
-            username: user.name,
-            userList: userMovies
-        };
+        setUserMovies(updatedUserMovies);
 
-        const updatedPairs = [
-            ...userListPairs.slice(0, updateIdx),
-            newPair,
-            ...userListPairs.slice(updateIdx + 1)
-        ];
-        setUserListPairs(updatedPairs);
+        const updatedUserListPairs = userListPairs.map((pair) => {
+            if (pair.username === user.name) {
+                return { ...pair, userList: updatedUserMovies };
+            }
+            return pair;
+        });
+
+        setUserListPairs(updatedUserListPairs);
     }
 
     function sortRuntimeA() {
