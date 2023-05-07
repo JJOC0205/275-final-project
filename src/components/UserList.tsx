@@ -9,13 +9,15 @@ import { ShowMovieDetails } from "./moviePoster";
 // import { User } from "../interfaces/user";
 import { userMovies } from "../App";
 import { EditMode } from "./EditUserMode";
+import { UserListPair } from "../interfaces/UserListPair";
 
 export function UserList({
     userMovies,
     setUserMovies,
-    user
+    user,
+    setUserListPairs,
+    userListPairs
 }: userMovies): JSX.Element {
-    // const [userMovies, setUserMovies] = useState<Movie[]>([]);
     const [movieDisplay, setMovieDisplay] = useState<Movie>({
         title: "Interstellar",
         released: 2014,
@@ -33,7 +35,25 @@ export function UserList({
         );
         if (!movieExists) {
             setUserMovies([...userMovies, newMovie]);
+        } else {
+            newMovie.title = newMovie.title + " ";
+            setUserMovies([...userMovies, newMovie]);
         }
+
+        const updateIdx = userListPairs.findIndex(
+            (userListPair) => user.name === userListPair.username
+        );
+        const newPair: UserListPair = {
+            username: user.name,
+            userList: userMovies
+        };
+
+        const updatedPairs = [
+            ...userListPairs.slice(0, updateIdx),
+            newPair,
+            ...userListPairs.slice(updateIdx + 1)
+        ];
+        setUserListPairs(updatedPairs);
     }
 
     function sortRuntimeA() {

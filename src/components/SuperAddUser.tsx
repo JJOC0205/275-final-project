@@ -10,9 +10,16 @@ export function SuperAddUser({ users, setUsers }: superAddUser): JSX.Element {
     // const [selectedUser, setSelectedUser] = useState<User>(users[0]);
 
     function addUser() {
-        const newUser = { name, id, role };
-        setUsers([...users, newUser]);
+        const isExistingUser = users.some(
+            (user) => user.name === name || user.id === id
+        );
+
+        if (!isExistingUser) {
+            const newUser = { name, id, role };
+            setUsers([...users, newUser]);
+        }
     }
+
     function deleteUser() {
         const updatedUsers = users.filter(
             (user) => user.name !== name || user.id !== id || user.role !== role

@@ -9,8 +9,8 @@ import { useState } from "react";
 export function SuperList({
     superMovies,
     setSuperMovies,
-    user,
-    setCilMovies
+    setCilMovies,
+    user
 }: superMovies): JSX.Element {
     function removeMovie(movie: Movie) {
         const updatedMovies = superMovies.filter(
