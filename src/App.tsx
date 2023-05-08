@@ -74,23 +74,33 @@ function App(): JSX.Element {
                     setCilMovies={setCilMovies}
                 ></CentralItemList>
                 <hr></hr>
-                <UserSelect
-                    users={users}
-                    setUser={setUser}
-                    setUsers={setUsers}
-                    userMovies={userMovies}
-                    setUserMovies={setUserMovies}
-                    userListPairs={userListPairs}
-                    currUser={currUser}
-                ></UserSelect>
-                {currUser.role === "super" && (
-                    <SuperAddUser
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        height: "150px",
+                        flexDirection: "column"
+                    }}
+                >
+                    <UserSelect
                         users={users}
+                        setUser={setUser}
                         setUsers={setUsers}
+                        userMovies={userMovies}
+                        setUserMovies={setUserMovies}
                         userListPairs={userListPairs}
-                        setUserListPairs={setUserListPairs}
+                        currUser={currUser}
                     />
-                )}
+                    {currUser.role === "super" && (
+                        <SuperAddUser
+                            users={users}
+                            setUsers={setUsers}
+                            userListPairs={userListPairs}
+                            setUserListPairs={setUserListPairs}
+                        />
+                    )}
+                </div>
                 <hr></hr>
                 {userListPairs.map((userListPair: UserListPair) =>
                     currUser.name === userListPair.username ? (

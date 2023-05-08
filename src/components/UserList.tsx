@@ -29,28 +29,6 @@ export function UserList({
         poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
     });
 
-    // const [editMode, setEditMode] = useState<boolean>(false);
-    // const [title, setTitle] = useState<string>(movieDisplay.title);
-    // const [released, setReleased] = useState<number>(movieDisplay.released);
-    // const [runtime, setRuntime] = useState<number>(movieDisplay.runtime);
-    // const [watched, setWatched] = useState<boolean>(movieDisplay.watched);
-    // const [description, setDescription] = useState<string>(
-    //     movieDisplay.description
-    // );
-    // const [rating, setRating] = useState<number>(movieDisplay.rating);
-    // const [poster, setPoster] = useState<string>(movieDisplay.poster);
-
-    // function updateMovieDisplay(movie: Movie) {
-    //     setMovieDisplay(movie);
-    //     setTitle(movieDisplay.title);
-    //     setReleased(movieDisplay.released);
-    //     setRuntime(movieDisplay.runtime);
-    //     setWatched(movieDisplay.watched);
-    //     setDescription(movieDisplay.description);
-    //     setRating(movieDisplay.rating);
-    //     setPoster(movieDisplay.poster);
-    // }
-
     function updateUserMovies(newMovie: Movie) {
         const movieExists = userMovies.some(
             (movie) => movie.title === newMovie.title
@@ -253,7 +231,7 @@ export function UserList({
                         <div
                             style={{
                                 marginLeft: "25px",
-                                backgroundColor: "darkolivegreen",
+                                backgroundColor: "darkslategray",
                                 height: "325px",
                                 border: "3px dotted cyan",
                                 width: "530px",
@@ -309,57 +287,6 @@ export function UserList({
                             >
                                 Rating: {movieDisplay.rating}/10
                             </p>
-                            {/* <button onClick={() => setEditMode(!editMode)}>
-                                Edit Movie
-                            </button>
-                            <input
-                                type="text"
-                                placeholder="Enter Title"
-                                onChange={(e) => setTitle(e.target.value)}
-                                style={{ marginBottom: "5px" }}
-                            />
-                            <input
-                                type="number"
-                                placeholder="Enter Release Date"
-                                onChange={(e) =>
-                                    setReleased(parseInt(e.target.value))
-                                }
-                                style={{ marginBottom: "5px" }}
-                            />
-                            <input
-                                type="number"
-                                placeholder="Enter Runtime (minutes)"
-                                onChange={(e) =>
-                                    setRuntime(parseInt(e.target.value))
-                                }
-                                style={{ marginBottom: "5px" }}
-                            />
-                            <input
-                                type="text"
-                                placeholder="Enter 'true' if watched, 'false' if not"
-                                onChange={(e) => setWatched(e.target.checked)}
-                                style={{ marginBottom: "5px" }}
-                            />
-                            <input
-                                type="text"
-                                placeholder="Enter Description"
-                                onChange={(e) => setDescription(e.target.value)}
-                                style={{ marginBottom: "5px" }}
-                            />
-                            <input
-                                type="number"
-                                placeholder="Enter Rating"
-                                onChange={(e) =>
-                                    setRating(parseInt(e.target.value))
-                                }
-                                style={{ marginBottom: "5px" }}
-                            />
-                            <input
-                                type="text"
-                                placeholder="Enter Poster url"
-                                onChange={(e) => setPoster(e.target.value)}
-                                style={{ marginBottom: "5px" }}
-                            /> */}
                         </div>
                     </div>
                 </>

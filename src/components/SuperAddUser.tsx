@@ -20,7 +20,7 @@ export function SuperAddUser({
             (user) => user.name === name || user.id === id
         );
 
-        if (!isExistingUser) {
+        if (!isExistingUser && role === "user") {
             const newUser = { name, id, role };
             const newUserList: Movie[] = [];
             setUsers([...users, newUser]);

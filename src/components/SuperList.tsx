@@ -153,9 +153,13 @@ export function SuperList({
                             style={{
                                 display: "flex",
                                 flexDirection: "column",
-                                width: "300px"
+                                width: "300px",
+                                border: "1px dashed black",
+                                padding: "5px",
+                                backgroundColor: "lightgoldenrodyellow"
                             }}
                         >
+                            ADD NEW MOVIE
                             <input
                                 type="text"
                                 placeholder="Enter Title"
@@ -178,6 +182,7 @@ export function SuperList({
                                 }
                                 style={{ marginBottom: "5px" }}
                             />
+                            Check if Watched:{" "}
                             <input
                                 type="checkbox"
                                 checked={watched}
@@ -278,7 +283,9 @@ export function SuperList({
                             {/* <button onClick={() => setEditMode(!editMode)}>
                                 Edit Movie
                             </button> */}
-                            <p>Edit Here</p>
+                            <p style={{ color: "lightgoldenrodyellow" }}>
+                                Edit Here (Double-Click movie in Super List)
+                            </p>
                             <input
                                 type="text"
                                 value={title}

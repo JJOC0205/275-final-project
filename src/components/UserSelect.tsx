@@ -25,9 +25,11 @@ export function UserSelect({
         console.log(currUserList);
     }
     return (
-        <div>
+        <div style={{ width: "500px", justifyContent: "center" }}>
             <Form.Group controlId="userSelect">
-                <Form.Label>Select Your Role:</Form.Label>
+                <Form.Label>
+                    <h3>Select Your Role:</h3>
+                </Form.Label>
                 <Form.Select onChange={setCurrentUser}>
                     {users.map((currUser: User, index) => (
                         <option key={index} value={index}>
