@@ -28,7 +28,7 @@ export function AdminList({
             setAdminMovies([...adminMovies, newMovie]);
         }
     }
-    const [{ isOver }, drop] = useDrop({
+    const [, drop] = useDrop({
         accept: MovieTypes.MOVIE,
         drop: (item: Movie) => updateAdminMovies(item),
         collect: (monitor) => ({
