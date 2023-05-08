@@ -28,7 +28,8 @@ export function SuperList({
         description:
             "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
         rating: 0,
-        poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
+        poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+        genre: ["Adventure", "Drama", "Sci-Fi"]
     });
 
     const [title, setTitle] = useState<string>("");
@@ -38,6 +39,7 @@ export function SuperList({
     const [description, setDescription] = useState<string>("");
     const [rating, setRating] = useState<number>(0);
     const [poster, setPoster] = useState<string>("");
+    const [genre, setGenre] = useState<string[]>([]);
 
     // const [editMode, setEditMode] = useState<boolean>(false);
 
@@ -59,7 +61,8 @@ export function SuperList({
         watched: false,
         description: "",
         rating: 0,
-        poster: ""
+        poster: "",
+        genre: []
     });
 
     function addMovie() {
@@ -72,7 +75,8 @@ export function SuperList({
             watched: false,
             description: "",
             rating: 0,
-            poster: ""
+            poster: "",
+            genre: []
         });
     }
 
@@ -84,7 +88,8 @@ export function SuperList({
             watched,
             description,
             rating,
-            poster
+            poster,
+            genre
         };
         setNewMovie(newMovie);
     }
@@ -97,7 +102,8 @@ export function SuperList({
             watched,
             description,
             rating,
-            poster
+            poster,
+            genre
         };
         const updatedSuperList = superMovies.map((movie) => {
             if (movie.title === movieDisplay.title) {
@@ -259,6 +265,7 @@ export function SuperList({
                                     </p>
                                 </div>
                             </div>
+                            <p>{movieDisplay.genre}</p>
                             <p
                                 style={{
                                     marginLeft: "25px",

@@ -26,7 +26,8 @@ export function UserList({
         description:
             "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
         rating: 0,
-        poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
+        poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+        genre: ["Adventure", "Drama", "Sci-Fi"]
     });
 
     // const [editMode, setEditMode] = useState<boolean>(false);
@@ -293,6 +294,7 @@ export function UserList({
                                     </p>
                                 </div>
                             </div>
+                            <p>{movieDisplay.genre}</p>
                             <p
                                 style={{
                                     marginLeft: "25px",

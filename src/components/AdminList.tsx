@@ -44,7 +44,8 @@ export function AdminList({
         description:
             "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
         rating: 0,
-        poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
+        poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+        genre: ["Adventure", "Drama", "Sci-Fi"]
     });
     const [title, setTitle] = useState<string>("");
     const [released, setReleased] = useState<number>(0);
@@ -53,6 +54,7 @@ export function AdminList({
     const [description, setDescription] = useState<string>("");
     const [rating, setRating] = useState<number>(0);
     const [poster, setPoster] = useState<string>("");
+    const [genre, setGenre] = useState<string[]>([]);
     function updateMovieDisplay(movie: Movie) {
         setMovieDisplay(movie);
         setTitle(movie.title);
@@ -62,7 +64,28 @@ export function AdminList({
         setDescription(movie.description);
         setRating(movie.rating);
         setPoster(movie.poster);
+        setGenre(movie.genre);
     }
+
+    const [genreInput, setGenreInput] = useState<string>("");
+
+    function updateGenreInput(event: React.ChangeEvent<HTMLInputElement>) {
+        setGenreInput(event.target.value);
+    }
+
+    function addGenre() {
+        if (genreInput && !genre.includes(genreInput)) {
+            setGenre([...genre, genreInput]);
+            setGenreInput("");
+        }
+    }
+
+    function removeGenre(index: number) {
+        const updatedGenre = [...genre];
+        updatedGenre.splice(index, 1);
+        setGenre(updatedGenre);
+    }
+
     function replaceMovieEdit() {
         const editedMovie = {
             title,
@@ -71,7 +94,8 @@ export function AdminList({
             watched,
             description,
             rating,
-            poster
+            poster,
+            genre
         };
         const updatedSuperList = adminMovies.map((movie) => {
             if (movie.title === movieDisplay.title) {
@@ -160,6 +184,27 @@ export function AdminList({
                                     </p>
                                 </div>
                             </div>
+                            <p>{movieDisplay.genre}</p>
+                            <div>
+                                {genre.map((item, index) => (
+                                    <div key={index}>
+                                        <span>{item}</span>
+                                        <button
+                                            onClick={() => removeGenre(index)}
+                                        >
+                                            Remove
+                                        </button>
+                                    </div>
+                                ))}
+                            </div>
+                            <input
+                                type="text"
+                                value={genreInput}
+                                onChange={updateGenreInput}
+                                placeholder="Enter Genre"
+                                style={{ marginBottom: "5px" }}
+                            />
+                            <button onClick={addGenre}>Add Genre</button>
                             <p
                                 style={{
                                     marginLeft: "25px",
