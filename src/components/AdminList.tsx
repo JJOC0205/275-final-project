@@ -8,6 +8,7 @@ import { ShowMovieDetails } from "./moviePoster";
 import { Stack } from "react-bootstrap";
 import { MovieTypes } from "../interfaces/MovieTypes";
 import { useDrop } from "react-dnd";
+import { AdminEdit } from "./EditAdminMovie";
 
 interface AdminListExport {
     adminMovies: Movie[];
@@ -36,6 +37,7 @@ export function AdminList(): JSX.Element {
     });
     return (
         <div>
+            <h2>Admin List</h2>
             <Stack
                 ref={drop}
                 style={{
@@ -58,6 +60,7 @@ export function AdminList(): JSX.Element {
                             style={{ marginRight: "10px" }}
                         >
                             <ShowMovieDetails movie={movie}></ShowMovieDetails>
+                            <AdminEdit movie={movie}></AdminEdit>
                         </div>
                     );
                 })}
