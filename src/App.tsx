@@ -27,6 +27,13 @@ export interface cilMovies {
     setCilMovies: (movies: Movie[]) => void;
 }
 
+export interface adminMovies {
+    adminMovies: Movie[];
+    setAdminMovies: (movies: Movie[]) => void;
+    setCilMovies: (movies: Movie[]) => void;
+    user: User;
+}
+
 export interface superAddUser {
     users: User[];
     setUsers: (users: User[]) => void;

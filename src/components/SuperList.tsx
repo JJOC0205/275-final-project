@@ -43,13 +43,13 @@ export function SuperList({
 
     function updateMovieDisplay(movie: Movie) {
         setMovieDisplay(movie);
-        setTitle(movieDisplay.title);
-        setReleased(movieDisplay.released);
-        setRuntime(movieDisplay.runtime);
-        setWatched(movieDisplay.watched);
-        setDescription(movieDisplay.description);
-        setRating(movieDisplay.rating);
-        setPoster(movieDisplay.poster);
+        setTitle(movie.title);
+        setReleased(movie.released);
+        setRuntime(movie.runtime);
+        setWatched(movie.watched);
+        setDescription(movie.description);
+        setRating(movie.rating);
+        setPoster(movie.poster);
     }
 
     const [newMovie, setNewMovie] = useState<Movie>({

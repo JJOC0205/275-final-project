@@ -40,8 +40,8 @@ export function SuperAddUser({
 
     return (
         <>
-            <div>
-                ADD NEW USER
+            <div style={{ marginTop: "10px" }}>
+                ADD NEW USER{" "}
                 <input
                     type="text"
                     placeholder="Enter New User Name"
@@ -63,7 +63,7 @@ export function SuperAddUser({
                 <button onClick={addUser}>Add New User</button>
             </div>
             <div>
-                DELETE USER
+                DELETE USER{" "}
                 <input
                     type="text"
                     placeholder="Enter User Name"
