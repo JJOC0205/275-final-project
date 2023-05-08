@@ -30,6 +30,8 @@ export interface cilMovies {
 export interface superAddUser {
     users: User[];
     setUsers: (users: User[]) => void;
+    userListPairs: UserListPair[];
+    setUserListPairs: (userListPairs: UserListPair[]) => void;
 }
 
 export interface userMovies {
@@ -82,7 +84,12 @@ function App(): JSX.Element {
                     currUser={currUser}
                 ></UserSelect>
                 {currUser.role === "super" && (
-                    <SuperAddUser users={users} setUsers={setUsers} />
+                    <SuperAddUser
+                        users={users}
+                        setUsers={setUsers}
+                        userListPairs={userListPairs}
+                        setUserListPairs={setUserListPairs}
+                    />
                 )}
                 <hr></hr>
                 {userListPairs.map((userListPair: UserListPair) =>

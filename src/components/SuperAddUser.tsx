@@ -1,9 +1,15 @@
 import React from "react";
 import { useState } from "react";
 import { superAddUser } from "../App";
+import { Movie } from "../interfaces/movie";
 // import { User } from "../interfaces/user";
 
-export function SuperAddUser({ users, setUsers }: superAddUser): JSX.Element {
+export function SuperAddUser({
+    users,
+    setUsers,
+    userListPairs,
+    setUserListPairs
+}: superAddUser): JSX.Element {
     const [name, setName] = useState<string>("");
     const [id, setId] = useState<number>(3);
     const [role, setRole] = useState<string>("");
@@ -16,7 +22,12 @@ export function SuperAddUser({ users, setUsers }: superAddUser): JSX.Element {
 
         if (!isExistingUser) {
             const newUser = { name, id, role };
+            const newUserList: Movie[] = [];
             setUsers([...users, newUser]);
+            setUserListPairs([
+                ...userListPairs,
+                { username: newUser.name, userList: newUserList }
+            ]);
         }
     }
 
