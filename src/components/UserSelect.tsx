@@ -34,8 +34,7 @@ export function UserSelect({
     users,
     setUserMovies,
     userListPairs,
-    setUser,
-    currUser
+    setUser
 }: userSelect): JSX.Element {
     // function setCurrentUser(event: React.ChangeEvent<HTMLSelectElement>) {
     //     setUser(users[parseInt(event.target.value)]);
