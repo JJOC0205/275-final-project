@@ -14,6 +14,7 @@ import testmovies from "./data/movies.json";
 import { SuperAddUser } from "./components/SuperAddUser";
 import { UserListPair } from "./interfaces/UserListPair";
 import { allUsers } from "./interfaces/UserListPair";
+import { AdminList } from "./components/AdminList";
 
 export interface superMovies {
     superMovies: Movie[];
@@ -49,9 +50,17 @@ export interface userSelect {
     setUser: (user: User) => void;
     currUser: User;
 }
+export interface adminMovies {
+    adminMovies: Movie[];
+    setAdminMovies: (movies: Movie[]) => void;
+    setCilMovies: (movies: Movie[]) => void;
+    user: User;
+    cilMovies: Movie[];
+}
 
 function App(): JSX.Element {
     const [superMovies, setSuperMovies] = useState<Movie[]>(testmovies);
+    const [adminMovies, setAdminMovies] = useState<Movie[]>([]);
     const [cilMovies, setCilMovies] = useState<Movie[]>(testmovies);
     const [userMovies, setUserMovies] = useState<Movie[]>([]);
 
@@ -103,6 +112,16 @@ function App(): JSX.Element {
                         setSuperMovies={setSuperMovies}
                         setCilMovies={setCilMovies}
                         user={currUser}
+                    />
+                )}
+                <hr></hr>
+                {currUser.role === "admin" && (
+                    <AdminList
+                        adminMovies={adminMovies}
+                        setAdminMovies={setAdminMovies}
+                        setCilMovies={setCilMovies}
+                        user={currUser}
+                        cilMovies={cilMovies}
                     />
                 )}
             </DndProvider>
