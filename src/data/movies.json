@@ -6,6 +6,7 @@
         "watched": false,
         "description": "Sparks fly when spirited Elizabeth Bennet meets single, rich, and proud Mr. Darcy. But Mr. Darcy reluctantly finds himself falling in love with a woman beneath his class. Can each overcome their own pride and prejudice?",
         "rating": 0,
+        "genre": ["Drama", "Romance"],
         "poster": "https://m.media-amazon.com/images/I/51d5M05dlWL._AC_.jpg"
 
     },
@@ -16,6 +17,7 @@
         "watched": false,
         "description": "Two Jedi escape a hostile blockade to find allies and come across a young boy who may bring balance to the Force, but the long dormant Sith resurface to claim their original glory.",
         "rating": 0,
+        "genre": ["Action", "Adventure", "Fantasy", "Sci-Fi"],
         "poster": "https://m.media-amazon.com/images/M/MV5BYTRhNjcwNWQtMGJmMi00NmQyLWE2YzItODVmMTdjNWI0ZDA2XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg"
 
     },
@@ -26,6 +28,7 @@
         "watched": false,
         "description": "Ten years after initially meeting, Anakin Skywalker shares a forbidden romance with Padmé Amidala, while Obi-Wan Kenobi discovers a secret clone army crafted for the Jedi",
         "rating": 0,
+        "genre": ["Action", "Adventure", "Fantasy", "Sci-Fi"],
         "poster": "https://m.media-amazon.com/images/M/MV5BMDAzM2M0Y2UtZjRmZi00MzVlLTg4MjEtOTE3NzU5ZDVlMTU5XkEyXkFqcGdeQXVyNDUyOTg3Njg@._V1_.jpg"
 
     },
@@ -36,6 +39,7 @@
         "watched": false,
         "description": "Three years into the Clone Wars, Obi-Wan pursues a new threat, while Anakin is lured by Chancellor Palpatine into a sinister plot to rule the galaxy.",
         "rating": 0,
+        "genre": ["Action", "Adventure", "Fantasy", "Sci-Fi"],
         "poster": "https://upload.wikimedia.org/wikipedia/en/9/93/Star_Wars_Episode_III_Revenge_of_the_Sith_poster.jpg"
 
     },
@@ -46,6 +50,7 @@
         "watched": false,
         "description": "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader.",
         "rating": 0,
+        "genre": ["Action", "Adventure", "Fantasy", "Sci-Fi"],
         "poster": "https://m.media-amazon.com/images/M/MV5BOTA5NjhiOTAtZWM0ZC00MWNhLThiMzEtZDFkOTk2OTU1ZDJkXkEyXkFqcGdeQXVyMTA4NDI1NTQx._V1_.jpg"
 
     },
@@ -56,6 +61,7 @@
         "watched": false,
         "description": "After the Rebels are overpowered by the Empire, Luke Skywalker begins his Jedi training with Yoda, while his friends are pursued across the galaxy by Darth Vader and bounty hunter Boba Fett.",
         "rating": 0,
+        "genre": ["Action", "Adventure", "Fantasy", "Sci-Fi"],
         "poster": "https://m.media-amazon.com/images/I/91mJqQ3gyhL._RI_.jpg"
 
     },
@@ -66,6 +72,7 @@
         "watched": false,
         "description": "After rescuing Han Solo from Jabba the Hutt, the Rebels attempt to destroy the second Death Star, while Luke struggles to help Darth Vader back from the dark side.",
         "rating": 0,
+        "genre": ["Action", "Adventure", "Fantasy", "Sci-Fi"],
         "poster": "https://m.media-amazon.com/images/M/MV5BOWZlMjFiYzgtMTUzNC00Y2IzLTk1NTMtZmNhMTczNTk0ODk1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg"
 
     },
@@ -76,6 +83,7 @@
         "watched": false,
         "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
         "rating": 0,
+        "genre": ["Adventure", "Drama", "Sci-Fi"],
         "poster": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
 
     },
@@ -86,6 +94,7 @@
         "watched": false,
         "description": "A pretty, popular teenager can't go out on a date until her ill-tempered older sister does.",
         "rating": 0,
+        "genre": ["Comedy", "Drama", "Romance"],
         "poster": "https://m.media-amazon.com/images/M/MV5BMmVhZjhlZDYtMDAwZi00MDcyLTgzOTItOWNiZjY0YmE0MGE0XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_FMjpg_UX1000_.jpg"
 
     },
@@ -96,6 +105,7 @@
         "watched": false,
         "description": "A middle-aged husband's life changes dramatically when his wife asks him for a divorce. He seeks to rediscover his manhood with the help of a newfound friend, Jacob, learning to pick up girls at bars",
         "rating": 0,
+        "genre": ["Comedy", "Drama", "Romance"],
         "poster": "https://m.media-amazon.com/images/M/MV5BMTg2MjkwMTM0NF5BMl5BanBnXkFtZTcwMzc4NDg2NQ@@._V1_.jpg"
 
     },
@@ -106,6 +116,7 @@
         "watched": false,
         "description": "Bad Guy, Good Girl, or is he really bad afterall?",
         "rating": 0,
+        "genre": ["Action", "Crime", "Thriller"],
         "poster": "https://upload.wikimedia.org/wikipedia/en/b/b2/Pokiri_movie_poster.jpg"
 
     },
@@ -116,6 +127,7 @@
         "watched": false,
         "description": "A blonde girly girl goes to law school to win back her potential husband.",
         "rating": 0,
+        "genre": ["Comedy", "Romance"],
         "poster": "https://m.media-amazon.com/images/M/MV5BNTEyNjUwMTkxMV5BMl5BanBnXkFtZTcwNjk0NDk0NA@@._V1_FMjpg_UX1000_.jpg"
 
     },
@@ -126,6 +138,7 @@
         "watched": false,
         "description": "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
         "rating": 0,
+        "genre": ["Action", "Adventure", "Drama", "Sci-Fi"],
         "poster": "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_.jpg"
 
     },
@@ -136,6 +149,7 @@
         "watched": false,
         "description": "To everyone's surprise, including his own, Po, an overweight, clumsy panda, is chosen as protector of the Valley of Peace. His suitability will soon be tested as the valley's arch-enemy is on his way.",
         "rating": 0,
+        "genre": ["Animation", "Action", "Adventure", "Comedy", "Family", "Fantasy"],
         "poster": "https://m.media-amazon.com/images/M/MV5BODJkZTZhMWItMDI3Yy00ZWZlLTk4NjQtOTI1ZjU5NjBjZTVjXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_FMjpg_UX1000_.jpg"
 
     },
@@ -146,6 +160,7 @@
         "watched": false,
         "description": "The story of The Super Mario Bros. on their journey through the Mushroom Kingdom.",
         "rating": 0,
+        "genre": ["Animation", "Adventure", "Comedy", "Family", "Fantasy"],
         "poster": "https://m.media-amazon.com/images/M/MV5BOTJhNzlmNzctNTU5Yy00N2YwLThhMjQtZDM0YjEzN2Y0ZjNhXkEyXkFqcGdeQXVyMTEwMTQ4MzU5._V1_QL75_UY281_CR0,0,190,281_.jpg"
 
     },
@@ -156,6 +171,7 @@
         "watched": false,
         "description": "Cady Heron is a hit with The Plastics, the A-list girl clique at her new school, until she makes the mistake of falling for Aaron Samuels, the ex-boyfriend of alpha Plastic Regina George.",
         "rating": 0,
+        "genre": ["Comedy"],
         "poster": "https://m.media-amazon.com/images/M/MV5BMjE1MDQ4MjI1OV5BMl5BanBnXkFtZTcwNzcwODAzMw@@._V1_FMjpg_UX1000_.jpg"
 
     },
@@ -166,6 +182,7 @@
         "watched": false,
         "description": "Two disgraced FBI agents go way undercover in an effort to protect hotel heiresses the Wilson sisters from a kidnapping plot.",
         "rating": 0,
+        "genre": ["Comedy", "Crime"],
         "poster": "https://m.media-amazon.com/images/M/MV5BMTY3OTg2OTM3OV5BMl5BanBnXkFtZTYwNzY5OTA3._V1_FMjpg_UX1000_.jpg"
 
     },
@@ -176,6 +193,7 @@
         "watched": false,
         "description": "A bear who eats cocaine and goes on a rampage.",
         "rating": 0,
+        "genre": ["Comedy", "Thriller"],
         "poster": "https://m.media-amazon.com/images/M/MV5BODAwZDQ5ZjEtZDI1My00MTFiLTg0ZjUtOGE2YTBkOTdjODFhXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg"
 
     },
@@ -186,6 +204,7 @@
         "watched": false,
         "description": "Nothing like a group of old friends getting some old revenge.",
         "rating": 0,
+        "genre": ["Action", "Comedy", "Crime", "Drama", "Music"],
         "poster": "https://m.media-amazon.com/images/M/MV5BMjEwZGQwZWMtNTU4Zi00YWVlLTlhZTYtZjc2MzJmMGVmMDQwXkEyXkFqcGdeQXVyNjQ3ODkxMjE@._V1_.jpg"
 
     },
@@ -196,6 +215,7 @@
         "watched": false,
         "description": "Take Hamlet and make it more dramatic with Indian actors.",
         "rating": 0,
+        "genre": ["Action", "Drama"],
         "poster": "https://m.media-amazon.com/images/M/MV5BNDMxYmY4YzAtMTdkYS00OGIzLWFjYWYtNGFiOWQ0N2M2MWM1XkEyXkFqcGdeQXVyNjQ1MDcxNzM@._V1_FMjpg_UX1000_.jpg"
 
     },
@@ -206,6 +226,7 @@
         "watched": false,
         "description": "A lone soldier finds a girl, saves a girl, loses a girl, but keeps his respect.",
         "rating": 0,
+        "genre": ["Action", "Drama", "Mystery", "Romance"],
         "poster": "https://m.media-amazon.com/images/M/MV5BN2RjZDJhYzUtOTQ5Yy00OWM3LWE5OTctM2Y0YWVmNzAzODllXkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_.jpg"
 
     },
@@ -216,6 +237,7 @@
         "watched": false,
         "description": "Bad boy vs Powerful Government vs Winning a Girl’s Heart",
         "rating": 0,
+        "genre": ["Action", "Crime", "Drama", "Thriller"],
         "poster": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/66ab0972-ff05-4650-9a8e-975bf16fe079/df3fxnw-f2efb7aa-086d-4a92-8294-9b3d499180d7.jpg/v1/fill/w_1280,h_1897,q_75,strp/kgf_chapter_2_poster_by_tyrionchandu_df3fxnw-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTg5NyIsInBhdGgiOiJcL2ZcLzY2YWIwOTcyLWZmMDUtNDY1MC05YThlLTk3NWJmMTZmZTA3OVwvZGYzZnhudy1mMmVmYjdhYS0wODZkLTRhOTItODI5NC05YjNkNDk5MTgwZDcuanBnIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.qPAKbbTXnfh-CYEzxsKJpJ0N_SkMOxCyogHwJSaLAlU"
 
     },
@@ -226,6 +248,7 @@
         "watched": false,
         "description": "A solo thief takes on a new partner, can he trust her?",
         "rating": 0,
+        "genre": [],
         "poster": "https://upload.wikimedia.org/wikipedia/en/1/13/Dhoom_2_%282006_film%29_poster.jpg"
 
     },
@@ -236,6 +259,7 @@
         "watched": false,
         "description": "After being bitten by a genetically-modified spider, a shy teenager gains spider-like abilities that he uses to fight injustice as a masked superhero and face a vengeful enemy.",
         "rating": 0,
+        "genre": ["Action", "Adventure", "Sci-Fi"],
         "poster": "https://m.media-amazon.com/images/M/MV5BZDEyN2NhMjgtMjdhNi00MmNlLWE5YTgtZGE4MzNjMTRlMGEwXkEyXkFqcGdeQXVyNDUyOTg3Njg@._V1_FMjpg_UX1000_.jpg"
 
     },
@@ -246,6 +270,7 @@
         "watched": false,
         "description": "The X-Men send Wolverine to the past in a desperate effort to change history and prevent an event that results in doom for both humans and mutants.",
         "rating": 0,
+        "genre": ["Action", "Adventure", "Sci-Fi", "Thriller"],
         "poster": "https://m.media-amazon.com/images/M/MV5BNjk3MGZhMjEtOTM4NC00NzE2LTk2NzctZDc4YTUwN2E3NDhhXkEyXkFqcGdeQXVyNDc2NjEyMw@@._V1_.jpg"
 
     },
@@ -256,6 +281,7 @@
         "watched": false,
         "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
         "rating": 0,
+        "genre": ["Action", "Crime", "Drama", "Thriller"],
         "poster": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg"
 
     },
@@ -266,6 +292,7 @@
         "watched": false,
         "description": "The people of Wakanda fight to protect their home from intervening world powers as they mourn the death of King T'Challa.",
         "rating": 0,
+        "genre": ["Action", "Adventure", "Drama", "Sci-Fi"],
         "poster": "https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Black_Panther_Wakanda_Forever_poster.jpg/220px-Black_Panther_Wakanda_Forever_poster.jpg"
 
     },
@@ -276,6 +303,7 @@
         "watched": false,
         "description": "Meet in Europe, Love Trains, Strict Dad…",
         "rating": 0,
+        "genre": ["Drama", "Romance"],
         "poster": "https://m.media-amazon.com/images/M/MV5BMDQ2ZmE2NTMtZDE3NC00YzFjLWJhNmEtMDEzMTI5ZjU2ZGM0XkEyXkFqcGdeQXVyNTkzNDQ4ODc@._V1_FMjpg_UX1000_.jpg"
 
     },
@@ -286,6 +314,7 @@
         "watched": false,
         "description": "Maverick teacher John Keating uses poetry to embolden his boarding school students to new heights of self-expression.",
         "rating": 0,
+        "genre": ["Comedy", "Drama"],
         "poster": "https://m.media-amazon.com/images/M/MV5BOGYwYWNjMzgtNGU4ZC00NWQ2LWEwZjUtMzE1Zjc3NjY3YTU1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg"
 
     },
@@ -296,6 +325,7 @@
         "watched": false,
         "description": "In a magically realistic version of Toronto, a young man must defeat his new girlfriend's seven evil exes one by one in order to win her heart.",
         "rating": 0,
+        "genre": ["Action", "Comedy", "Fantasy"],
         "poster": "https://upload.wikimedia.org/wikipedia/en/1/14/Scott_Pilgrim_vs._the_World_teaser.jpg"
 
     },
@@ -306,6 +336,7 @@
         "watched": false,
         "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
         "rating": 0,
+        "genre": ["Drama"],
         "poster": "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg"
 
     },
@@ -316,6 +347,7 @@
         "watched": false,
         "description": "An organized crime dynasty's aging patriarch transfers control of his clandestine empire to his reluctant son.",
         "rating": 0,
+        "genre": ["Crime", "Drama"],
         "poster": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg"
 
     },
@@ -326,6 +358,7 @@
         "watched": false,
         "description": "A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.",
         "rating": 0,
+        "genre": ["Crime", "Drama"],
         "poster": "https://upload.wikimedia.org/wikipedia/commons/b/b5/12_Angry_Men_%281957_film_poster%29.jpg"
 
     },
@@ -336,6 +369,7 @@
         "watched": false,
         "description": "In German occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.",
         "rating": 0,
+        "genre": ["Biography", "Drama", "History"],
         "poster": "https://m.media-amazon.com/images/M/MV5BNDE4OTMxMTctNmRhYy00NWE2LTg3YzItYTk3M2UwOTU5Njg4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg"
 
     }
