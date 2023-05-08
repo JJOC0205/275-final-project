@@ -12,18 +12,14 @@ import { User } from "./interfaces/user";
 import { Movie } from "./interfaces/movie";
 import testmovies from "./data/movies.json";
 import { SuperAddUser } from "./components/SuperAddUser";
+import { UserListPair } from "./interfaces/UserListPair";
+import { allUsers } from "./interfaces/UserListPair";
 
 export interface superMovies {
     superMovies: Movie[];
     setSuperMovies: (movies: Movie[]) => void;
     user: User;
     setCilMovies: (movies: Movie[]) => void;
-}
-
-export interface userMovies {
-    userMovies: Movie[];
-    setUserMovies: (movies: Movie[]) => void;
-    user: User;
 }
 
 export interface cilMovies {
@@ -36,10 +32,31 @@ export interface superAddUser {
     setUsers: (users: User[]) => void;
 }
 
+export interface userMovies {
+    userMovies: Movie[];
+    setUserMovies: (movies: Movie[]) => void;
+    user: User;
+    setUserListPairs: (userListPairs: UserListPair[]) => void;
+    userListPairs: UserListPair[];
+}
+
+export interface userSelect {
+    users: User[];
+    setUsers: (users: User[]) => void;
+    userMovies: Movie[];
+    setUserMovies: (userMovies: Movie[]) => void;
+    userListPairs: UserListPair[];
+    setUser: (user: User) => void;
+    currUser: User;
+}
+
 function App(): JSX.Element {
     const [superMovies, setSuperMovies] = useState<Movie[]>(testmovies);
     const [cilMovies, setCilMovies] = useState<Movie[]>(testmovies);
     const [userMovies, setUserMovies] = useState<Movie[]>([]);
+
+    const [userListPairs, setUserListPairs] =
+        useState<UserListPair[]>(allUsers);
 
     const [users, setUsers] = useState<User[]>(USERS);
     const [currUser, setUser] = useState<User>(users[0]);
@@ -55,23 +72,39 @@ function App(): JSX.Element {
                     setCilMovies={setCilMovies}
                 ></CentralItemList>
                 <hr></hr>
-                <UserSelect users={users} setUser={setUser}></UserSelect>
+                <UserSelect
+                    users={users}
+                    setUser={setUser}
+                    setUsers={setUsers}
+                    userMovies={userMovies}
+                    setUserMovies={setUserMovies}
+                    userListPairs={userListPairs}
+                    currUser={currUser}
+                ></UserSelect>
                 {currUser.role === "super" && (
                     <SuperAddUser users={users} setUsers={setUsers} />
                 )}
                 <hr></hr>
-                <UserList
-                    userMovies={userMovies}
-                    setUserMovies={setUserMovies}
-                    user={currUser}
-                ></UserList>
+                {userListPairs.map((userListPair: UserListPair) =>
+                    currUser.name === userListPair.username ? (
+                        <UserList
+                            userMovies={userMovies}
+                            setUserMovies={setUserMovies}
+                            user={currUser}
+                            userListPairs={userListPairs}
+                            setUserListPairs={setUserListPairs}
+                        />
+                    ) : null
+                )}
                 <hr></hr>
-                <SuperList
-                    superMovies={superMovies}
-                    setSuperMovies={setSuperMovies}
-                    user={currUser}
-                    setCilMovies={setCilMovies}
-                ></SuperList>
+                {currUser.role === "super" && (
+                    <SuperList
+                        superMovies={superMovies}
+                        setSuperMovies={setSuperMovies}
+                        setCilMovies={setCilMovies}
+                        user={currUser}
+                    />
+                )}
             </DndProvider>
         </div>
     );

@@ -9,13 +9,15 @@ import { ShowMovieDetails } from "./moviePoster";
 // import { User } from "../interfaces/user";
 import { userMovies } from "../App";
 import { EditMode } from "./EditUserMode";
+// import { UserListPair } from "../interfaces/UserListPair";
 
 export function UserList({
     userMovies,
     setUserMovies,
-    user
+    user,
+    setUserListPairs,
+    userListPairs
 }: userMovies): JSX.Element {
-    // const [userMovies, setUserMovies] = useState<Movie[]>([]);
     const [movieDisplay, setMovieDisplay] = useState<Movie>({
         title: "Interstellar",
         released: 2014,
@@ -27,15 +29,59 @@ export function UserList({
         poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
     });
 
+    // const [editMode, setEditMode] = useState<boolean>(false);
+    // const [title, setTitle] = useState<string>(movieDisplay.title);
+    // const [released, setReleased] = useState<number>(movieDisplay.released);
+    // const [runtime, setRuntime] = useState<number>(movieDisplay.runtime);
+    // const [watched, setWatched] = useState<boolean>(movieDisplay.watched);
+    // const [description, setDescription] = useState<string>(
+    //     movieDisplay.description
+    // );
+    // const [rating, setRating] = useState<number>(movieDisplay.rating);
+    // const [poster, setPoster] = useState<string>(movieDisplay.poster);
+
+    // function updateMovieDisplay(movie: Movie) {
+    //     setMovieDisplay(movie);
+    //     setTitle(movieDisplay.title);
+    //     setReleased(movieDisplay.released);
+    //     setRuntime(movieDisplay.runtime);
+    //     setWatched(movieDisplay.watched);
+    //     setDescription(movieDisplay.description);
+    //     setRating(movieDisplay.rating);
+    //     setPoster(movieDisplay.poster);
+    // }
+
     function updateUserMovies(newMovie: Movie) {
         const movieExists = userMovies.some(
             (movie) => movie.title === newMovie.title
         );
+
+        let updatedUserMovies: Movie[];
+
         if (!movieExists) {
-            setUserMovies([...userMovies, newMovie]);
+            updatedUserMovies = [...userMovies, newMovie];
+        } else {
+            updatedUserMovies = userMovies.map((movie) => {
+                if (movie.title === newMovie.title) {
+                    return { ...movie, watched: !movie.watched };
+                }
+                return movie;
+            });
         }
+
+        setUserMovies(updatedUserMovies);
+
+        const updatedUserListPairs = userListPairs.map((pair) => {
+            if (pair.username === user.name) {
+                return { ...pair, userList: updatedUserMovies };
+            }
+            return pair;
+        });
+
+        setUserListPairs(updatedUserListPairs);
     }
 
+    //SORTING FUNCTIONS
     function sortRuntimeA() {
         const newMovies = [...userMovies].sort((m1, m2) =>
             m1.runtime < m2.runtime ? -1 : 1
@@ -92,6 +138,7 @@ export function UserList({
         setUserMovies(newMovies);
     }
 
+    //DROP FUNCTION
     const [{ isOver }, drop] = useDrop({
         accept: MovieTypes.MOVIE,
         drop: (item: Movie) => updateUserMovies(item),
@@ -211,7 +258,8 @@ export function UserList({
                                 border: "3px dotted cyan",
                                 width: "530px",
                                 padding: "15px",
-                                marginTop: "10px"
+                                marginTop: "10px",
+                                overflow: "auto"
                             }}
                         >
                             <div
@@ -261,6 +309,57 @@ export function UserList({
                             >
                                 Rating: {movieDisplay.rating}/10
                             </p>
+                            {/* <button onClick={() => setEditMode(!editMode)}>
+                                Edit Movie
+                            </button>
+                            <input
+                                type="text"
+                                placeholder="Enter Title"
+                                onChange={(e) => setTitle(e.target.value)}
+                                style={{ marginBottom: "5px" }}
+                            />
+                            <input
+                                type="number"
+                                placeholder="Enter Release Date"
+                                onChange={(e) =>
+                                    setReleased(parseInt(e.target.value))
+                                }
+                                style={{ marginBottom: "5px" }}
+                            />
+                            <input
+                                type="number"
+                                placeholder="Enter Runtime (minutes)"
+                                onChange={(e) =>
+                                    setRuntime(parseInt(e.target.value))
+                                }
+                                style={{ marginBottom: "5px" }}
+                            />
+                            <input
+                                type="text"
+                                placeholder="Enter 'true' if watched, 'false' if not"
+                                onChange={(e) => setWatched(e.target.checked)}
+                                style={{ marginBottom: "5px" }}
+                            />
+                            <input
+                                type="text"
+                                placeholder="Enter Description"
+                                onChange={(e) => setDescription(e.target.value)}
+                                style={{ marginBottom: "5px" }}
+                            />
+                            <input
+                                type="number"
+                                placeholder="Enter Rating"
+                                onChange={(e) =>
+                                    setRating(parseInt(e.target.value))
+                                }
+                                style={{ marginBottom: "5px" }}
+                            />
+                            <input
+                                type="text"
+                                placeholder="Enter Poster url"
+                                onChange={(e) => setPoster(e.target.value)}
+                                style={{ marginBottom: "5px" }}
+                            /> */}
                         </div>
                     </div>
                 </>
