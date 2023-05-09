@@ -56,6 +56,7 @@ export interface adminMovies {
     setCilMovies: (movies: Movie[]) => void;
     user: User;
     cilMovies: Movie[];
+    setSuperMovies: (movies: Movie[]) => void;
 }
 
 function App(): JSX.Element {
@@ -72,28 +73,50 @@ function App(): JSX.Element {
 
     return (
         <div className="App">
-            <header className="App-header" style={{ marginBottom: "25px" }}>
+            <header className="App-header">
                 <h3>MOVIE MASH</h3>
             </header>
             <DndProvider backend={HTML5Backend}>
+                <div
+                    style={{
+                        backgroundColor: "lightblue",
+                        marginBottom: "50px",
+                        padding: "20px",
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "center"
+                    }}
+                >
+                    <div
+                        style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            marginBottom: "25px",
+                            marginRight: "50px"
+                        }}
+                    >
+                        <UserSelect
+                            users={users}
+                            setUser={setUser}
+                            setUsers={setUsers}
+                            userMovies={userMovies}
+                            setUserMovies={setUserMovies}
+                            userListPairs={userListPairs}
+                            currUser={currUser}
+                        ></UserSelect>
+                    </div>
+
+                    {currUser.role === "super" && (
+                        <SuperAddUser users={users} setUsers={setUsers} />
+                    )}
+                </div>
+                <h2 style={{ marginBottom: "25px" }}>
+                    Click on a Movie to have its details displayed on the right.
+                </h2>
                 <CentralItemList
                     cilMovies={cilMovies}
                     setCilMovies={setCilMovies}
                 ></CentralItemList>
-                <hr></hr>
-                <UserSelect
-                    users={users}
-                    setUser={setUser}
-                    setUsers={setUsers}
-                    userMovies={userMovies}
-                    setUserMovies={setUserMovies}
-                    userListPairs={userListPairs}
-                    currUser={currUser}
-                ></UserSelect>
-                {currUser.role === "super" && (
-                    <SuperAddUser users={users} setUsers={setUsers} />
-                )}
-                <hr></hr>
                 {userListPairs.map((userListPair: UserListPair) =>
                     currUser.name === userListPair.username ? (
                         <UserList
@@ -122,6 +145,7 @@ function App(): JSX.Element {
                         setCilMovies={setCilMovies}
                         user={currUser}
                         cilMovies={cilMovies}
+                        setSuperMovies={setSuperMovies}
                     />
                 )}
             </DndProvider>

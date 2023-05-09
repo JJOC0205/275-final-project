@@ -14,7 +14,8 @@ export function AdminList({
     setAdminMovies,
     setCilMovies,
     user,
-    cilMovies
+    cilMovies,
+    setSuperMovies
 }: adminMovies): JSX.Element {
     function updateAdminMovies(newMovie: Movie) {
         const movieExists = adminMovies.some(
@@ -113,25 +114,42 @@ export function AdminList({
         });
         setAdminMovies(updatedSuperList);
         setCilMovies(updatedCILList);
+        setSuperMovies(updatedCILList);
     }
 
     return (
         <div>
             {user.role === "admin" ? (
                 <>
-                    <h2>Admin List</h2>
-                    <div style={{ display: "flex", flexDirection: "row" }}>
+                    <h2
+                        style={{
+                            textAlign: "left",
+                            marginLeft: "225px",
+                            color: "gainsboro"
+                        }}
+                    >
+                        Administrator
+                    </h2>
+                    <div
+                        style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            justifyContent: "center",
+                            marginTop: "25px"
+                        }}
+                    >
                         <Stack
                             direction="horizontal"
                             ref={drop}
-                            gap={3}
+                            gap={4}
                             style={{
                                 marginLeft: "30px",
                                 marginRight: "30px",
-                                backgroundColor: "lightskyblue",
+                                backgroundColor: "lightgoldenrodyellow",
                                 padding: "10px",
                                 overflow: "auto",
-                                width: "975px"
+                                width: "975px",
+                                height: "300px"
                             }}
                         >
                             {adminMovies.map((movie: Movie) => (
@@ -148,8 +166,8 @@ export function AdminList({
                         <div
                             style={{
                                 marginLeft: "25px",
-                                backgroundColor: "darkred",
-                                height: "325px",
+                                backgroundColor: "blanchedalmond",
+                                height: "300px",
                                 border: "3px dotted lightgoldenrodyellow",
                                 width: "530px",
                                 padding: "15px",
@@ -171,8 +189,7 @@ export function AdminList({
                                 ></img>
                                 <div
                                     style={{
-                                        marginLeft: "25px",
-                                        color: "whitesmoke"
+                                        marginLeft: "25px"
                                     }}
                                 >
                                     <p>{movieDisplay.title}</p>
@@ -189,8 +206,7 @@ export function AdminList({
                             </div>
                             <p
                                 style={{
-                                    marginLeft: "25px",
-                                    color: "whitesmoke"
+                                    marginLeft: "25px"
                                 }}
                             >
                                 {movieDisplay.genre.map(
@@ -199,81 +215,103 @@ export function AdminList({
                             </p>
                             <p
                                 style={{
-                                    marginLeft: "25px",
-                                    color: "whitesmoke"
+                                    marginLeft: "25px"
                                 }}
                             >
                                 {movieDisplay.description}
                             </p>
                             <p
                                 style={{
-                                    marginLeft: "25px",
-                                    color: "whitesmoke"
+                                    marginLeft: "25px"
                                 }}
                             >
                                 Rating: {movieDisplay.rating}/10
                             </p>
-                            <h5>Edit Here</h5>
-                            <input
-                                type="text"
-                                value={title}
-                                onChange={(e) => setTitle(e.target.value)}
-                                placeholder="Enter Title"
-                                style={{ marginBottom: "5px" }}
-                            />
-                            <input
-                                type="number"
-                                value={released}
-                                onChange={(e) =>
-                                    setReleased(parseInt(e.target.value))
-                                }
-                                placeholder="Enter Release Date"
-                                style={{ marginBottom: "5px" }}
-                            />
-                            <input
-                                type="number"
-                                value={runtime}
-                                onChange={(e) =>
-                                    setRuntime(parseInt(e.target.value))
-                                }
-                                placeholder="Enter Runtime (minutes)"
-                                style={{ marginBottom: "5px" }}
-                            />
-                            Check if Watched:
-                            <input
-                                type="checkbox"
-                                checked={watched}
-                                onChange={(e) => setWatched(e.target.checked)}
-                                style={{ marginBottom: "5px" }}
-                            />
-                            <input
-                                type="text"
-                                value={description}
-                                onChange={(e) => setDescription(e.target.value)}
-                                placeholder="Enter Description"
-                                style={{ marginBottom: "5px" }}
-                            />
-                            <input
-                                type="number"
-                                value={rating}
-                                onChange={(e) =>
-                                    setRating(parseInt(e.target.value))
-                                }
-                                placeholder="Enter Rating"
-                                style={{ marginBottom: "5px" }}
-                            />
-                            <input
-                                type="text"
-                                value={poster}
-                                onChange={(e) => setPoster(e.target.value)}
-                                placeholder="Enter Poster URL"
-                                style={{ marginBottom: "5px" }}
-                            />
+                            <hr></hr>
+                            <h4>Edit Movie Here:</h4>
+                            <div
+                                style={{
+                                    display: "flex",
+                                    flexDirection: "column"
+                                }}
+                            >
+                                <input
+                                    type="text"
+                                    value={title}
+                                    onChange={(e) => setTitle(e.target.value)}
+                                    placeholder="Enter Title"
+                                    style={{ marginBottom: "5px" }}
+                                />
+                                <input
+                                    type="number"
+                                    value={released}
+                                    onChange={(e) =>
+                                        setReleased(parseInt(e.target.value))
+                                    }
+                                    placeholder="Enter Release Date"
+                                    style={{ marginBottom: "5px" }}
+                                />
+                                <input
+                                    type="number"
+                                    value={runtime}
+                                    onChange={(e) =>
+                                        setRuntime(parseInt(e.target.value))
+                                    }
+                                    placeholder="Enter Runtime (minutes)"
+                                    style={{ marginBottom: "5px" }}
+                                />
+                                <div
+                                    style={{
+                                        display: "flex",
+                                        flexDirection: "row",
+                                        justifyContent: "center",
+                                        marginBottom: "10px"
+                                    }}
+                                >
+                                    Check if Watched:
+                                    <input
+                                        type="checkbox"
+                                        checked={watched}
+                                        onChange={(e) =>
+                                            setWatched(e.target.checked)
+                                        }
+                                        style={{
+                                            marginBottom: "5px",
+                                            marginLeft: "10px"
+                                        }}
+                                    />
+                                </div>
+                                <input
+                                    type="text"
+                                    value={description}
+                                    onChange={(e) =>
+                                        setDescription(e.target.value)
+                                    }
+                                    placeholder="Enter Description"
+                                    style={{ marginBottom: "5px" }}
+                                />
+                                <input
+                                    type="number"
+                                    value={rating}
+                                    onChange={(e) =>
+                                        setRating(parseInt(e.target.value))
+                                    }
+                                    placeholder="Enter Rating"
+                                    style={{ marginBottom: "5px" }}
+                                />
+                                <input
+                                    type="text"
+                                    value={poster}
+                                    onChange={(e) => setPoster(e.target.value)}
+                                    placeholder="Enter Poster URL"
+                                    style={{ marginBottom: "5px" }}
+                                />
+                            </div>
                             <input
                                 type="text"
                                 value={genreInput}
                                 onChange={updateGenreInput}
-                                placeholder="Enter Genre"
+                                placeholder="Enter Genre to Add"
                                 style={{ marginBottom: "5px" }}
                             />
                             <button onClick={addGenre}>Add Genre</button>
@@ -281,13 +319,13 @@ export function AdminList({
                                 type="text"
                                 value={genreInput}
                                 onChange={updateGenreInput}
-                                placeholder="Enter Genre to remove"
+                                placeholder="Enter Genre to Remove"
                                 style={{ marginBottom: "5px" }}
                             />
                             <button onClick={() => removeGenre(genreInput)}>
                                 Remove Genre
                             </button>
-                            <div></div>
+                            <hr></hr>
                             <button onClick={() => replaceMovieEdit()}>
                                 Push Edited Movie
                             </button>

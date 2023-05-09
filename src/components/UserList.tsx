@@ -8,7 +8,7 @@ import { Movie } from "../interfaces/movie";
 import { ShowMovieDetails } from "./moviePoster";
 // import { User } from "../interfaces/user";
 import { userMovies } from "../App";
-import { EditMode } from "./EditUserMode";
+// import { EditMode } from "./EditUserMode";
 // import { UserListPair } from "../interfaces/UserListPair";
 
 export function UserList({
@@ -29,8 +29,17 @@ export function UserList({
         poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
         genre: ["Adventure", "Drama", "Sci-Fi"]
     });
+
+    function updateMovieDisplay(movie: Movie) {
+        setMovieDisplay(movie);
+        setWatched(movie.watched);
+        setRating(movie.rating);
+        setGenre(movie.genre);
+    }
+
     const [rating, setRating] = useState<number>(movieDisplay.rating);
     const [genre, setGenre] = useState<string[]>(movieDisplay.genre);
+    const [watched, setWatched] = useState<boolean>(false);
 
     const [genreInput, setGenreInput] = useState<string>("");
 
@@ -56,7 +65,7 @@ export function UserList({
             title: movieDisplay.title,
             released: movieDisplay.released,
             runtime: movieDisplay.runtime,
-            watched: movieDisplay.watched,
+            watched: watched,
             description: movieDisplay.description,
             rating: rating,
             poster: movieDisplay.poster,
@@ -172,7 +181,16 @@ export function UserList({
             {user.role === "user" ? (
                 <>
                     <div>
-                        <h2>User</h2>
+                        <h2
+                            style={{
+                                textAlign: "left",
+                                marginLeft: "50px",
+                                marginTop: "50px",
+                                color: "gainsboro"
+                            }}
+                        >
+                            {user.name}
+                        </h2>
                         <div
                             style={{
                                 display: "flex",
@@ -244,13 +262,13 @@ export function UserList({
                             style={{
                                 backgroundColor: isOver ? "lime" : "lightpink",
                                 width: "1300px",
-                                height: "175px",
+                                height: "200px",
                                 border: "2px dashed black",
                                 display: "flex",
                                 flexDirection: "row",
                                 marginLeft: "30px",
                                 overflow: "auto",
-                                padding: "5px",
+                                padding: "30px",
                                 marginTop: "10px"
                             }}
                         >
@@ -259,13 +277,14 @@ export function UserList({
                                     <div
                                         className="ListItem"
                                         key={movie.title}
-                                        style={{ marginRight: "10px" }}
-                                        onClick={() => setMovieDisplay(movie)}
+                                        style={{ marginRight: "30px" }}
+                                        onClick={() =>
+                                            updateMovieDisplay(movie)
+                                        }
                                     >
                                         <ShowMovieDetails
                                             movie={movie}
                                         ></ShowMovieDetails>
-                                        <EditMode movie={movie}></EditMode>
                                     </div>
                                 );
                             })}
@@ -273,7 +292,7 @@ export function UserList({
                         <div
                             style={{
                                 marginLeft: "25px",
-                                backgroundColor: "darkolivegreen",
+                                backgroundColor: "tomato",
                                 height: "325px",
                                 border: "3px dotted cyan",
                                 width: "530px",
@@ -297,8 +316,7 @@ export function UserList({
                                 ></img>
                                 <div
                                     style={{
-                                        marginLeft: "25px",
-                                        color: "whitesmoke"
+                                        marginLeft: "25px"
                                     }}
                                 >
                                     <p>{movieDisplay.title}</p>
@@ -315,8 +333,7 @@ export function UserList({
                             </div>
                             <p
                                 style={{
-                                    marginLeft: "25px",
-                                    color: "whitesmoke"
+                                    marginLeft: "25px"
                                 }}
                             >
                                 Genres:{" "}
@@ -324,40 +341,43 @@ export function UserList({
                                     (genre) => genre + ", "
                                 )}
                             </p>
-                            <input
-                                type="text"
-                                value={genreInput}
-                                onChange={updateGenreInput}
-                                placeholder="Enter Genre"
-                                style={{ marginBottom: "5px" }}
-                            />
-                            <button onClick={addGenre}>Add Genre</button>
-                            <input
-                                type="text"
-                                value={genreInput}
-                                onChange={updateGenreInput}
-                                placeholder="Enter Genre to remove"
-                                style={{ marginBottom: "5px" }}
-                            />
-                            <button onClick={() => removeGenre(genreInput)}>
-                                Remove Genre
-                            </button>
                             <p
                                 style={{
-                                    marginLeft: "25px",
-                                    color: "whitesmoke"
+                                    marginLeft: "25px"
                                 }}
                             >
                                 {movieDisplay.description}
                             </p>
                             <p
                                 style={{
-                                    marginLeft: "25px",
-                                    color: "whitesmoke"
+                                    marginLeft: "25px"
                                 }}
                             >
                                 Rating: {movieDisplay.rating}/10
                             </p>
+                            <hr></hr>
+                            <h4>Edit Here:</h4>
+                            <div
+                                style={{
+                                    display: "flex",
+                                    flexDirection: "row",
+                                    justifyContent: "center",
+                                    marginBottom: "10px"
+                                }}
+                            >
+                                Check if Watched:
+                                <input
+                                    type="checkbox"
+                                    checked={watched}
+                                    onChange={(e) =>
+                                        setWatched(e.target.checked)
+                                    }
+                                    style={{
+                                        marginBottom: "5px",
+                                        marginLeft: "10px"
+                                    }}
+                                />
+                            </div>
                             <input
                                 type="number"
                                 value={rating}
@@ -367,8 +387,29 @@ export function UserList({
                                 placeholder="Change Rating"
                                 style={{ marginBottom: "5px" }}
                             />
+                            <div></div>
+                            <input
+                                type="text"
+                                value={genreInput}
+                                onChange={updateGenreInput}
+                                placeholder="Enter Genre to Add"
+                                style={{ marginBottom: "5px" }}
+                            />
+                            <button onClick={addGenre}>Add Genre</button>
+                            <div></div>
+                            <input
+                                type="text"
+                                value={genreInput}
+                                onChange={updateGenreInput}
+                                placeholder="Enter Genre to Remove"
+                                style={{ marginBottom: "5px" }}
+                            />
+                            <button onClick={() => removeGenre(genreInput)}>
+                                Remove Genre
+                            </button>
+                            <hr></hr>
                             <button onClick={() => replaceMovieEdit()}>
-                                Push Edited Movie
+                                Save Changes
                             </button>
                         </div>
                     </div>
