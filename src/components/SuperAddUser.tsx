@@ -29,49 +29,51 @@ export function SuperAddUser({ users, setUsers }: superAddUser): JSX.Element {
 
     return (
         <>
-            <div>
-                ADD NEW USER
-                <input
-                    type="text"
-                    placeholder="Enter New User Name"
-                    onChange={(e) => setName(e.target.value)}
-                    style={{ marginBottom: "5px" }}
-                />
-                <input
-                    type="number"
-                    placeholder="Enter ID"
-                    onChange={(e) => setId(parseInt(e.target.value))}
-                    style={{ marginBottom: "5px" }}
-                />
-                <input
-                    type="text"
-                    placeholder="Enter Role"
-                    onChange={(e) => setRole(e.target.value)}
-                    style={{ marginBottom: "5px" }}
-                />
-                <button onClick={addUser}>Add New User</button>
-            </div>
-            <div>
-                DELETE USER
-                <input
-                    type="text"
-                    placeholder="Enter User Name"
-                    onChange={(e) => setName(e.target.value)}
-                    style={{ marginBottom: "5px" }}
-                />
-                <input
-                    type="number"
-                    placeholder="Enter ID"
-                    onChange={(e) => setId(parseInt(e.target.value))}
-                    style={{ marginBottom: "5px" }}
-                />
-                <input
-                    type="text"
-                    placeholder="Enter Role"
-                    onChange={(e) => setRole(e.target.value)}
-                    style={{ marginBottom: "5px" }}
-                />
-                <button onClick={deleteUser}>Delete User</button>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+                <div style={{ marginBottom: "10px" }}>
+                    <h5>ADD NEW USER</h5>
+                    <input
+                        type="text"
+                        placeholder="Enter New User Name"
+                        onChange={(e) => setName(e.target.value)}
+                        style={{ marginBottom: "5px", marginRight: "5px" }}
+                    />
+                    <input
+                        type="number"
+                        placeholder="Enter ID"
+                        onChange={(e) => setId(parseInt(e.target.value))}
+                        style={{ marginBottom: "5px", marginRight: "5px" }}
+                    />
+                    <input
+                        type="text"
+                        placeholder="Enter Role"
+                        onChange={(e) => setRole(e.target.value)}
+                        style={{ marginBottom: "5px", marginRight: "5px" }}
+                    />
+                    <button onClick={addUser}>Add</button>
+                </div>
+                <div>
+                    <h5>DELETE USER</h5>
+                    <input
+                        type="text"
+                        placeholder="Enter User Name"
+                        onChange={(e) => setName(e.target.value)}
+                        style={{ marginBottom: "5px", marginRight: "5px" }}
+                    />
+                    <input
+                        type="number"
+                        placeholder="Enter ID"
+                        onChange={(e) => setId(parseInt(e.target.value))}
+                        style={{ marginBottom: "5px", marginRight: "5px" }}
+                    />
+                    <input
+                        type="text"
+                        placeholder="Enter Role"
+                        onChange={(e) => setRole(e.target.value)}
+                        style={{ marginBottom: "5px", marginRight: "5px" }}
+                    />
+                    <button onClick={deleteUser}>Delete</button>
+                </div>
             </div>
         </>
     );
