@@ -65,7 +65,7 @@ export function UserList({
             title: movieDisplay.title,
             released: movieDisplay.released,
             runtime: movieDisplay.runtime,
-            watched: movieDisplay.watched,
+            watched: watched,
             description: movieDisplay.description,
             rating: rating,
             poster: movieDisplay.poster,

@@ -109,7 +109,7 @@ export function CentralItemList({ cilMovies }: cilMovies): JSX.Element {
                         gap={4}
                         style={{
                             marginLeft: "30px",
-                            backgroundColor: "lightcyan",
+                            backgroundColor: "powderblue",
                             padding: "25px",
                             overflow: "auto",
                             width: "950px"
@@ -123,7 +123,6 @@ export function CentralItemList({ cilMovies }: cilMovies): JSX.Element {
                                 <ShowMovieDetails
                                     movie={movie}
                                 ></ShowMovieDetails>
-                                {/* <EditMode movie={movie}></EditMode> */}
                             </div>
                         ))}
                     </Stack>

@@ -110,6 +110,9 @@ function App(): JSX.Element {
                         <SuperAddUser users={users} setUsers={setUsers} />
                     )}
                 </div>
+                <h2 style={{ marginBottom: "25px" }}>
+                    Click on a Movie to have its details displayed on the right.
+                </h2>
                 <CentralItemList
                     cilMovies={cilMovies}
                     setCilMovies={setCilMovies}
