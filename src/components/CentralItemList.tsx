@@ -11,6 +11,7 @@ export function CentralItemList({ cilMovies }: cilMovies): JSX.Element {
     const [movieDisplay, setMovieDisplay] = useState<Movie>(cilMovies[6]);
     const [searchTermD, setSearchTermD] = useState("");
     const [searchTermT, setSearchTermT] = useState("");
+    const [searchTermG, setSearchTermG] = useState("");
     const [minRating, setMinRating] = useState(0);
     const [minRuntime, setMinRuntime] = useState(0);
 
@@ -40,6 +41,9 @@ export function CentralItemList({ cilMovies }: cilMovies): JSX.Element {
                 .toLowerCase()
                 .split(" ")
                 .some((word) => word.includes(searchTermD.toLowerCase())) &&
+            movie.genre.some((genre) =>
+                genre.toLowerCase().includes(searchTermG.toLowerCase())
+            ) &&
             movie.rating >= minRating &&
             movie.runtime >= minRuntime
     );
@@ -69,6 +73,12 @@ export function CentralItemList({ cilMovies }: cilMovies): JSX.Element {
                             type="text"
                             placeholder="Search by movie title"
                             onChange={(e) => setSearchTermT(e.target.value)}
+                            style={{ marginBottom: "10px" }}
+                        />
+                        <input
+                            type="text"
+                            placeholder="Search by movie genre"
+                            onChange={(e) => setSearchTermG(e.target.value)}
                             style={{ marginBottom: "10px" }}
                         />
                         <input
@@ -110,7 +120,8 @@ export function CentralItemList({ cilMovies }: cilMovies): JSX.Element {
                         height: "325px",
                         border: "3px dotted lightgreen",
                         width: "530px",
-                        padding: "15px"
+                        padding: "15px",
+                        overflow: "auto"
                     }}
                 >
                     <div style={{ display: "flex", flexDirection: "row" }}>
@@ -130,6 +141,9 @@ export function CentralItemList({ cilMovies }: cilMovies): JSX.Element {
                             <p>Watched: {movieDisplay.watched.toString()}</p>
                         </div>
                     </div>
+                    <p style={{ marginLeft: "25px", color: "whitesmoke" }}>
+                        {movieDisplay.genre.map((genre) => genre + ", ")}
+                    </p>
                     <p style={{ marginLeft: "25px", color: "whitesmoke" }}>
                         {movieDisplay.description}
                     </p>

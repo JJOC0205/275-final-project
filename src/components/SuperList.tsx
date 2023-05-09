@@ -28,7 +28,8 @@ export function SuperList({
         description:
             "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
         rating: 0,
-        poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
+        poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+        genre: ["Adventure", "Drama", "Sci-Fi"]
     });
 
     const [title, setTitle] = useState<string>("");
@@ -38,18 +39,17 @@ export function SuperList({
     const [description, setDescription] = useState<string>("");
     const [rating, setRating] = useState<number>(0);
     const [poster, setPoster] = useState<string>("");
-
-    // const [editMode, setEditMode] = useState<boolean>(false);
+    const [genre, setGenre] = useState<string[]>([]);
 
     function updateMovieDisplay(movie: Movie) {
         setMovieDisplay(movie);
-        setTitle(movieDisplay.title);
-        setReleased(movieDisplay.released);
-        setRuntime(movieDisplay.runtime);
-        setWatched(movieDisplay.watched);
-        setDescription(movieDisplay.description);
-        setRating(movieDisplay.rating);
-        setPoster(movieDisplay.poster);
+        setTitle(movie.title);
+        setReleased(movie.released);
+        setRuntime(movie.runtime);
+        setWatched(movie.watched);
+        setDescription(movie.description);
+        setRating(movie.rating);
+        setPoster(movie.poster);
     }
 
     const [newMovie, setNewMovie] = useState<Movie>({
@@ -59,7 +59,8 @@ export function SuperList({
         watched: false,
         description: "",
         rating: 0,
-        poster: ""
+        poster: "",
+        genre: []
     });
 
     function addMovie() {
@@ -72,7 +73,8 @@ export function SuperList({
             watched: false,
             description: "",
             rating: 0,
-            poster: ""
+            poster: "",
+            genre: []
         });
     }
 
@@ -84,9 +86,29 @@ export function SuperList({
             watched,
             description,
             rating,
-            poster
+            poster,
+            genre: [...genre]
         };
         setNewMovie(newMovie);
+    }
+
+    const [genreInput, setGenreInput] = useState<string>("");
+
+    function updateGenreInput(event: React.ChangeEvent<HTMLInputElement>) {
+        setGenreInput(event.target.value);
+    }
+
+    function addGenre() {
+        if (genreInput && !genre.includes(genreInput)) {
+            setGenre((prevGenre) => [...prevGenre, genreInput]);
+            setGenreInput("");
+        }
+    }
+
+    function removeGenre(genreToRemove: string) {
+        const updatedGenre = genre.filter((item) => item !== genreToRemove);
+        setGenre(updatedGenre);
+        setGenreInput("");
     }
 
     function replaceMovieEdit() {
@@ -97,7 +119,8 @@ export function SuperList({
             watched,
             description,
             rating,
-            poster
+            poster,
+            genre
         };
         const updatedSuperList = superMovies.map((movie) => {
             if (movie.title === movieDisplay.title) {
@@ -156,6 +179,7 @@ export function SuperList({
                                 width: "300px"
                             }}
                         >
+                            Add New Movie
                             <input
                                 type="text"
                                 placeholder="Enter Title"
@@ -178,6 +202,7 @@ export function SuperList({
                                 }
                                 style={{ marginBottom: "5px" }}
                             />
+                            Check if Watched:
                             <input
                                 type="checkbox"
                                 checked={watched}
@@ -265,6 +290,16 @@ export function SuperList({
                                     color: "whitesmoke"
                                 }}
                             >
+                                {movieDisplay.genre.map(
+                                    (genre) => genre + ", "
+                                )}
+                            </p>
+                            <p
+                                style={{
+                                    marginLeft: "25px",
+                                    color: "whitesmoke"
+                                }}
+                            >
                                 {movieDisplay.description}
                             </p>
                             <p
@@ -275,9 +310,6 @@ export function SuperList({
                             >
                                 Rating: {movieDisplay.rating}/10
                             </p>
-                            {/* <button onClick={() => setEditMode(!editMode)}>
-                                Edit Movie
-                            </button> */}
                             <p>Edit Here</p>
                             <input
                                 type="text"
@@ -333,6 +365,25 @@ export function SuperList({
                                 placeholder="Enter Poster URL"
                                 style={{ marginBottom: "5px" }}
                             />
+                            <input
+                                type="text"
+                                value={genreInput}
+                                onChange={updateGenreInput}
+                                placeholder="Enter Genre"
+                                style={{ marginBottom: "5px" }}
+                            />
+                            <button onClick={addGenre}>Add Genre</button>
+                            <input
+                                type="text"
+                                value={genreInput}
+                                onChange={updateGenreInput}
+                                placeholder="Enter Genre to remove"
+                                style={{ marginBottom: "5px" }}
+                            />
+                            <button onClick={() => removeGenre(genreInput)}>
+                                Remove Genre
+                            </button>
+                            <div></div>
                             <button onClick={() => replaceMovieEdit()}>
                                 Push Edited Movie
                             </button>

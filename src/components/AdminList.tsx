@@ -44,8 +44,10 @@ export function AdminList({
         description:
             "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
         rating: 0,
-        poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
+        poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+        genre: ["Adventure", "Drama", "Sci-Fi"]
     });
+
     const [title, setTitle] = useState<string>("");
     const [released, setReleased] = useState<number>(0);
     const [runtime, setRuntime] = useState<number>(0);
@@ -53,6 +55,8 @@ export function AdminList({
     const [description, setDescription] = useState<string>("");
     const [rating, setRating] = useState<number>(0);
     const [poster, setPoster] = useState<string>("");
+    const [genre, setGenre] = useState<string[]>([]);
+
     function updateMovieDisplay(movie: Movie) {
         setMovieDisplay(movie);
         setTitle(movie.title);
@@ -62,7 +66,28 @@ export function AdminList({
         setDescription(movie.description);
         setRating(movie.rating);
         setPoster(movie.poster);
+        setGenre(movie.genre);
     }
+
+    const [genreInput, setGenreInput] = useState<string>("");
+
+    function updateGenreInput(event: React.ChangeEvent<HTMLInputElement>) {
+        setGenreInput(event.target.value);
+    }
+
+    function addGenre() {
+        if (genreInput && !genre.includes(genreInput)) {
+            setGenre([...genre, genreInput]);
+            setGenreInput("");
+        }
+    }
+
+    function removeGenre(genreToRemove: string) {
+        const updatedGenre = genre.filter((item) => item !== genreToRemove);
+        setGenre(updatedGenre);
+        setGenreInput("");
+    }
+
     function replaceMovieEdit() {
         const editedMovie = {
             title,
@@ -71,7 +96,8 @@ export function AdminList({
             watched,
             description,
             rating,
-            poster
+            poster,
+            genre
         };
         const updatedSuperList = adminMovies.map((movie) => {
             if (movie.title === movieDisplay.title) {
@@ -88,6 +114,7 @@ export function AdminList({
         setAdminMovies(updatedSuperList);
         setCilMovies(updatedCILList);
     }
+
     return (
         <div>
             {user.role === "admin" ? (
@@ -166,6 +193,16 @@ export function AdminList({
                                     color: "whitesmoke"
                                 }}
                             >
+                                {movieDisplay.genre.map(
+                                    (genre) => genre + ", "
+                                )}
+                            </p>
+                            <p
+                                style={{
+                                    marginLeft: "25px",
+                                    color: "whitesmoke"
+                                }}
+                            >
                                 {movieDisplay.description}
                             </p>
                             <p
@@ -176,7 +213,7 @@ export function AdminList({
                             >
                                 Rating: {movieDisplay.rating}/10
                             </p>
-                            <p>Edit Here</p>
+                            <h5>Edit Here</h5>
                             <input
                                 type="text"
                                 value={title}
@@ -202,6 +239,7 @@ export function AdminList({
                                 placeholder="Enter Runtime (minutes)"
                                 style={{ marginBottom: "5px" }}
                             />
+                            Check if Watched:
                             <input
                                 type="checkbox"
                                 checked={watched}
@@ -231,6 +269,25 @@ export function AdminList({
                                 placeholder="Enter Poster URL"
                                 style={{ marginBottom: "5px" }}
                             />
+                            <input
+                                type="text"
+                                value={genreInput}
+                                onChange={updateGenreInput}
+                                placeholder="Enter Genre"
+                                style={{ marginBottom: "5px" }}
+                            />
+                            <button onClick={addGenre}>Add Genre</button>
+                            <input
+                                type="text"
+                                value={genreInput}
+                                onChange={updateGenreInput}
+                                placeholder="Enter Genre to remove"
+                                style={{ marginBottom: "5px" }}
+                            />
+                            <button onClick={() => removeGenre(genreInput)}>
+                                Remove Genre
+                            </button>
+                            <div></div>
                             <button onClick={() => replaceMovieEdit()}>
                                 Push Edited Movie
                             </button>
