@@ -4,12 +4,8 @@ import { useState } from "react";
 import { MovieTypes } from "../interfaces/MovieTypes";
 import "./UserList.css";
 import { Movie } from "../interfaces/movie";
-// import testMovies from "../data/movies.json";
 import { ShowMovieDetails } from "./moviePoster";
-// import { User } from "../interfaces/user";
 import { userMovies } from "../App";
-// import { EditMode } from "./EditUserMode";
-// import { UserListPair } from "../interfaces/UserListPair";
 
 export function UserList({
     userMovies,
