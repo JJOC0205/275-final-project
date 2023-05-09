@@ -90,7 +90,7 @@ export function AdminList({
     }
     return (
         <div>
-            {user.role === "admin" ? (
+            {user.role === "admin" || user.role === "super" ? (
                 <>
                     <h2>Admin List</h2>
                     <div style={{ display: "flex", flexDirection: "row" }}>
