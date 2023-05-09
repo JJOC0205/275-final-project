@@ -16,13 +16,15 @@ export function UserSelect({
 
         setUser(users[selectedUserId]);
 
-        const currUserMovies = userListPairs.filter(
-            (pairs: UserListPair) => selectedUserName === pairs.username
-        );
-        const currUserList = currUserMovies[0].userList;
-        setUserMovies(currUserList);
+        if (selectedUserName === "user") {
+            const currUserMovies = userListPairs.filter(
+                (pairs: UserListPair) => selectedUserName === pairs.username
+            );
+            const currUserList = currUserMovies[0].userList;
+            setUserMovies(currUserList);
 
-        console.log(currUserList);
+            console.log(currUserList);
+        }
     }
     return (
         <div
