@@ -4,12 +4,9 @@ import { useState } from "react";
 import { MovieTypes } from "../interfaces/MovieTypes";
 import "./UserList.css";
 import { Movie } from "../interfaces/movie";
-// import testMovies from "../data/movies.json";
 import { ShowMovieDetails } from "./moviePoster";
-// import { User } from "../interfaces/user";
 import { userMovies } from "../App";
 import { EditMode } from "./EditUserMode";
-// import { UserListPair } from "../interfaces/UserListPair";
 
 export function UserList({
     userMovies,
@@ -309,57 +306,6 @@ export function UserList({
                             >
                                 Rating: {movieDisplay.rating}/10
                             </p>
-                            {/* <button onClick={() => setEditMode(!editMode)}>
-                                Edit Movie
-                            </button>
-                            <input
-                                type="text"
-                                placeholder="Enter Title"
-                                onChange={(e) => setTitle(e.target.value)}
-                                style={{ marginBottom: "5px" }}
-                            />
-                            <input
-                                type="number"
-                                placeholder="Enter Release Date"
-                                onChange={(e) =>
-                                    setReleased(parseInt(e.target.value))
-                                }
-                                style={{ marginBottom: "5px" }}
-                            />
-                            <input
-                                type="number"
-                                placeholder="Enter Runtime (minutes)"
-                                onChange={(e) =>
-                                    setRuntime(parseInt(e.target.value))
-                                }
-                                style={{ marginBottom: "5px" }}
-                            />
-                            <input
-                                type="text"
-                                placeholder="Enter 'true' if watched, 'false' if not"
-                                onChange={(e) => setWatched(e.target.checked)}
-                                style={{ marginBottom: "5px" }}
-                            />
-                            <input
-                                type="text"
-                                placeholder="Enter Description"
-                                onChange={(e) => setDescription(e.target.value)}
-                                style={{ marginBottom: "5px" }}
-                            />
-                            <input
-                                type="number"
-                                placeholder="Enter Rating"
-                                onChange={(e) =>
-                                    setRating(parseInt(e.target.value))
-                                }
-                                style={{ marginBottom: "5px" }}
-                            />
-                            <input
-                                type="text"
-                                placeholder="Enter Poster url"
-                                onChange={(e) => setPoster(e.target.value)}
-                                style={{ marginBottom: "5px" }}
-                            /> */}
                         </div>
                     </div>
                 </>
