@@ -26,28 +26,6 @@ export function UserList({
         poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
     });
 
-    // const [editMode, setEditMode] = useState<boolean>(false);
-    // const [title, setTitle] = useState<string>(movieDisplay.title);
-    // const [released, setReleased] = useState<number>(movieDisplay.released);
-    // const [runtime, setRuntime] = useState<number>(movieDisplay.runtime);
-    // const [watched, setWatched] = useState<boolean>(movieDisplay.watched);
-    // const [description, setDescription] = useState<string>(
-    //     movieDisplay.description
-    // );
-    // const [rating, setRating] = useState<number>(movieDisplay.rating);
-    // const [poster, setPoster] = useState<string>(movieDisplay.poster);
-
-    // function updateMovieDisplay(movie: Movie) {
-    //     setMovieDisplay(movie);
-    //     setTitle(movieDisplay.title);
-    //     setReleased(movieDisplay.released);
-    //     setRuntime(movieDisplay.runtime);
-    //     setWatched(movieDisplay.watched);
-    //     setDescription(movieDisplay.description);
-    //     setRating(movieDisplay.rating);
-    //     setPoster(movieDisplay.poster);
-    // }
-
     function updateUserMovies(newMovie: Movie) {
         const movieExists = userMovies.some(
             (movie) => movie.title === newMovie.title
