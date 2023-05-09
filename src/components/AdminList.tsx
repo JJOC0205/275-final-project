@@ -47,6 +47,7 @@ export function AdminList({
         poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
         genre: ["Adventure", "Drama", "Sci-Fi"]
     });
+
     const [title, setTitle] = useState<string>("");
     const [released, setReleased] = useState<number>(0);
     const [runtime, setRuntime] = useState<number>(0);
@@ -55,6 +56,7 @@ export function AdminList({
     const [rating, setRating] = useState<number>(0);
     const [poster, setPoster] = useState<string>("");
     const [genre, setGenre] = useState<string[]>([]);
+
     function updateMovieDisplay(movie: Movie) {
         setMovieDisplay(movie);
         setTitle(movie.title);
@@ -80,10 +82,10 @@ export function AdminList({
         }
     }
 
-    function removeGenre(index: number) {
-        const updatedGenre = [...genre];
-        updatedGenre.splice(index, 1);
+    function removeGenre(genreToRemove: string) {
+        const updatedGenre = genre.filter((item) => item !== genreToRemove);
         setGenre(updatedGenre);
+        setGenreInput("");
     }
 
     function replaceMovieEdit() {
@@ -112,6 +114,7 @@ export function AdminList({
         setAdminMovies(updatedSuperList);
         setCilMovies(updatedCILList);
     }
+
     return (
         <div>
             {user.role === "admin" ? (
@@ -184,27 +187,16 @@ export function AdminList({
                                     </p>
                                 </div>
                             </div>
-                            <p>{movieDisplay.genre}</p>
-                            <div>
-                                {genre.map((item, index) => (
-                                    <div key={index}>
-                                        <span>{item}</span>
-                                        <button
-                                            onClick={() => removeGenre(index)}
-                                        >
-                                            Remove
-                                        </button>
-                                    </div>
-                                ))}
-                            </div>
-                            <input
-                                type="text"
-                                value={genreInput}
-                                onChange={updateGenreInput}
-                                placeholder="Enter Genre"
-                                style={{ marginBottom: "5px" }}
-                            />
-                            <button onClick={addGenre}>Add Genre</button>
+                            <p
+                                style={{
+                                    marginLeft: "25px",
+                                    color: "whitesmoke"
+                                }}
+                            >
+                                {movieDisplay.genre.map(
+                                    (genre) => genre + ", "
+                                )}
+                            </p>
                             <p
                                 style={{
                                     marginLeft: "25px",
@@ -221,7 +213,7 @@ export function AdminList({
                             >
                                 Rating: {movieDisplay.rating}/10
                             </p>
-                            <p>Edit Here</p>
+                            <h5>Edit Here</h5>
                             <input
                                 type="text"
                                 value={title}
@@ -247,6 +239,7 @@ export function AdminList({
                                 placeholder="Enter Runtime (minutes)"
                                 style={{ marginBottom: "5px" }}
                             />
+                            Check if Watched:
                             <input
                                 type="checkbox"
                                 checked={watched}
@@ -276,6 +269,25 @@ export function AdminList({
                                 placeholder="Enter Poster URL"
                                 style={{ marginBottom: "5px" }}
                             />
+                            <input
+                                type="text"
+                                value={genreInput}
+                                onChange={updateGenreInput}
+                                placeholder="Enter Genre"
+                                style={{ marginBottom: "5px" }}
+                            />
+                            <button onClick={addGenre}>Add Genre</button>
+                            <input
+                                type="text"
+                                value={genreInput}
+                                onChange={updateGenreInput}
+                                placeholder="Enter Genre to remove"
+                                style={{ marginBottom: "5px" }}
+                            />
+                            <button onClick={() => removeGenre(genreInput)}>
+                                Remove Genre
+                            </button>
+                            <div></div>
                             <button onClick={() => replaceMovieEdit()}>
                                 Push Edited Movie
                             </button>

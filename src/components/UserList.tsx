@@ -29,28 +29,47 @@ export function UserList({
         poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
         genre: ["Adventure", "Drama", "Sci-Fi"]
     });
+    const [rating, setRating] = useState<number>(movieDisplay.rating);
+    const [genre, setGenre] = useState<string[]>(movieDisplay.genre);
 
-    // const [editMode, setEditMode] = useState<boolean>(false);
-    // const [title, setTitle] = useState<string>(movieDisplay.title);
-    // const [released, setReleased] = useState<number>(movieDisplay.released);
-    // const [runtime, setRuntime] = useState<number>(movieDisplay.runtime);
-    // const [watched, setWatched] = useState<boolean>(movieDisplay.watched);
-    // const [description, setDescription] = useState<string>(
-    //     movieDisplay.description
-    // );
-    // const [rating, setRating] = useState<number>(movieDisplay.rating);
-    // const [poster, setPoster] = useState<string>(movieDisplay.poster);
+    const [genreInput, setGenreInput] = useState<string>("");
 
-    // function updateMovieDisplay(movie: Movie) {
-    //     setMovieDisplay(movie);
-    //     setTitle(movieDisplay.title);
-    //     setReleased(movieDisplay.released);
-    //     setRuntime(movieDisplay.runtime);
-    //     setWatched(movieDisplay.watched);
-    //     setDescription(movieDisplay.description);
-    //     setRating(movieDisplay.rating);
-    //     setPoster(movieDisplay.poster);
-    // }
+    function updateGenreInput(event: React.ChangeEvent<HTMLInputElement>) {
+        setGenreInput(event.target.value);
+    }
+
+    function addGenre() {
+        if (genreInput && !genre.includes(genreInput)) {
+            setGenre([...genre, genreInput]);
+            setGenreInput("");
+        }
+    }
+
+    function removeGenre(genreToRemove: string) {
+        const updatedGenre = genre.filter((item) => item !== genreToRemove);
+        setGenre(updatedGenre);
+        setGenreInput("");
+    }
+
+    function replaceMovieEdit() {
+        const editedMovie = {
+            title: movieDisplay.title,
+            released: movieDisplay.released,
+            runtime: movieDisplay.runtime,
+            watched: movieDisplay.watched,
+            description: movieDisplay.description,
+            rating: rating,
+            poster: movieDisplay.poster,
+            genre: [...genre]
+        };
+        const updatedUserList = userMovies.map((movie) => {
+            if (movie.title === movieDisplay.title) {
+                return editedMovie;
+            }
+            return movie;
+        });
+        setUserMovies(updatedUserList);
+    }
 
     function updateUserMovies(newMovie: Movie) {
         const movieExists = userMovies.some(
@@ -64,7 +83,7 @@ export function UserList({
         } else {
             updatedUserMovies = userMovies.map((movie) => {
                 if (movie.title === newMovie.title) {
-                    return { ...movie, watched: !movie.watched };
+                    return { ...movie, title: movie.title + " " };
                 }
                 return movie;
             });
@@ -294,7 +313,35 @@ export function UserList({
                                     </p>
                                 </div>
                             </div>
-                            <p>{movieDisplay.genre}</p>
+                            <p
+                                style={{
+                                    marginLeft: "25px",
+                                    color: "whitesmoke"
+                                }}
+                            >
+                                Genres:{" "}
+                                {movieDisplay.genre.map(
+                                    (genre) => genre + ", "
+                                )}
+                            </p>
+                            <input
+                                type="text"
+                                value={genreInput}
+                                onChange={updateGenreInput}
+                                placeholder="Enter Genre"
+                                style={{ marginBottom: "5px" }}
+                            />
+                            <button onClick={addGenre}>Add Genre</button>
+                            <input
+                                type="text"
+                                value={genreInput}
+                                onChange={updateGenreInput}
+                                placeholder="Enter Genre to remove"
+                                style={{ marginBottom: "5px" }}
+                            />
+                            <button onClick={() => removeGenre(genreInput)}>
+                                Remove Genre
+                            </button>
                             <p
                                 style={{
                                     marginLeft: "25px",
@@ -311,57 +358,18 @@ export function UserList({
                             >
                                 Rating: {movieDisplay.rating}/10
                             </p>
-                            {/* <button onClick={() => setEditMode(!editMode)}>
-                                Edit Movie
-                            </button>
-                            <input
-                                type="text"
-                                placeholder="Enter Title"
-                                onChange={(e) => setTitle(e.target.value)}
-                                style={{ marginBottom: "5px" }}
-                            />
                             <input
                                 type="number"
-                                placeholder="Enter Release Date"
-                                onChange={(e) =>
-                                    setReleased(parseInt(e.target.value))
-                                }
-                                style={{ marginBottom: "5px" }}
-                            />
-                            <input
-                                type="number"
-                                placeholder="Enter Runtime (minutes)"
-                                onChange={(e) =>
-                                    setRuntime(parseInt(e.target.value))
-                                }
-                                style={{ marginBottom: "5px" }}
-                            />
-                            <input
-                                type="text"
-                                placeholder="Enter 'true' if watched, 'false' if not"
-                                onChange={(e) => setWatched(e.target.checked)}
-                                style={{ marginBottom: "5px" }}
-                            />
-                            <input
-                                type="text"
-                                placeholder="Enter Description"
-                                onChange={(e) => setDescription(e.target.value)}
-                                style={{ marginBottom: "5px" }}
-                            />
-                            <input
-                                type="number"
-                                placeholder="Enter Rating"
+                                value={rating}
                                 onChange={(e) =>
                                     setRating(parseInt(e.target.value))
                                 }
+                                placeholder="Change Rating"
                                 style={{ marginBottom: "5px" }}
                             />
-                            <input
-                                type="text"
-                                placeholder="Enter Poster url"
-                                onChange={(e) => setPoster(e.target.value)}
-                                style={{ marginBottom: "5px" }}
-                            /> */}
+                            <button onClick={() => replaceMovieEdit()}>
+                                Push Edited Movie
+                            </button>
                         </div>
                     </div>
                 </>
