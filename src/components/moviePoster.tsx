@@ -25,6 +25,7 @@ export function ShowMovieDetails({ movie }: { movie: Movie }): JSX.Element {
         <div ref={drag}>
             <img
                 src={movie.poster}
+                alt={movie.title}
                 height="125px"
                 width="125px"
                 onClick={() => setVisible(!visible)}

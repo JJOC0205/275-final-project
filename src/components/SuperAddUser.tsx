@@ -53,17 +53,19 @@ export function SuperAddUser({
                     />
                     <input
                         type="number"
-                        placeholder="Enter ID"
+                        placeholder="Enter New User ID"
                         onChange={(e) => setId(parseInt(e.target.value))}
                         style={{ marginBottom: "5px", marginRight: "5px" }}
                     />
                     <input
                         type="text"
-                        placeholder="Enter Role"
+                        placeholder="Enter New User Role"
                         onChange={(e) => setRole(e.target.value)}
                         style={{ marginBottom: "5px", marginRight: "5px" }}
                     />
-                    <button onClick={addUser}>Add</button>
+                    <button data-testID="addUser" onClick={addUser}>
+                        Add
+                    </button>
                 </div>
                 <div>
                     <h5>DELETE USER</h5>
@@ -85,7 +87,9 @@ export function SuperAddUser({
                         onChange={(e) => setRole(e.target.value)}
                         style={{ marginBottom: "5px", marginRight: "5px" }}
                     />
-                    <button onClick={deleteUser}>Delete</button>
+                    <button data-testID="deleteUser" onClick={deleteUser}>
+                        Delete
+                    </button>
                 </div>
             </div>
         </>

@@ -267,6 +267,7 @@ export function UserList({
                                 padding: "30px",
                                 marginTop: "10px"
                             }}
+                            data-testID="movieDrop"
                         >
                             {userMovies.map((movie) => {
                                 return (

@@ -16,10 +16,11 @@ export function UserSelect({
 
         setUser(users[selectedUserId]);
 
-        if (selectedUserName === "user") {
+        if (users[selectedUserId].role === "user") {
             const currUserMovies = userListPairs.filter(
                 (pairs: UserListPair) => selectedUserName === pairs.username
             );
+
             const currUserList = currUserMovies[0].userList;
             setUserMovies(currUserList);
 

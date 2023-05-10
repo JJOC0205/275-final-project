@@ -8,7 +8,7 @@ import "./UserList.css";
 import { cilMovies } from "../App";
 
 export function CentralItemList({ cilMovies }: cilMovies): JSX.Element {
-    const [movieDisplay, setMovieDisplay] = useState<Movie>(cilMovies[6]);
+    const [movieDisplay, setMovieDisplay] = useState<Movie>(cilMovies[3]);
     const [searchTermD, setSearchTermD] = useState("");
     const [searchTermT, setSearchTermT] = useState("");
     const [searchTermG, setSearchTermG] = useState("");
@@ -118,6 +118,7 @@ export function CentralItemList({ cilMovies }: cilMovies): JSX.Element {
                         {filteredMovies.map((movie: Movie) => (
                             <div
                                 key={movie.title}
+                                role="CIL-Element"
                                 onClick={() => setMovieDisplay(movie)}
                             >
                                 <ShowMovieDetails
@@ -127,6 +128,7 @@ export function CentralItemList({ cilMovies }: cilMovies): JSX.Element {
                         ))}
                     </Stack>
                     <div
+                        role="CIL"
                         style={{
                             marginLeft: "25px",
                             backgroundColor: "darkslateblue",
