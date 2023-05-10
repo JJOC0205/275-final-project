@@ -128,7 +128,7 @@ export function AdminList({
                             color: "gainsboro"
                         }}
                     >
-                        Administrator
+                        {user.name}
                     </h2>
                     <div
                         style={{
@@ -139,6 +139,7 @@ export function AdminList({
                         }}
                     >
                         <Stack
+                            role="adminList"
                             direction="horizontal"
                             ref={drop}
                             gap={4}
@@ -164,6 +165,7 @@ export function AdminList({
                             ))}
                         </Stack>
                         <div
+                            role="movieDisplay"
                             style={{
                                 marginLeft: "25px",
                                 backgroundColor: "blanchedalmond",
