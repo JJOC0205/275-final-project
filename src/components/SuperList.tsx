@@ -144,7 +144,7 @@ export function SuperList({
                             color: "gainsboro"
                         }}
                     >
-                        Super User
+                        {user.name}
                     </h2>
                     <div
                         style={{
@@ -175,6 +175,7 @@ export function SuperList({
                                         movie={movie}
                                     ></ShowMovieDetails>
                                     <button
+                                        role="removeMovie"
                                         style={{
                                             height: "30px",
                                             width: "75px",
@@ -199,14 +200,16 @@ export function SuperList({
                                 overflow: "auto"
                             }}
                         >
-                            <h4>Create New Movie</h4>
+                            <h4>Create New Movie:</h4>
                             <input
+                                role="createMovie"
                                 type="text"
                                 placeholder="Enter Title"
                                 onChange={(e) => setTitle(e.target.value)}
                                 style={{ marginBottom: "5px" }}
                             />
                             <input
+                                role="createMovie"
                                 type="number"
                                 placeholder="Enter Release Date"
                                 onChange={(e) =>
@@ -215,6 +218,7 @@ export function SuperList({
                                 style={{ marginBottom: "5px" }}
                             />
                             <input
+                                role="createMovie"
                                 type="number"
                                 placeholder="Enter Runtime (minutes)"
                                 onChange={(e) =>
@@ -223,6 +227,7 @@ export function SuperList({
                                 style={{ marginBottom: "5px" }}
                             />
                             <div
+                                role="createMovie"
                                 style={{
                                     display: "flex",
                                     flexDirection: "row",
@@ -232,6 +237,7 @@ export function SuperList({
                             >
                                 Check if Watched:
                                 <input
+                                    role="createMovie"
                                     type="checkbox"
                                     checked={watched}
                                     onChange={(e) =>
@@ -244,12 +250,14 @@ export function SuperList({
                                 />
                             </div>
                             <input
+                                role="createMovie"
                                 type="text"
                                 placeholder="Enter Description"
                                 onChange={(e) => setDescription(e.target.value)}
                                 style={{ marginBottom: "5px" }}
                             />
                             <input
+                                role="createMovie"
                                 type="number"
                                 placeholder="Enter Rating"
                                 onChange={(e) =>
@@ -258,6 +266,7 @@ export function SuperList({
                                 style={{ marginBottom: "5px" }}
                             />
                             <input
+                                role="createMovie"
                                 type="text"
                                 placeholder="Enter Poster url"
                                 onChange={(e) => setPoster(e.target.value)}
@@ -270,10 +279,15 @@ export function SuperList({
                                     justifyContent: "center"
                                 }}
                             >
-                                <button onClick={createNewMovie}>
+                                <button
+                                    role="createNewMovie"
+                                    onClick={createNewMovie}
+                                >
                                     Create New Movie
                                 </button>
-                                <button onClick={addMovie}>Add Movie</button>
+                                <button role="addNewMovie" onClick={addMovie}>
+                                    Add Movie
+                                </button>
                             </div>
                         </div>
                         <div
@@ -427,7 +441,9 @@ export function SuperList({
                                 placeholder="Enter Genre to Add"
                                 style={{ marginBottom: "5px" }}
                             />
-                            <button onClick={addGenre}>Add Genre</button>
+                            <button role="addGenre" onClick={addGenre}>
+                                Add Genre
+                            </button>
                             <input
                                 type="text"
                                 value={genreInput}
@@ -435,11 +451,17 @@ export function SuperList({
                                 placeholder="Enter Genre to Remove"
                                 style={{ marginBottom: "5px" }}
                             />
-                            <button onClick={() => removeGenre(genreInput)}>
+                            <button
+                                role="removeGenre"
+                                onClick={() => removeGenre(genreInput)}
+                            >
                                 Remove Genre
                             </button>
                             <hr></hr>
-                            <button onClick={() => replaceMovieEdit()}>
+                            <button
+                                role="pushMovie"
+                                onClick={() => replaceMovieEdit()}
+                            >
                                 Push Edited Movie
                             </button>
                         </div>
