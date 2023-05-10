@@ -1,6 +1,6 @@
 import { DragSourceMonitor, useDrag } from "react-dnd";
 import { Movie } from "../interfaces/movie";
-import React, { useState } from "react";
+import React from "react";
 import { MovieTypes } from "../interfaces/MovieTypes";
 
 export function ShowMovieDetails({ movie }: { movie: Movie }): JSX.Element {
@@ -20,15 +20,14 @@ export function ShowMovieDetails({ movie }: { movie: Movie }): JSX.Element {
             isDragging: !!monitor.isDragging()
         })
     });
-    const [visible, setVisible] = useState<boolean>(false);
+    // const [visible, setVisible] = useState<boolean>(false);
     return (
-        <div ref={drag}>
+        <div ref={drag} role="moviePosterImage">
             <img
                 src={movie.poster}
                 alt={movie.title}
                 height="125px"
                 width="125px"
-                onClick={() => setVisible(!visible)}
             />
         </div>
     );
