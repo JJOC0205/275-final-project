@@ -2,8 +2,9 @@ import React from "react";
 import { useState } from "react";
 import { superAddUser } from "../App";
 import { Movie } from "../interfaces/movie";
-// import { User } from "../interfaces/user";
 import { UserListPair } from "../interfaces/UserListPair";
+import { Form } from "react-bootstrap";
+import "./SuperAddUser.css";
 
 export function SuperAddUser({
     users,
@@ -14,7 +15,6 @@ export function SuperAddUser({
     const [name, setName] = useState<string>("");
     const [id, setId] = useState<number>(3);
     const [role, setRole] = useState<string>("");
-    // const [selectedUser, setSelectedUser] = useState<User>(users[0]);
 
     function addUser() {
         const isExistingUser = users.some(
@@ -53,16 +53,21 @@ export function SuperAddUser({
                     />
                     <input
                         type="number"
-                        placeholder="Enter ID"
+                        placeholder="Enter Your SSN"
                         onChange={(e) => setId(parseInt(e.target.value))}
                         style={{ marginBottom: "5px", marginRight: "5px" }}
                     />
-                    <input
-                        type="text"
-                        placeholder="Enter Role"
-                        onChange={(e) => setRole(e.target.value)}
-                        style={{ marginBottom: "5px", marginRight: "5px" }}
-                    />
+                    <Form.Group controlId="userRoles">
+                        <Form.Label>Choose your role</Form.Label>
+                        <Form.Select
+                            value={role}
+                            onChange={(e) => setRole(e.target.value)}
+                        >
+                            <option value="super">Super</option>
+                            <option value="admin">Admin</option>
+                            <option value="user">User</option>
+                        </Form.Select>
+                    </Form.Group>
                     <button onClick={addUser}>Add</button>
                 </div>
                 <div>
