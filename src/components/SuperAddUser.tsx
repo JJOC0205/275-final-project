@@ -63,7 +63,7 @@ export function SuperAddUser({
                         onChange={(e) => setRole(e.target.value)}
                         style={{ marginBottom: "5px", marginRight: "5px" }}
                     />
-                    <button data-testID="addUser" onClick={addUser}>
+                    <button data-testid="addUser" onClick={addUser}>
                         Add
                     </button>
                 </div>
@@ -87,7 +87,7 @@ export function SuperAddUser({
                         onChange={(e) => setRole(e.target.value)}
                         style={{ marginBottom: "5px", marginRight: "5px" }}
                     />
-                    <button data-testID="deleteUser" onClick={deleteUser}>
+                    <button data-testid="deleteUser" onClick={deleteUser}>
                         Delete
                     </button>
                 </div>

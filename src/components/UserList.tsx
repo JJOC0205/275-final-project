@@ -267,7 +267,7 @@ export function UserList({
                                 padding: "30px",
                                 marginTop: "10px"
                             }}
-                            data-testID="movieDrop"
+                            data-testid="movieDrop"
                         >
                             {userMovies.map((movie) => {
                                 return (
@@ -317,7 +317,7 @@ export function UserList({
                                         marginLeft: "25px"
                                     }}
                                 >
-                                    <p data-testID="displayTitle">
+                                    <p data-testid="displayTitle">
                                         {movieDisplay.title}
                                     </p>
                                     <p>Release Date: {movieDisplay.released}</p>

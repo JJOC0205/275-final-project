@@ -13,12 +13,27 @@ export function SuperList({
     user
 }: superMovies): JSX.Element {
     function removeMovie(movie: Movie) {
+        console.log(movie.title);
         const updatedMovies = superMovies.filter(
             (m) => m.title !== movie.title
         );
         setSuperMovies(updatedMovies);
         setCilMovies(updatedMovies);
+        console.log(superMovies[0].title);
     }
+
+    // function removeMovie(movie: Movie) {
+    //     console.log(movie.title);
+    //     const updatedMovies = superMovies.filter(
+    //         (m) => m.title !== movie.title
+    //     );
+    //     setSuperMovies(updatedMovies);
+    //     setCilMovies(updatedMovies);
+    // }
+
+    // useEffect(() => {
+    //     console.log(superMovies[0]?.title); // Log the updated superMovies state
+    // }, [superMovies]);
 
     const [movieDisplay, setMovieDisplay] = useState<Movie>({
         title: "Interstellar",
@@ -168,6 +183,7 @@ export function SuperList({
                         >
                             {superMovies.map((movie: Movie) => (
                                 <div
+                                    role="superMovie"
                                     key={movie.title}
                                     onClick={() => updateMovieDisplay(movie)}
                                 >
@@ -175,7 +191,7 @@ export function SuperList({
                                         movie={movie}
                                     ></ShowMovieDetails>
                                     <button
-                                        role="removeMovie"
+                                        role="removeMovieButton"
                                         style={{
                                             height: "30px",
                                             width: "75px",
