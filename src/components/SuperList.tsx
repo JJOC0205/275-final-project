@@ -322,7 +322,9 @@ export function SuperList({
                                         marginLeft: "25px"
                                     }}
                                 >
-                                    <p>{movieDisplay.title}</p>
+                                    <p data-testid="displayTitle">
+                                        {movieDisplay.title}
+                                    </p>
                                     <p>Release Date: {movieDisplay.released}</p>
                                     <p>
                                         Runtime in Minutes:{" "}

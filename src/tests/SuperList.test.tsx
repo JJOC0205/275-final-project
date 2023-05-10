@@ -73,4 +73,13 @@ describe("SuperList Tests", () => {
         const pushMovie = screen.getByRole("pushMovie");
         expect(pushMovie).toBeInTheDocument();
     });
+
+    test("Clicking a movie will render the movie display", () => {
+        const movies = screen.queryAllByRole("superMovie");
+        const m = movies[10];
+        m.click();
+        const movieDisplayTitle = screen.getByTestId("displayTitle");
+        expect(movieDisplayTitle.textContent).toEqual("Pokiri");
+        expect(screen.getByText(/Pokiri/i)).toBeInTheDocument();
+    });
 });
