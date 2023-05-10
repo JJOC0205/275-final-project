@@ -77,22 +77,23 @@ export function UserList({
     }
 
     function updateUserMovies(newMovie: Movie) {
-        const movieExists = userMovies.some(
-            (movie) => movie.title === newMovie.title
-        );
+        // const movieExists = userMovies.some(
+        //     (movie) => movie.title === newMovie.title
+        // );
 
-        let updatedUserMovies: Movie[];
+        // let updatedUserMovies: Movie[];
 
-        if (!movieExists) {
-            updatedUserMovies = [...userMovies, newMovie];
-        } else {
-            updatedUserMovies = userMovies.map((movie) => {
-                if (movie.title === newMovie.title) {
-                    return { ...movie, title: movie.title + " " };
-                }
-                return movie;
-            });
-        }
+        // if (!movieExists) {
+        //     updatedUserMovies = [...userMovies, newMovie];
+        // } else {
+        //     updatedUserMovies = userMovies.map((movie) => {
+        //         if (movie.title === newMovie.title) {
+        //             return { ...movie, title: movie.title + " " };
+        //         }
+        //         return movie;
+        //     });
+        // }
+        const updatedUserMovies = [...userMovies, newMovie];
 
         setUserMovies(updatedUserMovies);
 
@@ -269,12 +270,13 @@ export function UserList({
                             }}
                             data-testid="movieDrop"
                         >
-                            {userMovies.map((movie) => {
+                            {userMovies.map((movie, index) => {
                                 return (
                                     <div
                                         role="userMovie"
                                         className="ListItem"
-                                        key={movie.title}
+                                        // key={movie.title}
+                                        key={index}
                                         style={{ marginRight: "30px" }}
                                         onClick={() =>
                                             updateMovieDisplay(movie)
