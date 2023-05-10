@@ -22,19 +22,6 @@ export function SuperList({
         console.log(superMovies[0].title);
     }
 
-    // function removeMovie(movie: Movie) {
-    //     console.log(movie.title);
-    //     const updatedMovies = superMovies.filter(
-    //         (m) => m.title !== movie.title
-    //     );
-    //     setSuperMovies(updatedMovies);
-    //     setCilMovies(updatedMovies);
-    // }
-
-    // useEffect(() => {
-    //     console.log(superMovies[0]?.title); // Log the updated superMovies state
-    // }, [superMovies]);
-
     const [movieDisplay, setMovieDisplay] = useState<Movie>({
         title: "Interstellar",
         released: 2014,

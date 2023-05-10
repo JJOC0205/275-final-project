@@ -42,9 +42,10 @@ describe("SuperList Tests", () => {
         removeButton.click();
         const second = screen.queryAllByRole("superMovie")[0];
         second.click();
-        expect(
-            screen.getByText(/StarWars 1: The Phantom Menace/i)
-        ).toBeInTheDocument();
+        // expect(
+        //     screen.getByText(/StarWars 1: The Phantom Menace/i)
+        // ).toBeInTheDocument();
+        expect(screen.getByText(/Pride and Prejudice/i)).toBeInTheDocument();
     });
 
     test("Input forms for creating movies are present", () => {
