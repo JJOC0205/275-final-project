@@ -8,12 +8,36 @@ import { User } from "../interfaces/user";
 // import { UserListPair } from "../interfaces/UserListPair";
 
 describe("UserList Tests", () => {
-    const userMovies: Movie[] = [];
+    const userMovies: Movie[] = [
+        {
+            title: "The Dark Knight",
+            released: 2008,
+            runtime: 152,
+            watched: false,
+            description:
+                "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+            rating: 0,
+            genre: ["Action", "Crime", "Drama", "Thriller"],
+            poster: "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg"
+        }
+    ];
     const user: User = { name: "User1", id: 3, role: "user" };
     const userListPairs = [
         {
             username: "User1",
-            userList: []
+            userList: [
+                {
+                    title: "The Dark Knight",
+                    released: 2008,
+                    runtime: 152,
+                    watched: false,
+                    description:
+                        "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+                    rating: 0,
+                    genre: ["Action", "Crime", "Drama", "Thriller"],
+                    poster: "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg"
+                }
+            ]
         },
         {
             username: "User2",
@@ -57,5 +81,12 @@ describe("UserList Tests", () => {
     test("The UserList Drop Zone is present", () => {
         const dropZone = screen.getByTestId("movieDrop");
         expect(dropZone).toBeInTheDocument();
+    });
+
+    test("Clicking a movie will render the movie display", () => {
+        const userMovie = screen.getByRole("userMovie");
+        userMovie.click();
+        const movieDisplayTitle = screen.getByTestId("displayTitle");
+        expect(movieDisplayTitle.textContent).toEqual("The Dark Knight");
     });
 });

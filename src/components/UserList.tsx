@@ -272,6 +272,7 @@ export function UserList({
                             {userMovies.map((movie) => {
                                 return (
                                     <div
+                                        role="userMovie"
                                         className="ListItem"
                                         key={movie.title}
                                         style={{ marginRight: "30px" }}
@@ -316,7 +317,9 @@ export function UserList({
                                         marginLeft: "25px"
                                     }}
                                 >
-                                    <p>{movieDisplay.title}</p>
+                                    <p data-testID="displayTitle">
+                                        {movieDisplay.title}
+                                    </p>
                                     <p>Release Date: {movieDisplay.released}</p>
                                     <p>
                                         Runtime in Minutes:{" "}
