@@ -69,7 +69,19 @@ describe("AdminList Tests", () => {
     ];
 
     const user: User = { name: "Administrator", id: 1, role: "admin" };
-    const adminMovies: Movie[] = [];
+    const adminMovies: Movie[] = [
+        {
+            title: "KGF 2",
+            released: 2022,
+            runtime: 168,
+            watched: false,
+            description:
+                "Bad boy vs Powerful Government vs Winning a Girls Heart",
+            rating: 0,
+            genre: ["Action", "Crime", "Drama", "Thriller"],
+            poster: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/66ab0972-ff05-4650-9a8e-975bf16fe079/df3fxnw-f2efb7aa-086d-4a92-8294-9b3d499180d7.jpg/v1/fill/w_1280,h_1897,q_75,strp/kgf_chapter_2_poster_by_tyrionchandu_df3fxnw-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTg5NyIsInBhdGgiOiJcL2ZcLzY2YWIwOTcyLWZmMDUtNDY1MC05YThlLTk3NWJmMTZmZTA3OVwvZGYzZnhudy1mMmVmYjdhYS0wODZkLTRhOTItODI5NC05YjNkNDk5MTgwZDcuanBnIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.qPAKbbTXnfh-CYEzxsKJpJ0N_SkMOxCyogHwJSaLAlU"
+        }
+    ];
 
     beforeEach(() =>
         render(
@@ -110,5 +122,14 @@ describe("AdminList Tests", () => {
     test("Checkbox for editing watched movies is present", () => {
         const checkbox = screen.getByRole("checkbox");
         expect(checkbox).toBeInTheDocument();
+    });
+
+    test("Clicking a movie will render the movie display", () => {
+        const movies = screen.queryAllByRole("adminMovie");
+        const m = movies[0];
+        m.click();
+        const movieDisplayTitle = screen.getByTestId("displayTitle");
+        expect(movieDisplayTitle.textContent).toEqual("KGF 2");
+        expect(screen.getByText(/KGF 2/i)).toBeInTheDocument();
     });
 });
