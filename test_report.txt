@@ -2,136 +2,19 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test --coverage
 
-PASS src/tests/SuperList.test.tsx
-  ● Console
-
-    console.error
-      Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
-
-      72 |
-      73 |     beforeEach(() =>
-    > 74 |         render(
-         |         ^
-      75 |             <DndProvider backend={HTML5Backend}>
-      76 |                 <SuperList
-      77 |                     superMovies={superMovies}
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
-      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:29670:5)
-      at node_modules/@testing-library/react/dist/pure.js:101:25
-      at act (node_modules/react/cjs/react.development.js:2512:16)
-      at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/tests/SuperList.test.tsx:74:9)
-
-    console.error
-      Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
-
-      72 |
-      73 |     beforeEach(() =>
-    > 74 |         render(
-         |         ^
-      75 |             <DndProvider backend={HTML5Backend}>
-      76 |                 <SuperList
-      77 |                     superMovies={superMovies}
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
-      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:29670:5)
-      at node_modules/@testing-library/react/dist/pure.js:101:25
-      at act (node_modules/react/cjs/react.development.js:2512:16)
-      at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/tests/SuperList.test.tsx:74:9)
-
-    console.error
-      Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
-
-      72 |
-      73 |     beforeEach(() =>
-    > 74 |         render(
-         |         ^
-      75 |             <DndProvider backend={HTML5Backend}>
-      76 |                 <SuperList
-      77 |                     superMovies={superMovies}
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
-      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:29670:5)
-      at node_modules/@testing-library/react/dist/pure.js:101:25
-      at act (node_modules/react/cjs/react.development.js:2512:16)
-      at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/tests/SuperList.test.tsx:74:9)
-
-    console.error
-      Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
-
-      72 |
-      73 |     beforeEach(() =>
-    > 74 |         render(
-         |         ^
-      75 |             <DndProvider backend={HTML5Backend}>
-      76 |                 <SuperList
-      77 |                     superMovies={superMovies}
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
-      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:29670:5)
-      at node_modules/@testing-library/react/dist/pure.js:101:25
-      at act (node_modules/react/cjs/react.development.js:2512:16)
-      at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/tests/SuperList.test.tsx:74:9)
-
-    console.error
-      Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
-
-      72 |
-      73 |     beforeEach(() =>
-    > 74 |         render(
-         |         ^
-      75 |             <DndProvider backend={HTML5Backend}>
-      76 |                 <SuperList
-      77 |                     superMovies={superMovies}
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
-      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:29670:5)
-      at node_modules/@testing-library/react/dist/pure.js:101:25
-      at act (node_modules/react/cjs/react.development.js:2512:16)
-      at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/tests/SuperList.test.tsx:74:9)
-
-    console.error
-      Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
-
-      72 |
-      73 |     beforeEach(() =>
-    > 74 |         render(
-         |         ^
-      75 |             <DndProvider backend={HTML5Backend}>
-      76 |                 <SuperList
-      77 |                     superMovies={superMovies}
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
-      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:29670:5)
-      at node_modules/@testing-library/react/dist/pure.js:101:25
-      at act (node_modules/react/cjs/react.development.js:2512:16)
-      at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/tests/SuperList.test.tsx:74:9)
-
 PASS src/tests/AdminList.test.tsx
   ● Console
 
     console.error
       Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
 
-      73 |
-      74 |     beforeEach(() =>
-    > 75 |         render(
+      85 |
+      86 |     beforeEach(() =>
+    > 87 |         render(
          |         ^
-      76 |             <DndProvider backend={HTML5Backend}>
-      77 |                 <AdminList
-      78 |                     adminMovies={adminMovies}
+      88 |             <DndProvider backend={HTML5Backend}>
+      89 |                 <AdminList
+      90 |                     adminMovies={adminMovies}
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
@@ -139,18 +22,18 @@ PASS src/tests/AdminList.test.tsx
       at node_modules/@testing-library/react/dist/pure.js:101:25
       at act (node_modules/react/cjs/react.development.js:2512:16)
       at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/tests/AdminList.test.tsx:75:9)
+      at Object.<anonymous> (src/tests/AdminList.test.tsx:87:9)
 
     console.error
       Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
 
-      73 |
-      74 |     beforeEach(() =>
-    > 75 |         render(
+      85 |
+      86 |     beforeEach(() =>
+    > 87 |         render(
          |         ^
-      76 |             <DndProvider backend={HTML5Backend}>
-      77 |                 <AdminList
-      78 |                     adminMovies={adminMovies}
+      88 |             <DndProvider backend={HTML5Backend}>
+      89 |                 <AdminList
+      90 |                     adminMovies={adminMovies}
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
@@ -158,18 +41,18 @@ PASS src/tests/AdminList.test.tsx
       at node_modules/@testing-library/react/dist/pure.js:101:25
       at act (node_modules/react/cjs/react.development.js:2512:16)
       at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/tests/AdminList.test.tsx:75:9)
+      at Object.<anonymous> (src/tests/AdminList.test.tsx:87:9)
 
     console.error
       Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
 
-      73 |
-      74 |     beforeEach(() =>
-    > 75 |         render(
+      85 |
+      86 |     beforeEach(() =>
+    > 87 |         render(
          |         ^
-      76 |             <DndProvider backend={HTML5Backend}>
-      77 |                 <AdminList
-      78 |                     adminMovies={adminMovies}
+      88 |             <DndProvider backend={HTML5Backend}>
+      89 |                 <AdminList
+      90 |                     adminMovies={adminMovies}
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
@@ -177,18 +60,18 @@ PASS src/tests/AdminList.test.tsx
       at node_modules/@testing-library/react/dist/pure.js:101:25
       at act (node_modules/react/cjs/react.development.js:2512:16)
       at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/tests/AdminList.test.tsx:75:9)
+      at Object.<anonymous> (src/tests/AdminList.test.tsx:87:9)
 
     console.error
       Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
 
-      73 |
-      74 |     beforeEach(() =>
-    > 75 |         render(
+      85 |
+      86 |     beforeEach(() =>
+    > 87 |         render(
          |         ^
-      76 |             <DndProvider backend={HTML5Backend}>
-      77 |                 <AdminList
-      78 |                     adminMovies={adminMovies}
+      88 |             <DndProvider backend={HTML5Backend}>
+      89 |                 <AdminList
+      90 |                     adminMovies={adminMovies}
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
@@ -196,18 +79,18 @@ PASS src/tests/AdminList.test.tsx
       at node_modules/@testing-library/react/dist/pure.js:101:25
       at act (node_modules/react/cjs/react.development.js:2512:16)
       at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/tests/AdminList.test.tsx:75:9)
+      at Object.<anonymous> (src/tests/AdminList.test.tsx:87:9)
 
     console.error
       Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
 
-      73 |
-      74 |     beforeEach(() =>
-    > 75 |         render(
+      85 |
+      86 |     beforeEach(() =>
+    > 87 |         render(
          |         ^
-      76 |             <DndProvider backend={HTML5Backend}>
-      77 |                 <AdminList
-      78 |                     adminMovies={adminMovies}
+      88 |             <DndProvider backend={HTML5Backend}>
+      89 |                 <AdminList
+      90 |                     adminMovies={adminMovies}
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
@@ -215,7 +98,26 @@ PASS src/tests/AdminList.test.tsx
       at node_modules/@testing-library/react/dist/pure.js:101:25
       at act (node_modules/react/cjs/react.development.js:2512:16)
       at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/tests/AdminList.test.tsx:75:9)
+      at Object.<anonymous> (src/tests/AdminList.test.tsx:87:9)
+
+    console.error
+      Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
+
+      85 |
+      86 |     beforeEach(() =>
+    > 87 |         render(
+         |         ^
+      88 |             <DndProvider backend={HTML5Backend}>
+      89 |                 <AdminList
+      90 |                     adminMovies={adminMovies}
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:29670:5)
+      at node_modules/@testing-library/react/dist/pure.js:101:25
+      at act (node_modules/react/cjs/react.development.js:2512:16)
+      at render (node_modules/@testing-library/react/dist/pure.js:97:26)
+      at Object.<anonymous> (src/tests/AdminList.test.tsx:87:9)
 
 PASS src/tests/CentralItemList.test.tsx
   ● Console
@@ -319,23 +221,6 @@ PASS src/tests/SuperAddUser.test.tsx
       at Object.<anonymous> (src/tests/SuperAddUser.test.tsx:48:9)
 
     console.error
-      Warning: React does not recognize the `data-testID` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `data-testid` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
-          at button
-          at div
-          at div
-          at SuperAddUser (/home/runner/work/275-final-project/275-final-project/src/components/SuperAddUser.tsx:9:5)
-          at DndProvider (/home/runner/work/275-final-project/275-final-project/node_modules/react-dnd/src/core/DndProvider.tsx:28:25)
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
-      at validateProperty$1 (node_modules/react-dom/cjs/react-dom.development.js:3757:7)
-      at warnUnknownProperties (node_modules/react-dom/cjs/react-dom.development.js:3803:21)
-      at validateProperties$2 (node_modules/react-dom/cjs/react-dom.development.js:3827:3)
-      at validatePropertiesInDevelopment (node_modules/react-dom/cjs/react-dom.development.js:9541:5)
-      at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9830:5)
-      at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10950:3)
-
-    console.error
       Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
 
       46 |
@@ -429,6 +314,288 @@ PASS src/tests/SuperAddUser.test.tsx
       at act (node_modules/react/cjs/react.development.js:2512:16)
       at render (node_modules/@testing-library/react/dist/pure.js:97:26)
       at Object.<anonymous> (src/tests/SuperAddUser.test.tsx:48:9)
+
+PASS src/tests/UserList.test.tsx
+  ● Console
+
+    console.error
+      Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
+
+      48 |     const setUserListPairs = jest.fn();
+      49 |     beforeEach(() =>
+    > 50 |         render(
+         |         ^
+      51 |             <DndProvider backend={HTML5Backend}>
+      52 |                 <UserList
+      53 |                     userMovies={userMovies}
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:29670:5)
+      at node_modules/@testing-library/react/dist/pure.js:101:25
+      at act (node_modules/react/cjs/react.development.js:2512:16)
+      at render (node_modules/@testing-library/react/dist/pure.js:97:26)
+      at Object.<anonymous> (src/tests/UserList.test.tsx:50:9)
+
+    console.error
+      Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
+
+      48 |     const setUserListPairs = jest.fn();
+      49 |     beforeEach(() =>
+    > 50 |         render(
+         |         ^
+      51 |             <DndProvider backend={HTML5Backend}>
+      52 |                 <UserList
+      53 |                     userMovies={userMovies}
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:29670:5)
+      at node_modules/@testing-library/react/dist/pure.js:101:25
+      at act (node_modules/react/cjs/react.development.js:2512:16)
+      at render (node_modules/@testing-library/react/dist/pure.js:97:26)
+      at Object.<anonymous> (src/tests/UserList.test.tsx:50:9)
+
+    console.error
+      Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
+
+      48 |     const setUserListPairs = jest.fn();
+      49 |     beforeEach(() =>
+    > 50 |         render(
+         |         ^
+      51 |             <DndProvider backend={HTML5Backend}>
+      52 |                 <UserList
+      53 |                     userMovies={userMovies}
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:29670:5)
+      at node_modules/@testing-library/react/dist/pure.js:101:25
+      at act (node_modules/react/cjs/react.development.js:2512:16)
+      at render (node_modules/@testing-library/react/dist/pure.js:97:26)
+      at Object.<anonymous> (src/tests/UserList.test.tsx:50:9)
+
+    console.error
+      Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
+
+      48 |     const setUserListPairs = jest.fn();
+      49 |     beforeEach(() =>
+    > 50 |         render(
+         |         ^
+      51 |             <DndProvider backend={HTML5Backend}>
+      52 |                 <UserList
+      53 |                     userMovies={userMovies}
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:29670:5)
+      at node_modules/@testing-library/react/dist/pure.js:101:25
+      at act (node_modules/react/cjs/react.development.js:2512:16)
+      at render (node_modules/@testing-library/react/dist/pure.js:97:26)
+      at Object.<anonymous> (src/tests/UserList.test.tsx:50:9)
+
+    console.error
+      Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
+
+      48 |     const setUserListPairs = jest.fn();
+      49 |     beforeEach(() =>
+    > 50 |         render(
+         |         ^
+      51 |             <DndProvider backend={HTML5Backend}>
+      52 |                 <UserList
+      53 |                     userMovies={userMovies}
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:29670:5)
+      at node_modules/@testing-library/react/dist/pure.js:101:25
+      at act (node_modules/react/cjs/react.development.js:2512:16)
+      at render (node_modules/@testing-library/react/dist/pure.js:97:26)
+      at Object.<anonymous> (src/tests/UserList.test.tsx:50:9)
+
+    console.error
+      Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
+
+      48 |     const setUserListPairs = jest.fn();
+      49 |     beforeEach(() =>
+    > 50 |         render(
+         |         ^
+      51 |             <DndProvider backend={HTML5Backend}>
+      52 |                 <UserList
+      53 |                     userMovies={userMovies}
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:29670:5)
+      at node_modules/@testing-library/react/dist/pure.js:101:25
+      at act (node_modules/react/cjs/react.development.js:2512:16)
+      at render (node_modules/@testing-library/react/dist/pure.js:97:26)
+      at Object.<anonymous> (src/tests/UserList.test.tsx:50:9)
+
+PASS src/tests/SuperList.test.tsx
+  ● Console
+
+    console.error
+      Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
+
+      17 |
+      18 |     beforeEach(() =>
+    > 19 |         render(
+         |         ^
+      20 |             <DndProvider backend={HTML5Backend}>
+      21 |                 <SuperList
+      22 |                     superMovies={superMovies}
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:29670:5)
+      at node_modules/@testing-library/react/dist/pure.js:101:25
+      at act (node_modules/react/cjs/react.development.js:2512:16)
+      at render (node_modules/@testing-library/react/dist/pure.js:97:26)
+      at Object.<anonymous> (src/tests/SuperList.test.tsx:19:9)
+
+    console.error
+      Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
+
+      17 |
+      18 |     beforeEach(() =>
+    > 19 |         render(
+         |         ^
+      20 |             <DndProvider backend={HTML5Backend}>
+      21 |                 <SuperList
+      22 |                     superMovies={superMovies}
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:29670:5)
+      at node_modules/@testing-library/react/dist/pure.js:101:25
+      at act (node_modules/react/cjs/react.development.js:2512:16)
+      at render (node_modules/@testing-library/react/dist/pure.js:97:26)
+      at Object.<anonymous> (src/tests/SuperList.test.tsx:19:9)
+
+    console.error
+      Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
+
+      17 |
+      18 |     beforeEach(() =>
+    > 19 |         render(
+         |         ^
+      20 |             <DndProvider backend={HTML5Backend}>
+      21 |                 <SuperList
+      22 |                     superMovies={superMovies}
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:29670:5)
+      at node_modules/@testing-library/react/dist/pure.js:101:25
+      at act (node_modules/react/cjs/react.development.js:2512:16)
+      at render (node_modules/@testing-library/react/dist/pure.js:97:26)
+      at Object.<anonymous> (src/tests/SuperList.test.tsx:19:9)
+
+    console.log
+      Pride & Prejudice
+
+      at removeMovie (src/components/SuperList.tsx:16:17)
+
+    console.log
+      Pride & Prejudice
+
+      at removeMovie (src/components/SuperList.tsx:22:17)
+
+    console.error
+      Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
+
+      17 |
+      18 |     beforeEach(() =>
+    > 19 |         render(
+         |         ^
+      20 |             <DndProvider backend={HTML5Backend}>
+      21 |                 <SuperList
+      22 |                     superMovies={superMovies}
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:29670:5)
+      at node_modules/@testing-library/react/dist/pure.js:101:25
+      at act (node_modules/react/cjs/react.development.js:2512:16)
+      at render (node_modules/@testing-library/react/dist/pure.js:97:26)
+      at Object.<anonymous> (src/tests/SuperList.test.tsx:19:9)
+
+    console.error
+      Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
+
+      17 |
+      18 |     beforeEach(() =>
+    > 19 |         render(
+         |         ^
+      20 |             <DndProvider backend={HTML5Backend}>
+      21 |                 <SuperList
+      22 |                     superMovies={superMovies}
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:29670:5)
+      at node_modules/@testing-library/react/dist/pure.js:101:25
+      at act (node_modules/react/cjs/react.development.js:2512:16)
+      at render (node_modules/@testing-library/react/dist/pure.js:97:26)
+      at Object.<anonymous> (src/tests/SuperList.test.tsx:19:9)
+
+    console.error
+      Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
+
+      17 |
+      18 |     beforeEach(() =>
+    > 19 |         render(
+         |         ^
+      20 |             <DndProvider backend={HTML5Backend}>
+      21 |                 <SuperList
+      22 |                     superMovies={superMovies}
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:29670:5)
+      at node_modules/@testing-library/react/dist/pure.js:101:25
+      at act (node_modules/react/cjs/react.development.js:2512:16)
+      at render (node_modules/@testing-library/react/dist/pure.js:97:26)
+      at Object.<anonymous> (src/tests/SuperList.test.tsx:19:9)
+
+    console.error
+      Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
+
+      17 |
+      18 |     beforeEach(() =>
+    > 19 |         render(
+         |         ^
+      20 |             <DndProvider backend={HTML5Backend}>
+      21 |                 <SuperList
+      22 |                     superMovies={superMovies}
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:29670:5)
+      at node_modules/@testing-library/react/dist/pure.js:101:25
+      at act (node_modules/react/cjs/react.development.js:2512:16)
+      at render (node_modules/@testing-library/react/dist/pure.js:97:26)
+      at Object.<anonymous> (src/tests/SuperList.test.tsx:19:9)
+
+    console.error
+      Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
+
+      17 |
+      18 |     beforeEach(() =>
+    > 19 |         render(
+         |         ^
+      20 |             <DndProvider backend={HTML5Backend}>
+      21 |                 <SuperList
+      22 |                     superMovies={superMovies}
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:29670:5)
+      at node_modules/@testing-library/react/dist/pure.js:101:25
+      at act (node_modules/react/cjs/react.development.js:2512:16)
+      at render (node_modules/@testing-library/react/dist/pure.js:97:26)
+      at Object.<anonymous> (src/tests/SuperList.test.tsx:19:9)
 
 PASS src/tests/UserSelect.test.tsx
   ● Console
@@ -543,121 +710,6 @@ PASS src/tests/UserSelect.test.tsx
 
       at setCurrentUser (src/components/UserSelect.tsx:27:21)
 
-PASS src/tests/UserList.test.tsx
-  ● Console
-
-    console.error
-      Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
-
-      24 |     const setUserListPairs = jest.fn();
-      25 |     beforeEach(() =>
-    > 26 |         render(
-         |         ^
-      27 |             <DndProvider backend={HTML5Backend}>
-      28 |                 <UserList
-      29 |                     userMovies={userMovies}
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
-      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:29670:5)
-      at node_modules/@testing-library/react/dist/pure.js:101:25
-      at act (node_modules/react/cjs/react.development.js:2512:16)
-      at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/tests/UserList.test.tsx:26:9)
-
-    console.error
-      Warning: React does not recognize the `data-testID` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `data-testid` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
-          at div
-          at div
-          at div
-          at UserList (/home/runner/work/275-final-project/275-final-project/src/components/UserList.tsx:11:5)
-          at DndProvider (/home/runner/work/275-final-project/275-final-project/node_modules/react-dnd/src/core/DndProvider.tsx:28:25)
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
-      at validateProperty$1 (node_modules/react-dom/cjs/react-dom.development.js:3757:7)
-      at warnUnknownProperties (node_modules/react-dom/cjs/react-dom.development.js:3803:21)
-      at validateProperties$2 (node_modules/react-dom/cjs/react-dom.development.js:3827:3)
-      at validatePropertiesInDevelopment (node_modules/react-dom/cjs/react-dom.development.js:9541:5)
-      at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9830:5)
-      at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10950:3)
-
-    console.error
-      Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
-
-      24 |     const setUserListPairs = jest.fn();
-      25 |     beforeEach(() =>
-    > 26 |         render(
-         |         ^
-      27 |             <DndProvider backend={HTML5Backend}>
-      28 |                 <UserList
-      29 |                     userMovies={userMovies}
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
-      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:29670:5)
-      at node_modules/@testing-library/react/dist/pure.js:101:25
-      at act (node_modules/react/cjs/react.development.js:2512:16)
-      at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/tests/UserList.test.tsx:26:9)
-
-    console.error
-      Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
-
-      24 |     const setUserListPairs = jest.fn();
-      25 |     beforeEach(() =>
-    > 26 |         render(
-         |         ^
-      27 |             <DndProvider backend={HTML5Backend}>
-      28 |                 <UserList
-      29 |                     userMovies={userMovies}
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
-      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:29670:5)
-      at node_modules/@testing-library/react/dist/pure.js:101:25
-      at act (node_modules/react/cjs/react.development.js:2512:16)
-      at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/tests/UserList.test.tsx:26:9)
-
-    console.error
-      Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
-
-      24 |     const setUserListPairs = jest.fn();
-      25 |     beforeEach(() =>
-    > 26 |         render(
-         |         ^
-      27 |             <DndProvider backend={HTML5Backend}>
-      28 |                 <UserList
-      29 |                     userMovies={userMovies}
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
-      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:29670:5)
-      at node_modules/@testing-library/react/dist/pure.js:101:25
-      at act (node_modules/react/cjs/react.development.js:2512:16)
-      at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/tests/UserList.test.tsx:26:9)
-
-    console.error
-      Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
-
-      24 |     const setUserListPairs = jest.fn();
-      25 |     beforeEach(() =>
-    > 26 |         render(
-         |         ^
-      27 |             <DndProvider backend={HTML5Backend}>
-      28 |                 <UserList
-      29 |                     userMovies={userMovies}
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
-      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:29670:5)
-      at node_modules/@testing-library/react/dist/pure.js:101:25
-      at act (node_modules/react/cjs/react.development.js:2512:16)
-      at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/tests/UserList.test.tsx:26:9)
-
 PASS src/tests/moviePoster.test.tsx
   ● Console
 
@@ -702,52 +754,32 @@ PASS src/tests/App.test.tsx
       at render (node_modules/@testing-library/react/dist/pure.js:97:26)
       at Object.<anonymous> (src/tests/App.test.tsx:6:5)
 
-    console.error
-      Warning: React does not recognize the `data-testID` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `data-testid` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
-          at button
-          at div
-          at div
-          at SuperAddUser (/home/runner/work/275-final-project/275-final-project/src/components/SuperAddUser.tsx:9:5)
-          at div
-          at DndProvider (/home/runner/work/275-final-project/275-final-project/node_modules/react-dnd/src/core/DndProvider.tsx:28:25)
-          at div
-          at App (/home/runner/work/275-final-project/275-final-project/src/App.tsx:65:43)
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
-      at validateProperty$1 (node_modules/react-dom/cjs/react-dom.development.js:3757:7)
-      at warnUnknownProperties (node_modules/react-dom/cjs/react-dom.development.js:3803:21)
-      at validateProperties$2 (node_modules/react-dom/cjs/react-dom.development.js:3827:3)
-      at validatePropertiesInDevelopment (node_modules/react-dom/cjs/react-dom.development.js:9541:5)
-      at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9830:5)
-      at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10950:3)
-
-----------------------|---------|----------|---------|---------|------------------------------------------
-File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                        
-----------------------|---------|----------|---------|---------|------------------------------------------
-All files             |    29.6 |    21.79 |   19.54 |   30.03 |                                          
- src                  |     100 |       75 |     100 |     100 |                                          
-  App.tsx             |     100 |       75 |     100 |     100 | 128,148                                  
- src/components       |   26.33 |    15.71 |   17.82 |   26.74 |                                          
-  AdminList.tsx       |   22.58 |     8.33 |   11.53 |   22.95 | 21-29,34,62-70,76-117,157-159,243-331    
-  CentralItemList.tsx |   53.84 |    55.55 |   46.66 |   53.84 | 19-30,69-101,122                         
-  SuperAddUser.tsx    |   19.04 |        0 |    9.09 |   19.04 | 20-40,51-87                              
-  SuperList.tsx       |   21.21 |     12.5 |    9.09 |   21.87 | 16-20,45-53,68-93,99-133,172-272,368-463 
-  UserList.tsx        |   12.32 |     6.25 |    7.89 |    12.5 | 30-33,43-163,169,248-279,370-408         
-  UserSelect.tsx      |     100 |      100 |     100 |     100 |                                          
-  moviePoster.tsx     |     100 |      100 |     100 |     100 |                                          
- src/data             |      50 |      100 |      50 |      50 |                                          
-  MovieList.tsx       |       0 |      100 |       0 |       0 | 4-5                                      
-  UsersList.tsx       |     100 |      100 |     100 |     100 |                                          
- src/interfaces       |     100 |      100 |     100 |     100 |                                          
-  MovieTypes.tsx      |     100 |      100 |     100 |     100 |                                          
-  UserListPair.tsx    |     100 |      100 |     100 |     100 |                                          
-  movie.ts            |       0 |        0 |       0 |       0 |                                          
-  user.ts             |       0 |        0 |       0 |       0 |                                          
-----------------------|---------|----------|---------|---------|------------------------------------------
+----------------------|---------|----------|---------|---------|-------------------------------
+File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s             
+----------------------|---------|----------|---------|---------|-------------------------------
+All files             |   42.64 |    22.97 |   28.24 |   43.28 |                               
+ src                  |     100 |       75 |     100 |     100 |                               
+  App.tsx             |     100 |       75 |     100 |     100 | 128,148                       
+ src/components       |   40.07 |    16.66 |   26.77 |   40.71 |                               
+  AdminList.tsx       |   40.32 |     8.33 |   23.07 |   40.98 | 21-29,34,76-117,246-334       
+  CentralItemList.tsx |   53.84 |    55.55 |   46.66 |   53.84 | 19-30,69-101,122              
+  SuperAddUser.tsx    |   19.04 |        0 |    9.09 |   19.04 | 20-40,51-87                   
+  SuperList.tsx       |   45.58 |     12.5 |   24.24 |   46.96 | 70-95,101-135,211-275,373-468 
+  UserList.tsx        |   22.72 |     7.14 |   16.66 |   23.07 | 43-164,170,249,375-413        
+  UserSelect.tsx      |     100 |      100 |     100 |     100 |                               
+  moviePoster.tsx     |     100 |      100 |     100 |     100 |                               
+ src/data             |      50 |      100 |      50 |      50 |                               
+  MovieList.tsx       |       0 |      100 |       0 |       0 | 4-5                           
+  UsersList.tsx       |     100 |      100 |     100 |     100 |                               
+ src/interfaces       |     100 |      100 |     100 |     100 |                               
+  MovieTypes.tsx      |     100 |      100 |     100 |     100 |                               
+  UserListPair.tsx    |     100 |      100 |     100 |     100 |                               
+  movie.ts            |       0 |        0 |       0 |       0 |                               
+  user.ts             |       0 |        0 |       0 |       0 |                               
+----------------------|---------|----------|---------|---------|-------------------------------
 
 Test Suites: 8 passed, 8 total
-Tests:       33 passed, 33 total
+Tests:       37 passed, 37 total
 Snapshots:   0 total
-Time:        8.653 s
+Time:        8.508 s
 Ran all test suites.
