@@ -1,12 +1,12 @@
 import React from "react";
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { SuperList } from "../components/SuperList";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { Movie } from "../interfaces/movie";
 import { User } from "../interfaces/user";
 import testMovies from "../data/movies.json";
-import userEvent from "@testing-library/user-event";
+// import userEvent from "@testing-library/user-event";
 
 describe("SuperList Tests", () => {
     const superMovies: Movie[] = testMovies;
@@ -41,7 +41,8 @@ describe("SuperList Tests", () => {
     test("Remove Movie Button removes movie from Super List", async () => {
         const removeButton = screen.queryAllByRole("removeMovieButton")[1];
         removeButton.click();
-        expect(screen.getByText(/Star Wars: Episode 1 - The Phantom Menace/i)).toBeInTheDocument();
+        expect(screen.getByText(/Star Wars: Episode 1 - The Phantom Menace/i))
+        .toBeInTheDocument();
     });
 
     test("Input forms for creating movies are present", () => {
