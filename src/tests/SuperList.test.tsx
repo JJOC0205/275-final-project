@@ -41,8 +41,9 @@ describe("SuperList Tests", () => {
     test("Remove Movie Button removes movie from Super List", async () => {
         const removeButton = screen.queryAllByRole("removeMovieButton")[1];
         removeButton.click();
-        expect(screen.getByText(/Star Wars: Episode 1 - The Phantom Menace/i))
-        .toBeInTheDocument();
+        expect(
+            screen.getByText(/Star Wars: Episode 1 - The Phantom Menace/i)
+        ).toBeInTheDocument();
     });
 
     test("Input forms for creating movies are present", () => {
