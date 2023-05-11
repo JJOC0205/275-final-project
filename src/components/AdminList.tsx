@@ -84,9 +84,11 @@ export function AdminList({
     }
 
     function removeGenre(genreToRemove: string) {
-        const updatedGenre = genre.filter((item) => item !== genreToRemove);
-        setGenre(updatedGenre);
-        setGenreInput("");
+        if (genre.length > 1) {
+            const updatedGenre = genre.filter((item) => item !== genreToRemove);
+            setGenre(updatedGenre);
+            setGenreInput("");
+        }
     }
 
     function replaceMovieEdit() {

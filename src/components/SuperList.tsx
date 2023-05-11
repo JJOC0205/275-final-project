@@ -14,12 +14,12 @@ export function SuperList({
 }: superMovies): JSX.Element {
     function removeMovie(movie: Movie) {
         console.log(movie.title);
-        const updatedMovies = superMovies.filter(
-            (m) => m.title !== movie.title
-        );
+        const superCopy = [...superMovies];
+        const updatedMovies = superCopy.filter((m) => m.title !== movie.title);
         setSuperMovies(updatedMovies);
         setCilMovies(updatedMovies);
-        console.log(superMovies[0].title);
+        console.log("First Movie in Super List: " + superMovies[0].title);
+        console.log("First Movie in Updated Movies: " + updatedMovies[0].title);
     }
 
     const [movieDisplay, setMovieDisplay] = useState<Movie>({
@@ -63,7 +63,7 @@ export function SuperList({
         description: "",
         rating: 0,
         poster: "",
-        genre: []
+        genre: ["No Genre Yet"]
     });
 
     function addMovie() {
@@ -83,14 +83,14 @@ export function SuperList({
 
     function createNewMovie() {
         const newMovie = {
-            title,
-            released,
-            runtime,
-            watched,
-            description,
-            rating,
-            poster,
-            genre: [...genre]
+            title: title,
+            released: released,
+            runtime: runtime,
+            watched: watched,
+            description: description,
+            rating: rating,
+            poster: poster,
+            genre: ["No Genre Yet"]
         };
         setNewMovie(newMovie);
     }
@@ -109,9 +109,11 @@ export function SuperList({
     }
 
     function removeGenre(genreToRemove: string) {
-        const updatedGenre = genre.filter((item) => item !== genreToRemove);
-        setGenre(updatedGenre);
-        setGenreInput("");
+        if (genre.length > 1) {
+            const updatedGenre = genre.filter((item) => item !== genreToRemove);
+            setGenre(updatedGenre);
+            setGenreInput("");
+        }
     }
 
     function replaceMovieEdit() {
@@ -123,7 +125,7 @@ export function SuperList({
             description,
             rating,
             poster,
-            genre
+            genre: [...genre]
         };
         const updatedSuperList = superMovies.map((movie) => {
             if (movie.title === movieDisplay.title) {
@@ -155,7 +157,7 @@ export function SuperList({
                             marginTop: "25px"
                         }}
                     >
-                        <Stack
+                        <Stack /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////SUPER LIST STARTS
                             direction="horizontal"
                             gap={4}
                             style={{
@@ -192,7 +194,7 @@ export function SuperList({
                                 </div>
                             ))}
                         </Stack>
-                        <div
+                        <div /////////////////////////////////////////////////////////////////////////////////////////////////////////CREATE MOVIE STARTS
                             style={{
                                 display: "flex",
                                 flexDirection: "column",
@@ -212,21 +214,21 @@ export function SuperList({
                                 style={{ marginBottom: "5px" }}
                             />
                             <input
-                                role="createMovie"
                                 type="number"
-                                placeholder="Enter Release Date"
+                                value={released}
                                 onChange={(e) =>
                                     setReleased(parseInt(e.target.value))
                                 }
+                                placeholder="Enter Release Year"
                                 style={{ marginBottom: "5px" }}
                             />
                             <input
-                                role="createMovie"
                                 type="number"
-                                placeholder="Enter Runtime (minutes)"
+                                value={runtime}
                                 onChange={(e) =>
                                     setRuntime(parseInt(e.target.value))
                                 }
+                                placeholder="Enter Runtime (minutes)"
                                 style={{ marginBottom: "5px" }}
                             />
                             <div
@@ -260,12 +262,12 @@ export function SuperList({
                                 style={{ marginBottom: "5px" }}
                             />
                             <input
-                                role="createMovie"
                                 type="number"
-                                placeholder="Enter Rating"
+                                value={rating}
                                 onChange={(e) =>
                                     setRating(parseInt(e.target.value))
                                 }
+                                placeholder="Enter Rating"
                                 style={{ marginBottom: "5px" }}
                             />
                             <input
@@ -284,16 +286,19 @@ export function SuperList({
                             >
                                 <button
                                     role="createNewMovie"
-                                    onClick={createNewMovie}
+                                    onClick={() => createNewMovie()}
                                 >
                                     Create New Movie
                                 </button>
-                                <button role="addNewMovie" onClick={addMovie}>
+                                <button
+                                    role="addNewMovie"
+                                    onClick={() => addMovie()}
+                                >
                                     Add Movie
                                 </button>
                             </div>
                         </div>
-                        <div
+                        <div ////////////////////////////////////////////////////////////////////////////////////////////////////////MOVIE DISPLAY STARTS
                             style={{
                                 marginLeft: "25px",
                                 backgroundColor: "coral",
@@ -369,7 +374,7 @@ export function SuperList({
                             >
                                 <input
                                     type="text"
-                                    value={title}
+                                    value={""}
                                     onChange={(e) => setTitle(e.target.value)}
                                     placeholder="Enter Title"
                                     style={{ marginBottom: "5px" }}
