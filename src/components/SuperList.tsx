@@ -157,7 +157,7 @@ export function SuperList({
                             marginTop: "25px"
                         }}
                     >
-                        <Stack
+                        <Stack //SUPER LIST STARTS
                             direction="horizontal"
                             gap={4}
                             style={{
@@ -194,7 +194,7 @@ export function SuperList({
                                 </div>
                             ))}
                         </Stack>
-                        <div
+                        <div /////////////////////////////////////////////////////////////////////////////////////////////////////////CREATE MOVIE STARTS
                             style={{
                                 display: "flex",
                                 flexDirection: "column",
@@ -214,21 +214,21 @@ export function SuperList({
                                 style={{ marginBottom: "5px" }}
                             />
                             <input
-                                role="createMovie"
                                 type="number"
-                                placeholder="Enter Release Date"
+                                value={released}
                                 onChange={(e) =>
                                     setReleased(parseInt(e.target.value))
                                 }
+                                placeholder="Enter Release Year"
                                 style={{ marginBottom: "5px" }}
                             />
                             <input
-                                role="createMovie"
                                 type="number"
-                                placeholder="Enter Runtime (minutes)"
+                                value={runtime}
                                 onChange={(e) =>
                                     setRuntime(parseInt(e.target.value))
                                 }
+                                placeholder="Enter Runtime (minutes)"
                                 style={{ marginBottom: "5px" }}
                             />
                             <div
@@ -262,12 +262,12 @@ export function SuperList({
                                 style={{ marginBottom: "5px" }}
                             />
                             <input
-                                role="createMovie"
                                 type="number"
-                                placeholder="Enter Rating"
+                                value={rating}
                                 onChange={(e) =>
                                     setRating(parseInt(e.target.value))
                                 }
+                                placeholder="Enter Rating"
                                 style={{ marginBottom: "5px" }}
                             />
                             <input
@@ -298,7 +298,7 @@ export function SuperList({
                                 </button>
                             </div>
                         </div>
-                        <div
+                        <div ////////////////////////////////////////////////////////////////////////////////////////////////////////MOVIE DISPLAY STARTS
                             style={{
                                 marginLeft: "25px",
                                 backgroundColor: "coral",
