@@ -3,7 +3,6 @@ import { render, screen } from "@testing-library/react";
 import { CentralItemList } from "../components/CentralItemList";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-// import { Movie } from "../interfaces/movie";
 
 describe("CIL Tests", () => {
     const setCilMovies = jest.fn();
