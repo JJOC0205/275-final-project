@@ -125,13 +125,13 @@ PASS src/tests/CentralItemList.test.tsx
     console.error
       Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
 
-      67 |
-      68 |     beforeEach(() =>
-    > 69 |         render(
+      66 |
+      67 |     beforeEach(() =>
+    > 68 |         render(
          |         ^
-      70 |             <DndProvider backend={HTML5Backend}>
-      71 |                 <CentralItemList
-      72 |                     cilMovies={cilMovies}
+      69 |             <DndProvider backend={HTML5Backend}>
+      70 |                 <CentralItemList
+      71 |                     cilMovies={cilMovies}
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
@@ -139,18 +139,18 @@ PASS src/tests/CentralItemList.test.tsx
       at node_modules/@testing-library/react/dist/pure.js:101:25
       at act (node_modules/react/cjs/react.development.js:2512:16)
       at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/tests/CentralItemList.test.tsx:69:9)
+      at Object.<anonymous> (src/tests/CentralItemList.test.tsx:68:9)
 
     console.error
       Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
 
-      67 |
-      68 |     beforeEach(() =>
-    > 69 |         render(
+      66 |
+      67 |     beforeEach(() =>
+    > 68 |         render(
          |         ^
-      70 |             <DndProvider backend={HTML5Backend}>
-      71 |                 <CentralItemList
-      72 |                     cilMovies={cilMovies}
+      69 |             <DndProvider backend={HTML5Backend}>
+      70 |                 <CentralItemList
+      71 |                     cilMovies={cilMovies}
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
@@ -158,18 +158,18 @@ PASS src/tests/CentralItemList.test.tsx
       at node_modules/@testing-library/react/dist/pure.js:101:25
       at act (node_modules/react/cjs/react.development.js:2512:16)
       at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/tests/CentralItemList.test.tsx:69:9)
+      at Object.<anonymous> (src/tests/CentralItemList.test.tsx:68:9)
 
     console.error
       Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
 
-      67 |
-      68 |     beforeEach(() =>
-    > 69 |         render(
+      66 |
+      67 |     beforeEach(() =>
+    > 68 |         render(
          |         ^
-      70 |             <DndProvider backend={HTML5Backend}>
-      71 |                 <CentralItemList
-      72 |                     cilMovies={cilMovies}
+      69 |             <DndProvider backend={HTML5Backend}>
+      70 |                 <CentralItemList
+      71 |                     cilMovies={cilMovies}
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
@@ -177,18 +177,18 @@ PASS src/tests/CentralItemList.test.tsx
       at node_modules/@testing-library/react/dist/pure.js:101:25
       at act (node_modules/react/cjs/react.development.js:2512:16)
       at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/tests/CentralItemList.test.tsx:69:9)
+      at Object.<anonymous> (src/tests/CentralItemList.test.tsx:68:9)
 
     console.error
       Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
 
-      67 |
-      68 |     beforeEach(() =>
-    > 69 |         render(
+      66 |
+      67 |     beforeEach(() =>
+    > 68 |         render(
          |         ^
-      70 |             <DndProvider backend={HTML5Backend}>
-      71 |                 <CentralItemList
-      72 |                     cilMovies={cilMovies}
+      69 |             <DndProvider backend={HTML5Backend}>
+      70 |                 <CentralItemList
+      71 |                     cilMovies={cilMovies}
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
@@ -196,7 +196,7 @@ PASS src/tests/CentralItemList.test.tsx
       at node_modules/@testing-library/react/dist/pure.js:101:25
       at act (node_modules/react/cjs/react.development.js:2512:16)
       at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/tests/CentralItemList.test.tsx:69:9)
+      at Object.<anonymous> (src/tests/CentralItemList.test.tsx:68:9)
 
 PASS src/tests/SuperAddUser.test.tsx
   ● Console
@@ -438,13 +438,13 @@ PASS src/tests/SuperList.test.tsx
     console.error
       Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
 
-      17 |
-      18 |     beforeEach(() =>
-    > 19 |         render(
+      18 |
+      19 |     beforeEach(() =>
+    > 20 |         render(
          |         ^
-      20 |             <DndProvider backend={HTML5Backend}>
-      21 |                 <SuperList
-      22 |                     superMovies={superMovies}
+      21 |             <DndProvider backend={HTML5Backend}>
+      22 |                 <SuperList
+      23 |                     superMovies={superMovies}
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
@@ -452,18 +452,18 @@ PASS src/tests/SuperList.test.tsx
       at node_modules/@testing-library/react/dist/pure.js:101:25
       at act (node_modules/react/cjs/react.development.js:2512:16)
       at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/tests/SuperList.test.tsx:19:9)
+      at Object.<anonymous> (src/tests/SuperList.test.tsx:20:9)
 
     console.error
       Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
 
-      17 |
-      18 |     beforeEach(() =>
-    > 19 |         render(
+      18 |
+      19 |     beforeEach(() =>
+    > 20 |         render(
          |         ^
-      20 |             <DndProvider backend={HTML5Backend}>
-      21 |                 <SuperList
-      22 |                     superMovies={superMovies}
+      21 |             <DndProvider backend={HTML5Backend}>
+      22 |                 <SuperList
+      23 |                     superMovies={superMovies}
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
@@ -471,18 +471,18 @@ PASS src/tests/SuperList.test.tsx
       at node_modules/@testing-library/react/dist/pure.js:101:25
       at act (node_modules/react/cjs/react.development.js:2512:16)
       at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/tests/SuperList.test.tsx:19:9)
+      at Object.<anonymous> (src/tests/SuperList.test.tsx:20:9)
 
     console.error
       Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
 
-      17 |
-      18 |     beforeEach(() =>
-    > 19 |         render(
+      18 |
+      19 |     beforeEach(() =>
+    > 20 |         render(
          |         ^
-      20 |             <DndProvider backend={HTML5Backend}>
-      21 |                 <SuperList
-      22 |                     superMovies={superMovies}
+      21 |             <DndProvider backend={HTML5Backend}>
+      22 |                 <SuperList
+      23 |                     superMovies={superMovies}
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
@@ -490,28 +490,33 @@ PASS src/tests/SuperList.test.tsx
       at node_modules/@testing-library/react/dist/pure.js:101:25
       at act (node_modules/react/cjs/react.development.js:2512:16)
       at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/tests/SuperList.test.tsx:19:9)
+      at Object.<anonymous> (src/tests/SuperList.test.tsx:20:9)
 
     console.log
-      Pride & Prejudice
+      Star Wars: Episode 1 - The Phantom Menace
 
       at removeMovie (src/components/SuperList.tsx:16:17)
 
     console.log
-      Pride & Prejudice
+      First Movie in Super List: Pride & Prejudice
+
+      at removeMovie (src/components/SuperList.tsx:21:17)
+
+    console.log
+      First Movie in Updated Movies: Pride & Prejudice
 
       at removeMovie (src/components/SuperList.tsx:22:17)
 
     console.error
       Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
 
-      17 |
-      18 |     beforeEach(() =>
-    > 19 |         render(
+      18 |
+      19 |     beforeEach(() =>
+    > 20 |         render(
          |         ^
-      20 |             <DndProvider backend={HTML5Backend}>
-      21 |                 <SuperList
-      22 |                     superMovies={superMovies}
+      21 |             <DndProvider backend={HTML5Backend}>
+      22 |                 <SuperList
+      23 |                     superMovies={superMovies}
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
@@ -519,18 +524,18 @@ PASS src/tests/SuperList.test.tsx
       at node_modules/@testing-library/react/dist/pure.js:101:25
       at act (node_modules/react/cjs/react.development.js:2512:16)
       at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/tests/SuperList.test.tsx:19:9)
+      at Object.<anonymous> (src/tests/SuperList.test.tsx:20:9)
 
     console.error
       Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
 
-      17 |
-      18 |     beforeEach(() =>
-    > 19 |         render(
+      18 |
+      19 |     beforeEach(() =>
+    > 20 |         render(
          |         ^
-      20 |             <DndProvider backend={HTML5Backend}>
-      21 |                 <SuperList
-      22 |                     superMovies={superMovies}
+      21 |             <DndProvider backend={HTML5Backend}>
+      22 |                 <SuperList
+      23 |                     superMovies={superMovies}
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
@@ -538,18 +543,18 @@ PASS src/tests/SuperList.test.tsx
       at node_modules/@testing-library/react/dist/pure.js:101:25
       at act (node_modules/react/cjs/react.development.js:2512:16)
       at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/tests/SuperList.test.tsx:19:9)
+      at Object.<anonymous> (src/tests/SuperList.test.tsx:20:9)
 
     console.error
       Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
 
-      17 |
-      18 |     beforeEach(() =>
-    > 19 |         render(
+      18 |
+      19 |     beforeEach(() =>
+    > 20 |         render(
          |         ^
-      20 |             <DndProvider backend={HTML5Backend}>
-      21 |                 <SuperList
-      22 |                     superMovies={superMovies}
+      21 |             <DndProvider backend={HTML5Backend}>
+      22 |                 <SuperList
+      23 |                     superMovies={superMovies}
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
@@ -557,18 +562,18 @@ PASS src/tests/SuperList.test.tsx
       at node_modules/@testing-library/react/dist/pure.js:101:25
       at act (node_modules/react/cjs/react.development.js:2512:16)
       at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/tests/SuperList.test.tsx:19:9)
+      at Object.<anonymous> (src/tests/SuperList.test.tsx:20:9)
 
     console.error
       Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
 
-      17 |
-      18 |     beforeEach(() =>
-    > 19 |         render(
+      18 |
+      19 |     beforeEach(() =>
+    > 20 |         render(
          |         ^
-      20 |             <DndProvider backend={HTML5Backend}>
-      21 |                 <SuperList
-      22 |                     superMovies={superMovies}
+      21 |             <DndProvider backend={HTML5Backend}>
+      22 |                 <SuperList
+      23 |                     superMovies={superMovies}
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
@@ -576,18 +581,18 @@ PASS src/tests/SuperList.test.tsx
       at node_modules/@testing-library/react/dist/pure.js:101:25
       at act (node_modules/react/cjs/react.development.js:2512:16)
       at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/tests/SuperList.test.tsx:19:9)
+      at Object.<anonymous> (src/tests/SuperList.test.tsx:20:9)
 
     console.error
       Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
 
-      17 |
-      18 |     beforeEach(() =>
-    > 19 |         render(
+      18 |
+      19 |     beforeEach(() =>
+    > 20 |         render(
          |         ^
-      20 |             <DndProvider backend={HTML5Backend}>
-      21 |                 <SuperList
-      22 |                     superMovies={superMovies}
+      21 |             <DndProvider backend={HTML5Backend}>
+      22 |                 <SuperList
+      23 |                     superMovies={superMovies}
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
@@ -595,7 +600,7 @@ PASS src/tests/SuperList.test.tsx
       at node_modules/@testing-library/react/dist/pure.js:101:25
       at act (node_modules/react/cjs/react.development.js:2512:16)
       at render (node_modules/@testing-library/react/dist/pure.js:97:26)
-      at Object.<anonymous> (src/tests/SuperList.test.tsx:19:9)
+      at Object.<anonymous> (src/tests/SuperList.test.tsx:20:9)
 
 PASS src/tests/UserSelect.test.tsx
   ● Console
@@ -757,15 +762,15 @@ PASS src/tests/App.test.tsx
 ----------------------|---------|----------|---------|---------|-------------------------------
 File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s             
 ----------------------|---------|----------|---------|---------|-------------------------------
-All files             |   42.64 |    22.97 |   28.24 |   43.28 |                               
+All files             |    42.5 |    20.73 |   28.57 |    42.9 |                               
  src                  |     100 |       75 |     100 |     100 |                               
   App.tsx             |     100 |       75 |     100 |     100 | 128,148                       
- src/components       |   40.07 |    16.66 |   26.77 |   40.71 |                               
-  AdminList.tsx       |   40.32 |     8.33 |   23.07 |   40.98 | 21-29,34,76-117,246-334       
+ src/components       |      40 |    14.86 |   27.13 |   40.38 |                               
+  AdminList.tsx       |   39.68 |     7.14 |   23.07 |   40.32 | 21-29,34,76-119,248-336       
   CentralItemList.tsx |   53.84 |    55.55 |   46.66 |   53.84 | 19-30,69-101,122              
-  SuperAddUser.tsx    |   19.04 |        0 |    9.09 |   19.04 | 20-40,51-87                   
-  SuperList.tsx       |   45.58 |     12.5 |   24.24 |   46.96 | 70-95,101-135,211-275,373-468 
-  UserList.tsx        |   22.72 |     7.14 |   16.66 |   23.07 | 43-164,170,249,375-413        
+  SuperAddUser.tsx    |   22.72 |        0 |   18.18 |   22.72 | 20-42,54-90                   
+  SuperList.tsx       |    45.2 |       10 |   22.85 |   45.71 | 70-95,101-137,213-295,378-473 
+  UserList.tsx        |   22.38 |     6.66 |   16.66 |   22.72 | 43-166,172,251,377-415        
   UserSelect.tsx      |     100 |      100 |     100 |     100 |                               
   moviePoster.tsx     |     100 |      100 |     100 |     100 |                               
  src/data             |      50 |      100 |      50 |      50 |                               
@@ -781,5 +786,5 @@ All files             |   42.64 |    22.97 |   28.24 |   43.28 |
 Test Suites: 8 passed, 8 total
 Tests:       37 passed, 37 total
 Snapshots:   0 total
-Time:        8.508 s
+Time:        9.04 s
 Ran all test suites.
