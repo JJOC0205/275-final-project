@@ -63,7 +63,7 @@ export function SuperList({
         description: "",
         rating: 0,
         poster: "",
-        genre: []
+        genre: ["No Genre Yet"]
     });
 
     function addMovie() {
@@ -83,14 +83,14 @@ export function SuperList({
 
     function createNewMovie() {
         const newMovie = {
-            title,
-            released,
-            runtime,
-            watched,
-            description,
-            rating,
-            poster,
-            genre: [...genre]
+            title: title,
+            released: released,
+            runtime: runtime,
+            watched: watched,
+            description: description,
+            rating: rating,
+            poster: poster,
+            genre: ["No Genre Yet"]
         };
         setNewMovie(newMovie);
     }
@@ -109,9 +109,11 @@ export function SuperList({
     }
 
     function removeGenre(genreToRemove: string) {
-        const updatedGenre = genre.filter((item) => item !== genreToRemove);
-        setGenre(updatedGenre);
-        setGenreInput("");
+        if (genre.length > 1) {
+            const updatedGenre = genre.filter((item) => item !== genreToRemove);
+            setGenre(updatedGenre);
+            setGenreInput("");
+        }
     }
 
     function replaceMovieEdit() {
@@ -123,7 +125,7 @@ export function SuperList({
             description,
             rating,
             poster,
-            genre
+            genre: [...genre]
         };
         const updatedSuperList = superMovies.map((movie) => {
             if (movie.title === movieDisplay.title) {
@@ -284,11 +286,14 @@ export function SuperList({
                             >
                                 <button
                                     role="createNewMovie"
-                                    onClick={createNewMovie}
+                                    onClick={() => createNewMovie()}
                                 >
                                     Create New Movie
                                 </button>
-                                <button role="addNewMovie" onClick={addMovie}>
+                                <button
+                                    role="addNewMovie"
+                                    onClick={() => addMovie()}
+                                >
                                     Add Movie
                                 </button>
                             </div>
