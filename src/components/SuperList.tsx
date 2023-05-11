@@ -14,12 +14,12 @@ export function SuperList({
 }: superMovies): JSX.Element {
     function removeMovie(movie: Movie) {
         console.log(movie.title);
-        const updatedMovies = superMovies.filter(
-            (m) => m.title !== movie.title
-        );
+        const superCopy = [...superMovies];
+        const updatedMovies = superCopy.filter((m) => m.title !== movie.title);
         setSuperMovies(updatedMovies);
         setCilMovies(updatedMovies);
-        console.log(superMovies[0].title);
+        console.log("First Movie in Super List: " + superMovies[0].title);
+        console.log("First Movie in Updated Movies: " + updatedMovies[0].title);
     }
 
     const [movieDisplay, setMovieDisplay] = useState<Movie>({
@@ -157,7 +157,7 @@ export function SuperList({
                             marginTop: "25px"
                         }}
                     >
-                        <Stack //SUPER LIST STARTS
+                        <Stack /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////SUPER LIST STARTS
                             direction="horizontal"
                             gap={4}
                             style={{
@@ -374,7 +374,7 @@ export function SuperList({
                             >
                                 <input
                                     type="text"
-                                    value={title}
+                                    value={""}
                                     onChange={(e) => setTitle(e.target.value)}
                                     placeholder="Enter Title"
                                     style={{ marginBottom: "5px" }}

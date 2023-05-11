@@ -22,7 +22,7 @@ export function SuperAddUser({
         );
 
         if (!isExistingUser) {
-            const newUser = { name, id, role };
+            const newUser = { name, id, role: "user" };
             setUsers([...users, newUser]);
             const newUserList: Movie[] = [];
             const newUserPairs: UserListPair[] = [
@@ -34,10 +34,13 @@ export function SuperAddUser({
     }
 
     function deleteUser() {
-        const updatedUsers = users.filter(
-            (user) => user.name !== name || user.id !== id || user.role !== role
-        );
-        setUsers(updatedUsers);
+        if (role === "user") {
+            const updatedUsers = users.filter(
+                (user) =>
+                    user.name !== name || user.id !== id || user.role !== role
+            );
+            setUsers(updatedUsers);
+        }
     }
 
     return (
@@ -57,12 +60,12 @@ export function SuperAddUser({
                         onChange={(e) => setId(parseInt(e.target.value))}
                         style={{ marginBottom: "5px", marginRight: "5px" }}
                     />
-                    <input
+                    {/* <input
                         type="text"
                         placeholder="Enter New User Role"
                         onChange={(e) => setRole(e.target.value)}
                         style={{ marginBottom: "5px", marginRight: "5px" }}
-                    />
+                    /> */}
                     <button data-testid="addUser" onClick={addUser}>
                         Add
                     </button>
@@ -91,6 +94,22 @@ export function SuperAddUser({
                         Delete
                     </button>
                 </div>
+            </div>
+            <div
+                style={{
+                    width: "300px",
+                    marginLeft: "75px",
+                    height: "150px",
+                    border: "1px dashed grey",
+                    overflow: "auto"
+                }}
+            >
+                <h2>Current Users:</h2>
+                {users.map((user, index) => (
+                    <li key={index}>
+                        {user.name}, ID: {user.id}, Role: {user.role}
+                    </li>
+                ))}
             </div>
         </>
     );
