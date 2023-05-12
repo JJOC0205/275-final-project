@@ -112,7 +112,8 @@ export function CentralItemList({ cilMovies }: cilMovies): JSX.Element {
                             backgroundColor: "powderblue",
                             padding: "25px",
                             overflow: "auto",
-                            width: "950px"
+                            width: "950px",
+                            height: "300px"
                         }}
                     >
                         {filteredMovies.map((movie: Movie) => (
