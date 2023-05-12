@@ -21,7 +21,7 @@ export function SuperAddUser({
             (user) => user.name === name || user.id === id
         );
 
-        if (!isExistingUser) {
+        if (!isExistingUser && !isNaN(id)) {
             const newUser = { name, id, role: "user" };
             setUsers([...users, newUser]);
             const newUserList: Movie[] = [];
@@ -34,7 +34,7 @@ export function SuperAddUser({
     }
 
     function deleteUser() {
-        if (role === "user") {
+        if (role === "user" && !isNaN(id)) {
             const updatedUsers = users.filter(
                 (user) =>
                     user.name !== name || user.id !== id || user.role !== role

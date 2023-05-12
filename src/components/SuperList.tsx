@@ -135,6 +135,7 @@ export function SuperList({
         });
         setSuperMovies(updatedSuperList);
         setCilMovies(updatedSuperList);
+        updateMovieDisplay(editedMovie);
     }
 
     return (
@@ -149,6 +150,11 @@ export function SuperList({
                         }}
                     >
                         {user.name}
+                    </h2>
+                    <h2 style={{ color: "gainsboro" }}>
+                        Create New Movies OR click any movie poster{" "}
+                        <span style={{ color: "orange" }}>First</span> and edit
+                        the movie on the right.
                     </h2>
                     <div
                         style={{
@@ -372,13 +378,28 @@ export function SuperList({
                                     flexDirection: "column"
                                 }}
                             >
-                                <input
-                                    type="text"
-                                    value={""}
-                                    onChange={(e) => setTitle(e.target.value)}
-                                    placeholder="Enter Title"
-                                    style={{ marginBottom: "5px" }}
-                                />
+                                <div
+                                    style={{
+                                        display: "flex",
+                                        flexDirection: "row",
+                                        justifyContent: "center"
+                                    }}
+                                >
+                                    <h5>Title: </h5>
+                                    <input
+                                        type="text"
+                                        value={title}
+                                        onChange={(e) =>
+                                            setTitle(e.target.value)
+                                        }
+                                        placeholder="Enter Title"
+                                        style={{
+                                            marginBottom: "5px",
+                                            width: "300px",
+                                            marginLeft: "20px"
+                                        }}
+                                    />
+                                </div>
                                 <input
                                     type="number"
                                     value={released}
