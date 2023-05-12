@@ -767,7 +767,7 @@ All files             |   42.19 |    19.76 |   28.57 |   42.59 |
   App.tsx             |     100 |       75 |     100 |     100 | 128,148                       
  src/components       |    39.7 |     14.1 |   27.13 |   40.07 |                               
   AdminList.tsx       |   39.06 |     7.14 |   23.07 |   39.68 | 21-29,34,76-120,254-342       
-  CentralItemList.tsx |   53.84 |    55.55 |   46.66 |   53.84 | 19-30,69-101,122              
+  CentralItemList.tsx |   53.84 |    55.55 |   46.66 |   53.84 | 19-30,69-101,123              
   SuperAddUser.tsx    |   22.72 |        0 |   18.18 |   22.72 | 20-42,54-90                   
   SuperList.tsx       |   44.59 |       10 |   22.85 |   45.07 | 70-95,101-138,219-301,393-494 
   UserList.tsx        |   22.38 |     6.66 |   16.66 |   22.72 | 43-166,172,258,384-422        
@@ -786,5 +786,5 @@ All files             |   42.19 |    19.76 |   28.57 |   42.59 |
 Test Suites: 8 passed, 8 total
 Tests:       37 passed, 37 total
 Snapshots:   0 total
-Time:        9.12 s
+Time:        9.406 s
 Ran all test suites.
