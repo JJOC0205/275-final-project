@@ -117,6 +117,7 @@ export function AdminList({
         setAdminMovies(updatedSuperList);
         setCilMovies(updatedCILList);
         setSuperMovies(updatedCILList);
+        updateMovieDisplay(editedMovie);
     }
 
     return (
@@ -131,6 +132,11 @@ export function AdminList({
                         }}
                     >
                         {user.name}
+                    </h2>
+                    <h2 style={{ color: "gainsboro" }}>
+                        Drag movies and click their posters{" "}
+                        <span style={{ color: "blanchedalmond" }}>First</span>{" "}
+                        to edit them on the right.
                     </h2>
                     <div
                         style={{

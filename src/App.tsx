@@ -117,7 +117,7 @@ function App(): JSX.Element {
                         />
                     )}
                 </div>
-                <h2 style={{ marginBottom: "25px" }}>
+                <h2 style={{ marginBottom: "25px", color: "gainsboro" }}>
                     Click on a Movie to have its details displayed on the right.
                 </h2>
                 <CentralItemList

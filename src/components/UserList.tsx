@@ -190,6 +190,13 @@ export function UserList({
                         >
                             {user.name}
                         </h2>
+                        <h2
+                            style={{ color: "gainsboro", marginBottom: "20px" }}
+                        >
+                            Drag movies and click their posters{" "}
+                            <span style={{ color: "tomato" }}>First</span> to
+                            edit them on the right.
+                        </h2>
                         <div
                             style={{
                                 display: "flex",
@@ -268,7 +275,7 @@ export function UserList({
                                 marginLeft: "30px",
                                 overflow: "auto",
                                 padding: "30px",
-                                marginTop: "10px"
+                                marginTop: "75px"
                             }}
                             data-testid="movieDrop"
                         >
