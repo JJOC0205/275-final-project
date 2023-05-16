@@ -116,9 +116,9 @@ export function CentralItemList({ cilMovies }: cilMovies): JSX.Element {
                             height: "300px"
                         }}
                     >
-                        {filteredMovies.map((movie: Movie) => (
+                        {filteredMovies.map((movie: Movie, index) => (
                             <div
-                                key={movie.title}
+                                key={index}
                                 role="CIL-Element"
                                 onClick={() => setMovieDisplay(movie)}
                             >
