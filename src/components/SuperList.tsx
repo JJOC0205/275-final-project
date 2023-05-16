@@ -400,33 +400,62 @@ export function SuperList({
                                         }}
                                     />
                                 </div>
-                                <input
-                                    type="number"
-                                    value={released}
-                                    onChange={(e) =>
-                                        setReleased(parseInt(e.target.value))
-                                    }
-                                    placeholder="Enter Release Date"
-                                    style={{ marginBottom: "5px" }}
-                                />
-                                <input
-                                    type="number"
-                                    value={runtime}
-                                    onChange={(e) =>
-                                        setRuntime(parseInt(e.target.value))
-                                    }
-                                    placeholder="Enter Runtime (minutes)"
-                                    style={{ marginBottom: "5px" }}
-                                />
                                 <div
                                     style={{
                                         display: "flex",
                                         flexDirection: "row",
-                                        justifyContent: "center",
-                                        marginBottom: "10px"
+                                        justifyContent: "center"
                                     }}
                                 >
-                                    Check if Watched:
+                                    <h5>Release Year: </h5>
+                                    <input
+                                        type="number"
+                                        value={released}
+                                        onChange={(e) =>
+                                            setReleased(
+                                                parseInt(e.target.value)
+                                            )
+                                        }
+                                        placeholder="Enter Release Date"
+                                        style={{
+                                            marginBottom: "5px",
+                                            width: "300px",
+                                            marginLeft: "20px"
+                                        }}
+                                    />
+                                </div>
+                                <div
+                                    style={{
+                                        display: "flex",
+                                        flexDirection: "row",
+                                        justifyContent: "center"
+                                    }}
+                                >
+                                    <h5>Runtime: </h5>
+                                    <input
+                                        type="number"
+                                        value={runtime}
+                                        onChange={(e) =>
+                                            setRuntime(parseInt(e.target.value))
+                                        }
+                                        placeholder="Enter Runtime (minutes)"
+                                        style={{
+                                            marginBottom: "5px",
+                                            width: "300px",
+                                            marginLeft: "20px"
+                                        }}
+                                    />
+                                </div>
+                                <div
+                                    style={{
+                                        display: "flex",
+                                        flexDirection: "row",
+                                        justifyContent: "left",
+                                        marginBottom: "5px",
+                                        marginLeft: "30px"
+                                    }}
+                                >
+                                    <h5>Check if Watched: </h5>
                                     <input
                                         type="checkbox"
                                         checked={watched}
@@ -434,36 +463,76 @@ export function SuperList({
                                             setWatched(e.target.checked)
                                         }
                                         style={{
-                                            marginBottom: "5px",
                                             marginLeft: "10px"
                                         }}
                                     />
                                 </div>
-                                <input
-                                    type="text"
-                                    value={description}
-                                    onChange={(e) =>
-                                        setDescription(e.target.value)
-                                    }
-                                    placeholder="Enter Description"
-                                    style={{ marginBottom: "5px" }}
-                                />
-                                <input
-                                    type="number"
-                                    value={rating}
-                                    onChange={(e) =>
-                                        setRating(parseInt(e.target.value))
-                                    }
-                                    placeholder="Enter Rating"
-                                    style={{ marginBottom: "5px" }}
-                                />
-                                <input
-                                    type="text"
-                                    value={poster}
-                                    onChange={(e) => setPoster(e.target.value)}
-                                    placeholder="Enter Poster URL"
-                                    style={{ marginBottom: "5px" }}
-                                />
+                                <div
+                                    style={{
+                                        display: "flex",
+                                        flexDirection: "row",
+                                        justifyContent: "center"
+                                    }}
+                                >
+                                    <h5>Description: </h5>
+                                    <input
+                                        type="text"
+                                        value={description}
+                                        onChange={(e) =>
+                                            setDescription(e.target.value)
+                                        }
+                                        placeholder="Enter Description"
+                                        style={{
+                                            marginBottom: "5px",
+                                            width: "300px",
+                                            marginLeft: "20px"
+                                        }}
+                                    />
+                                </div>
+                                <div
+                                    style={{
+                                        display: "flex",
+                                        flexDirection: "row",
+                                        justifyContent: "center"
+                                    }}
+                                >
+                                    <h5>Rating: </h5>
+                                    <input
+                                        type="number"
+                                        value={rating}
+                                        onChange={(e) =>
+                                            setRating(parseInt(e.target.value))
+                                        }
+                                        placeholder="Enter Rating"
+                                        style={{
+                                            marginBottom: "5px",
+                                            width: "300px",
+                                            marginLeft: "20px"
+                                        }}
+                                    />
+                                </div>
+                                <div
+                                    style={{
+                                        display: "flex",
+                                        flexDirection: "row",
+                                        justifyContent: "center"
+                                    }}
+                                >
+                                    <h5>Poster URL: </h5>
+                                    <input
+                                        type="text"
+                                        value={poster}
+                                        onChange={(e) =>
+                                            setPoster(e.target.value)
+                                        }
+                                        placeholder="Enter Poster URL"
+                                        style={{
+                                            marginBottom: "5px",
+                                            width: "300px",
+                                            marginLeft: "20px"
+                                        }}
+                                    />
+                                </div>
                             </div>
                             <input
                                 type="text"
