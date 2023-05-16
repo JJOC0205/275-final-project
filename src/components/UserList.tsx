@@ -76,25 +76,10 @@ export function UserList({
             return movie;
         });
         setUserMovies(updatedUserList);
+        updateMovieDisplay(editedMovie);
     }
 
     function updateUserMovies(newMovie: Movie) {
-        // const movieExists = userMovies.some(
-        //     (movie) => movie.title === newMovie.title
-        // );
-
-        // let updatedUserMovies: Movie[];
-
-        // if (!movieExists) {
-        //     updatedUserMovies = [...userMovies, newMovie];
-        // } else {
-        //     updatedUserMovies = userMovies.map((movie) => {
-        //         if (movie.title === newMovie.title) {
-        //             return { ...movie, title: movie.title + " " };
-        //         }
-        //         return movie;
-        //     });
-        // }
         const updatedUserMovies = [...userMovies, newMovie];
 
         setUserMovies(updatedUserMovies);
@@ -373,10 +358,10 @@ export function UserList({
                                     display: "flex",
                                     flexDirection: "row",
                                     justifyContent: "center",
-                                    marginBottom: "10px"
+                                    marginBottom: "5px"
                                 }}
                             >
-                                Check if Watched:
+                                <h5>Check if Watched: </h5>
                                 <input
                                     type="checkbox"
                                     checked={watched}
@@ -384,20 +369,32 @@ export function UserList({
                                         setWatched(e.target.checked)
                                     }
                                     style={{
-                                        marginBottom: "5px",
                                         marginLeft: "10px"
                                     }}
                                 />
                             </div>
-                            <input
-                                type="number"
-                                value={rating}
-                                onChange={(e) =>
-                                    setRating(parseInt(e.target.value))
-                                }
-                                placeholder="Change Rating"
-                                style={{ marginBottom: "5px" }}
-                            />
+                            <div
+                                style={{
+                                    display: "flex",
+                                    flexDirection: "row",
+                                    justifyContent: "center"
+                                }}
+                            >
+                                <h5>Rating: </h5>
+                                <input
+                                    type="number"
+                                    value={rating}
+                                    onChange={(e) =>
+                                        setRating(parseInt(e.target.value))
+                                    }
+                                    placeholder="Enter Rating"
+                                    style={{
+                                        marginBottom: "5px",
+                                        width: "300px",
+                                        marginLeft: "20px"
+                                    }}
+                                />
+                            </div>
                             <div></div>
                             <input
                                 type="text"
