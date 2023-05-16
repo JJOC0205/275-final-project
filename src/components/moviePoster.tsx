@@ -20,7 +20,6 @@ export function ShowMovieDetails({ movie }: { movie: Movie }): JSX.Element {
             isDragging: !!monitor.isDragging()
         })
     });
-    // const [visible, setVisible] = useState<boolean>(false);
     return (
         <div ref={drag} role="moviePosterImage">
             <img
