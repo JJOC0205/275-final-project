@@ -176,10 +176,11 @@ export function SuperList({
                                 height: "300px"
                             }}
                         >
-                            {superMovies.map((movie: Movie) => (
+                            {superMovies.map((movie: Movie, index) => (
                                 <div
                                     role="superMovie"
-                                    key={movie.title}
+                                    // key={movie.title}
+                                    key={index}
                                     onClick={() => updateMovieDisplay(movie)}
                                 >
                                     <ShowMovieDetails

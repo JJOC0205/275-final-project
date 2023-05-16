@@ -161,10 +161,10 @@ export function AdminList({
                                 height: "300px"
                             }}
                         >
-                            {adminMovies.map((movie: Movie) => (
+                            {adminMovies.map((movie: Movie, index) => (
                                 <div
                                     role="adminMovie"
-                                    key={movie.title}
+                                    key={index}
                                     onClick={() => updateMovieDisplay(movie)}
                                 >
                                     <ShowMovieDetails
