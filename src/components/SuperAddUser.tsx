@@ -54,17 +54,10 @@ export function SuperAddUser({
                     />
                     <input
                         type="number"
-                        value={id}
                         placeholder="Enter New User ID"
                         onChange={(e) => setId(parseInt(e.target.value))}
                         style={{ marginBottom: "5px", marginRight: "5px" }}
                     />
-                    {/* <input
-                        type="text"
-                        placeholder="Enter New User Role"
-                        onChange={(e) => setRole(e.target.value)}
-                        style={{ marginBottom: "5px", marginRight: "5px" }}
-                    /> */}
                     <button data-testid="addUser" onClick={addUser}>
                         Add
                     </button>

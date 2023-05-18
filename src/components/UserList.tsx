@@ -7,6 +7,17 @@ import { Movie } from "../interfaces/movie";
 import { ShowMovieDetails } from "./moviePoster";
 import { userMovies } from "../App";
 
+const defaultMovie = {
+    title: "DEFAULT MOVIE",
+    released: 0,
+    runtime: 0,
+    watched: false,
+    description: "Please CLICK any Movie",
+    rating: 0,
+    poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+    genre: ["None"]
+};
+
 export function UserList({
     userMovies,
     setUserMovies,
@@ -14,17 +25,7 @@ export function UserList({
     setUserListPairs,
     userListPairs
 }: userMovies): JSX.Element {
-    const [movieDisplay, setMovieDisplay] = useState<Movie>({
-        title: "Interstellar",
-        released: 2014,
-        runtime: 169,
-        watched: false,
-        description:
-            "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
-        rating: 0,
-        poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
-        genre: ["Adventure", "Drama", "Sci-Fi"]
-    });
+    const [movieDisplay, setMovieDisplay] = useState<Movie>(defaultMovie);
 
     function updateMovieDisplay(movie: Movie) {
         setMovieDisplay(movie);
@@ -34,13 +35,9 @@ export function UserList({
     }
 
     function removeMovie(movie: Movie) {
-        // console.log(movie.title);
         const userCopy = [...userMovies];
         const updatedMovies = userCopy.filter((m) => m.title !== movie.title);
         setUserMovies(updatedMovies);
-        // setCilMovies(updatedMovies);
-        // console.log("First Movie in Super List: " + superMovies[0].title);
-        // console.log("First Movie in Updated Movies: " + updatedMovies[0].title);
     }
 
     const [rating, setRating] = useState<number>(movieDisplay.rating);
@@ -188,9 +185,9 @@ export function UserList({
                         <h2
                             style={{ color: "lightcyan", marginBottom: "20px" }}
                         >
-                            Drag movies and click their posters{" "}
-                            <span style={{ color: "tomato" }}>First</span> to
-                            edit them on the right.
+                            Drag movies, click any movie poster{" "}
+                            <span style={{ color: "orange" }}>before</span>{" "}
+                            viewing and editing the movie on the right.
                         </h2>
                         <div
                             style={{

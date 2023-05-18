@@ -6,6 +6,17 @@ import { Stack } from "react-bootstrap";
 import { superMovies } from "../App";
 import { useState } from "react";
 
+const defaultMovie = {
+    title: "DEFAULT MOVIE",
+    released: 0,
+    runtime: 0,
+    watched: false,
+    description: "Please CLICK any Movie",
+    rating: 0,
+    poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+    genre: ["None"]
+};
+
 export function SuperList({
     superMovies,
     setSuperMovies,
@@ -19,17 +30,7 @@ export function SuperList({
         setCilMovies(updatedMovies);
     }
 
-    const [movieDisplay, setMovieDisplay] = useState<Movie>({
-        title: "Interstellar",
-        released: 2014,
-        runtime: 169,
-        watched: false,
-        description:
-            "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
-        rating: 0,
-        poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
-        genre: ["Adventure", "Drama", "Sci-Fi"]
-    });
+    const [movieDisplay, setMovieDisplay] = useState<Movie>(defaultMovie);
 
     const [title, setTitle] = useState<string>("");
     const [released, setReleased] = useState<number>(0);

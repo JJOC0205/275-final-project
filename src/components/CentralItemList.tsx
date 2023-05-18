@@ -3,12 +3,22 @@ import { useState } from "react";
 import { Movie } from "../interfaces/movie";
 import { Stack } from "react-bootstrap";
 import { ShowMovieDetails } from "./moviePoster";
-// import { EditMode } from "./EditUserMode";
 import "./UserList.css";
 import { cilMovies } from "../App";
 
+const defaultMovie = {
+    title: "DEFAULT MOVIE",
+    released: 0,
+    runtime: 0,
+    watched: false,
+    description: "Please CLICK any Movie",
+    rating: 0,
+    poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+    genre: ["None"]
+};
+
 export function CentralItemList({ cilMovies }: cilMovies): JSX.Element {
-    const [movieDisplay, setMovieDisplay] = useState<Movie>(cilMovies[3]);
+    const [movieDisplay, setMovieDisplay] = useState<Movie>(defaultMovie);
     const [searchTermD, setSearchTermD] = useState("");
     const [searchTermT, setSearchTermT] = useState("");
     const [searchTermG, setSearchTermG] = useState("");
