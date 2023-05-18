@@ -98,7 +98,7 @@ export function SuperAddUser({
                 style={{
                     width: "300px",
                     marginLeft: "75px",
-                    height: "150px",
+                    height: "175px",
                     border: "1px dashed grey",
                     overflow: "auto"
                 }}
@@ -106,7 +106,9 @@ export function SuperAddUser({
                 <h2>Current Users:</h2>
                 {users.map((user, index) => (
                     <li key={index}>
-                        {user.name}, ID: {user.id}, Role: {user.role}
+                        <h5>
+                            {user.name}, ID: {user.id}, Role: {user.role}
+                        </h5>
                     </li>
                 ))}
             </div>

@@ -13,13 +13,10 @@ export function SuperList({
     user
 }: superMovies): JSX.Element {
     function removeMovie(movie: Movie) {
-        // console.log(movie.title);
         const superCopy = [...superMovies];
         const updatedMovies = superCopy.filter((m) => m.title !== movie.title);
         setSuperMovies(updatedMovies);
         setCilMovies(updatedMovies);
-        // console.log("First Movie in Super List: " + superMovies[0].title);
-        // console.log("First Movie in Updated Movies: " + updatedMovies[0].title);
     }
 
     const [movieDisplay, setMovieDisplay] = useState<Movie>({
@@ -67,6 +64,9 @@ export function SuperList({
     });
 
     function addMovie() {
+        if (isNaN(released) || isNaN(runtime) || isNaN(rating)) {
+            return;
+        }
         setSuperMovies([...superMovies, newMovie]);
         setCilMovies([...superMovies, newMovie]);
         setNewMovie({
@@ -82,6 +82,9 @@ export function SuperList({
     }
 
     function createNewMovie() {
+        if (isNaN(released) || isNaN(runtime) || isNaN(rating)) {
+            return;
+        }
         const newMovie = {
             title: title,
             released: released,
@@ -117,6 +120,9 @@ export function SuperList({
     }
 
     function replaceMovieEdit() {
+        if (isNaN(released) || isNaN(runtime) || isNaN(rating)) {
+            return;
+        }
         const editedMovie = {
             title,
             released,

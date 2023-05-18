@@ -120,10 +120,16 @@ function App(): JSX.Element {
                 <h2 style={{ marginBottom: "25px", color: "gainsboro" }}>
                     Click on a Movie to have its details displayed on the right.
                 </h2>
-                <CentralItemList
+                {currUser.role !== "super" && (
+                    <CentralItemList
+                        cilMovies={cilMovies}
+                        setCilMovies={setCilMovies}
+                    />
+                )}
+                {/* <CentralItemList
                     cilMovies={cilMovies}
                     setCilMovies={setCilMovies}
-                ></CentralItemList>
+                ></CentralItemList> */}
                 {userListPairs.map((userListPair: UserListPair) =>
                     currUser.name === userListPair.username ? (
                         <UserList
@@ -155,6 +161,7 @@ function App(): JSX.Element {
                         setSuperMovies={setSuperMovies}
                     />
                 )}
+                <hr></hr>
             </DndProvider>
         </div>
     );

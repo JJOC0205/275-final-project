@@ -31,12 +31,9 @@ export function AdminList({
     }
 
     function removeMovie(movie: Movie) {
-        // console.log(movie.title);
         const adminCopy = [...adminMovies];
         const updatedMovies = adminCopy.filter((m) => m.title !== movie.title);
         setAdminMovies(updatedMovies);
-        // console.log("First Movie in Super List: " + superMovies[0].title);
-        // console.log("First Movie in Updated Movies: " + updatedMovies[0].title);
     }
 
     const [, drop] = useDrop({
@@ -102,6 +99,9 @@ export function AdminList({
     }
 
     function replaceMovieEdit() {
+        if (isNaN(released) || isNaN(runtime) || isNaN(rating)) {
+            return;
+        }
         const editedMovie = {
             title,
             released,
