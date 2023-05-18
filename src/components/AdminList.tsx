@@ -29,6 +29,16 @@ export function AdminList({
             setAdminMovies([...adminMovies, newMovie]);
         }
     }
+
+    function removeMovie(movie: Movie) {
+        // console.log(movie.title);
+        const adminCopy = [...adminMovies];
+        const updatedMovies = adminCopy.filter((m) => m.title !== movie.title);
+        setAdminMovies(updatedMovies);
+        // console.log("First Movie in Super List: " + superMovies[0].title);
+        // console.log("First Movie in Updated Movies: " + updatedMovies[0].title);
+    }
+
     const [, drop] = useDrop({
         accept: MovieTypes.MOVIE,
         drop: (item: Movie) => updateAdminMovies(item),
@@ -131,9 +141,10 @@ export function AdminList({
                             color: "gainsboro"
                         }}
                     >
-                        {user.name}
+                        {user.name}: Edit CIL movies by changing their
+                        attributes.
                     </h2>
-                    <h2 style={{ color: "gainsboro" }}>
+                    <h2 style={{ color: "lightcyan" }}>
                         Drag movies and click their posters{" "}
                         <span style={{ color: "blanchedalmond" }}>First</span>{" "}
                         to edit them on the right.
@@ -170,6 +181,18 @@ export function AdminList({
                                     <ShowMovieDetails
                                         movie={movie}
                                     ></ShowMovieDetails>
+                                    <button
+                                        role="removeMovieButton"
+                                        style={{
+                                            height: "30px",
+                                            width: "75px",
+                                            backgroundColor: "orange",
+                                            marginTop: "10px"
+                                        }}
+                                        onClick={() => removeMovie(movie)}
+                                    >
+                                        Remove
+                                    </button>
                                 </div>
                             ))}
                         </Stack>

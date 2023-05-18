@@ -13,13 +13,13 @@ export function SuperList({
     user
 }: superMovies): JSX.Element {
     function removeMovie(movie: Movie) {
-        console.log(movie.title);
+        // console.log(movie.title);
         const superCopy = [...superMovies];
         const updatedMovies = superCopy.filter((m) => m.title !== movie.title);
         setSuperMovies(updatedMovies);
         setCilMovies(updatedMovies);
-        console.log("First Movie in Super List: " + superMovies[0].title);
-        console.log("First Movie in Updated Movies: " + updatedMovies[0].title);
+        // console.log("First Movie in Super List: " + superMovies[0].title);
+        // console.log("First Movie in Updated Movies: " + updatedMovies[0].title);
     }
 
     const [movieDisplay, setMovieDisplay] = useState<Movie>({
@@ -149,13 +149,14 @@ export function SuperList({
                             color: "gainsboro"
                         }}
                     >
-                        {user.name}
+                        {user.name}: Control the composition of the Central Item
+                        List (create/delete/edit movies)
                     </h2>
-                    <h2 style={{ color: "gainsboro" }}>
-                        Create New Movies OR click any movie poster{" "}
-                        <span style={{ color: "orange" }}>First</span> and edit
+                    <h3 style={{ color: "lightcyan" }}>
+                        Click any movie poster{" "}
+                        <span style={{ color: "orange" }}>First</span> to edit
                         the movie on the right.
-                    </h2>
+                    </h3>
                     <div
                         style={{
                             display: "flex",
@@ -191,7 +192,7 @@ export function SuperList({
                                         style={{
                                             height: "30px",
                                             width: "75px",
-                                            backgroundColor: "lightsalmon",
+                                            backgroundColor: "lightyellow",
                                             marginTop: "10px"
                                         }}
                                         onClick={() => removeMovie(movie)}
@@ -258,7 +259,7 @@ export function SuperList({
                                     style={{
                                         marginBottom: "5px",
                                         width: "75px",
-                                        marginLeft: "15px"
+                                        marginLeft: "50px"
                                     }}
                                 />
                             </div>
@@ -267,7 +268,7 @@ export function SuperList({
                                 style={{
                                     display: "flex",
                                     flexDirection: "row",
-                                    justifyContent: "center",
+                                    justifyContent: "left",
                                     marginBottom: "10px"
                                 }}
                             >
@@ -281,7 +282,7 @@ export function SuperList({
                                     }
                                     style={{
                                         marginBottom: "5px",
-                                        marginLeft: "10px"
+                                        marginLeft: "25px"
                                     }}
                                 />
                             </div>
@@ -309,7 +310,7 @@ export function SuperList({
                                     style={{
                                         marginBottom: "5px",
                                         width: "75px",
-                                        marginLeft: "15px"
+                                        marginLeft: "65px"
                                     }}
                                 />
                             </div>
@@ -327,18 +328,25 @@ export function SuperList({
                                     justifyContent: "center"
                                 }}
                             >
-                                <button
-                                    role="createNewMovie"
-                                    onClick={() => createNewMovie()}
+                                <div
+                                    style={{
+                                        display: "flex",
+                                        flexDirection: "column"
+                                    }}
                                 >
-                                    Create New Movie
-                                </button>
-                                <button
-                                    role="addNewMovie"
-                                    onClick={() => addMovie()}
-                                >
-                                    Add Movie
-                                </button>
+                                    <button
+                                        role="createNewMovie"
+                                        onClick={() => createNewMovie()}
+                                    >
+                                        Create New Movie
+                                    </button>
+                                    <button
+                                        role="addNewMovie"
+                                        onClick={() => addMovie()}
+                                    >
+                                        Add To CIL
+                                    </button>
+                                </div>
                             </div>
                         </div>
                         <div ////////////////////////////////////////////////////////////////////////////////////////////////////////MOVIE DISPLAY STARTS
