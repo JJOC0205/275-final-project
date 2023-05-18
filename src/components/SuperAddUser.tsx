@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import { superAddUser } from "../App";
 import { Movie } from "../interfaces/movie";
-// import { User } from "../interfaces/user";
 import { UserListPair } from "../interfaces/UserListPair";
 
 export function SuperAddUser({
@@ -14,7 +13,6 @@ export function SuperAddUser({
     const [name, setName] = useState<string>("");
     const [id, setId] = useState<number>(3);
     const [role, setRole] = useState<string>("");
-    // const [selectedUser, setSelectedUser] = useState<User>(users[0]);
 
     function addUser() {
         const isExistingUser = users.some(
@@ -56,6 +54,7 @@ export function SuperAddUser({
                     />
                     <input
                         type="number"
+                        value={id}
                         placeholder="Enter New User ID"
                         onChange={(e) => setId(parseInt(e.target.value))}
                         style={{ marginBottom: "5px", marginRight: "5px" }}
