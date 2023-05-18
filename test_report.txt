@@ -2,7 +2,7 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test --coverage
 
-PASS src/tests/AdminList.test.tsx
+PASS src/tests/AdminList.test.tsx (5.044 s)
   ● Console
 
     console.error
@@ -492,21 +492,6 @@ PASS src/tests/SuperList.test.tsx
       at render (node_modules/@testing-library/react/dist/pure.js:97:26)
       at Object.<anonymous> (src/tests/SuperList.test.tsx:20:9)
 
-    console.log
-      Star Wars: Episode 1 - The Phantom Menace
-
-      at removeMovie (src/components/SuperList.tsx:16:17)
-
-    console.log
-      First Movie in Super List: Pride & Prejudice
-
-      at removeMovie (src/components/SuperList.tsx:21:17)
-
-    console.log
-      First Movie in Updated Movies: Pride & Prejudice
-
-      at removeMovie (src/components/SuperList.tsx:22:17)
-
     console.error
       Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
 
@@ -759,32 +744,32 @@ PASS src/tests/App.test.tsx
       at render (node_modules/@testing-library/react/dist/pure.js:97:26)
       at Object.<anonymous> (src/tests/App.test.tsx:6:5)
 
-----------------------|---------|----------|---------|---------|-------------------------------
-File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s             
-----------------------|---------|----------|---------|---------|-------------------------------
-All files             |   42.04 |    19.76 |   28.57 |   42.44 |                               
- src                  |     100 |       75 |     100 |     100 |                               
-  App.tsx             |     100 |       75 |     100 |     100 | 128,148                       
- src/components       |   39.55 |     14.1 |   27.13 |   39.92 |                               
-  AdminList.tsx       |   39.06 |     7.14 |   23.07 |   39.68 | 21-29,34,76-120,263-426       
-  CentralItemList.tsx |   53.84 |    55.55 |   46.66 |   53.84 | 19-30,69-101,123              
-  SuperAddUser.tsx    |   22.72 |        0 |   18.18 |   22.72 | 18-40,52-89                   
-  SuperList.tsx       |   44.59 |       10 |   22.85 |   45.07 | 70-95,101-138,220-338,430-600 
-  UserList.tsx        |   22.05 |     6.66 |   16.66 |   22.38 | 43-151,157,243,369-419        
-  UserSelect.tsx      |     100 |      100 |     100 |     100 |                               
-  moviePoster.tsx     |     100 |      100 |     100 |     100 |                               
- src/data             |      50 |      100 |      50 |      50 |                               
-  MovieList.tsx       |       0 |      100 |       0 |       0 | 4-5                           
-  UsersList.tsx       |     100 |      100 |     100 |     100 |                               
- src/interfaces       |     100 |      100 |     100 |     100 |                               
-  MovieTypes.tsx      |     100 |      100 |     100 |     100 |                               
-  UserListPair.tsx    |     100 |      100 |     100 |     100 |                               
-  movie.ts            |       0 |        0 |       0 |       0 |                               
-  user.ts             |       0 |        0 |       0 |       0 |                               
-----------------------|---------|----------|---------|---------|-------------------------------
+----------------------|---------|----------|---------|---------|----------------------------------
+File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                
+----------------------|---------|----------|---------|---------|----------------------------------
+All files             |   39.73 |    16.66 |   27.33 |   40.33 |                                  
+ src                  |     100 |       70 |     100 |     100 |                                  
+  App.tsx             |     100 |       70 |     100 |     100 | 123-134,154                      
+ src/components       |   37.28 |    11.22 |   25.92 |   37.85 |                                  
+  AdminList.tsx       |   36.11 |     5.26 |   20.68 |   37.14 | 32-47,52,84-131,193,287-450      
+  CentralItemList.tsx |   55.55 |    55.55 |   46.66 |   55.55 | 29-40,79-111,133                 
+  SuperAddUser.tsx    |   22.72 |        0 |   18.18 |   22.72 | 18-40,52-82                      
+  SuperList.tsx       |   39.74 |        4 |   22.85 |      40 | 68-99,105-145,228-352,445-615    
+  UserList.tsx        |   21.62 |     6.66 |   15.38 |   22.22 | 38-40,50-158,164,261,309,400-450 
+  UserSelect.tsx      |     100 |      100 |     100 |     100 |                                  
+  moviePoster.tsx     |     100 |      100 |     100 |     100 |                                  
+ src/data             |      50 |      100 |      50 |      50 |                                  
+  MovieList.tsx       |       0 |      100 |       0 |       0 | 4-5                              
+  UsersList.tsx       |     100 |      100 |     100 |     100 |                                  
+ src/interfaces       |     100 |      100 |     100 |     100 |                                  
+  MovieTypes.tsx      |     100 |      100 |     100 |     100 |                                  
+  UserListPair.tsx    |     100 |      100 |     100 |     100 |                                  
+  movie.ts            |       0 |        0 |       0 |       0 |                                  
+  user.ts             |       0 |        0 |       0 |       0 |                                  
+----------------------|---------|----------|---------|---------|----------------------------------
 
 Test Suites: 8 passed, 8 total
 Tests:       37 passed, 37 total
 Snapshots:   0 total
-Time:        9.001 s
+Time:        13.776 s
 Ran all test suites.
