@@ -220,24 +220,48 @@ export function SuperList({
                                 onChange={(e) => setTitle(e.target.value)}
                                 style={{ marginBottom: "5px" }}
                             />
-                            <input
-                                type="number"
-                                value={released}
-                                onChange={(e) =>
-                                    setReleased(parseInt(e.target.value))
-                                }
-                                placeholder="Enter Release Year"
-                                style={{ marginBottom: "5px" }}
-                            />
-                            <input
-                                type="number"
-                                value={runtime}
-                                onChange={(e) =>
-                                    setRuntime(parseInt(e.target.value))
-                                }
-                                placeholder="Enter Runtime (minutes)"
-                                style={{ marginBottom: "5px" }}
-                            />
+                            <div
+                                style={{
+                                    display: "flex",
+                                    flexDirection: "row"
+                                }}
+                            >
+                                <h5>Enter Release Year:</h5>
+                                <input
+                                    type="number"
+                                    value={released}
+                                    onChange={(e) =>
+                                        setReleased(parseInt(e.target.value))
+                                    }
+                                    placeholder="Enter Release Year"
+                                    style={{
+                                        marginBottom: "5px",
+                                        width: "75px",
+                                        marginLeft: "15px"
+                                    }}
+                                />
+                            </div>
+                            <div
+                                style={{
+                                    display: "flex",
+                                    flexDirection: "row"
+                                }}
+                            >
+                                <h5>Enter Runtime:</h5>
+                                <input
+                                    type="number"
+                                    value={runtime}
+                                    onChange={(e) =>
+                                        setRuntime(parseInt(e.target.value))
+                                    }
+                                    placeholder="Enter Runtime (minutes)"
+                                    style={{
+                                        marginBottom: "5px",
+                                        width: "75px",
+                                        marginLeft: "15px"
+                                    }}
+                                />
+                            </div>
                             <div
                                 role="createMovie"
                                 style={{
@@ -247,7 +271,7 @@ export function SuperList({
                                     marginBottom: "10px"
                                 }}
                             >
-                                Check if Watched:
+                                <h5>Check if Watched:</h5>
                                 <input
                                     role="createMovie"
                                     type="checkbox"
@@ -268,15 +292,27 @@ export function SuperList({
                                 onChange={(e) => setDescription(e.target.value)}
                                 style={{ marginBottom: "5px" }}
                             />
-                            <input
-                                type="number"
-                                value={rating}
-                                onChange={(e) =>
-                                    setRating(parseInt(e.target.value))
-                                }
-                                placeholder="Enter Rating"
-                                style={{ marginBottom: "5px" }}
-                            />
+                            <div
+                                style={{
+                                    display: "flex",
+                                    flexDirection: "row"
+                                }}
+                            >
+                                <h5>Enter Rating:</h5>
+                                <input
+                                    type="number"
+                                    value={rating}
+                                    onChange={(e) =>
+                                        setRating(parseInt(e.target.value))
+                                    }
+                                    placeholder="Enter Rating"
+                                    style={{
+                                        marginBottom: "5px",
+                                        width: "75px",
+                                        marginLeft: "15px"
+                                    }}
+                                />
+                            </div>
                             <input
                                 role="createMovie"
                                 type="text"
