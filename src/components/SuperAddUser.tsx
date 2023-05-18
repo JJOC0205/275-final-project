@@ -54,17 +54,10 @@ export function SuperAddUser({
                     />
                     <input
                         type="number"
-                        value={id}
                         placeholder="Enter New User ID"
                         onChange={(e) => setId(parseInt(e.target.value))}
                         style={{ marginBottom: "5px", marginRight: "5px" }}
                     />
-                    {/* <input
-                        type="text"
-                        placeholder="Enter New User Role"
-                        onChange={(e) => setRole(e.target.value)}
-                        style={{ marginBottom: "5px", marginRight: "5px" }}
-                    /> */}
                     <button data-testid="addUser" onClick={addUser}>
                         Add
                     </button>
@@ -98,7 +91,7 @@ export function SuperAddUser({
                 style={{
                     width: "300px",
                     marginLeft: "75px",
-                    height: "150px",
+                    height: "175px",
                     border: "1px dashed grey",
                     overflow: "auto"
                 }}
@@ -106,7 +99,9 @@ export function SuperAddUser({
                 <h2>Current Users:</h2>
                 {users.map((user, index) => (
                     <li key={index}>
-                        {user.name}, ID: {user.id}, Role: {user.role}
+                        <h5>
+                            {user.name}, ID: {user.id}, Role: {user.role}
+                        </h5>
                     </li>
                 ))}
             </div>

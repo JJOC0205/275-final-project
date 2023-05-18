@@ -9,6 +9,17 @@ import { MovieTypes } from "../interfaces/MovieTypes";
 import { useDrop } from "react-dnd";
 import { adminMovies } from "../App";
 
+const defaultMovie = {
+    title: "DEFAULT MOVIE",
+    released: 0,
+    runtime: 0,
+    watched: false,
+    description: "Please CLICK any Movie",
+    rating: 0,
+    poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+    genre: ["None"]
+};
+
 export function AdminList({
     adminMovies,
     setAdminMovies,
@@ -29,6 +40,13 @@ export function AdminList({
             setAdminMovies([...adminMovies, newMovie]);
         }
     }
+
+    function removeMovie(movie: Movie) {
+        const adminCopy = [...adminMovies];
+        const updatedMovies = adminCopy.filter((m) => m.title !== movie.title);
+        setAdminMovies(updatedMovies);
+    }
+
     const [, drop] = useDrop({
         accept: MovieTypes.MOVIE,
         drop: (item: Movie) => updateAdminMovies(item),
@@ -37,17 +55,7 @@ export function AdminList({
         })
     });
 
-    const [movieDisplay, setMovieDisplay] = useState<Movie>({
-        title: "Interstellar",
-        released: 2014,
-        runtime: 169,
-        watched: false,
-        description:
-            "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
-        rating: 0,
-        poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
-        genre: ["Adventure", "Drama", "Sci-Fi"]
-    });
+    const [movieDisplay, setMovieDisplay] = useState<Movie>(defaultMovie);
 
     const [title, setTitle] = useState<string>("");
     const [released, setReleased] = useState<number>(0);
@@ -92,6 +100,9 @@ export function AdminList({
     }
 
     function replaceMovieEdit() {
+        if (isNaN(released) || isNaN(runtime) || isNaN(rating)) {
+            return;
+        }
         const editedMovie = {
             title,
             released,
@@ -131,12 +142,13 @@ export function AdminList({
                             color: "gainsboro"
                         }}
                     >
-                        {user.name}
+                        {user.name}: Edit CIL movies by changing their
+                        attributes.
                     </h2>
-                    <h2 style={{ color: "gainsboro" }}>
-                        Drag movies and click their posters{" "}
-                        <span style={{ color: "blanchedalmond" }}>First</span>{" "}
-                        to edit them on the right.
+                    <h2 style={{ color: "lightcyan", marginBottom: "20px" }}>
+                        Drag movies, click any movie poster{" "}
+                        <span style={{ color: "orange" }}>before</span> viewing
+                        and editing the movie on the right.
                     </h2>
                     <div
                         style={{
@@ -170,6 +182,18 @@ export function AdminList({
                                     <ShowMovieDetails
                                         movie={movie}
                                     ></ShowMovieDetails>
+                                    <button
+                                        role="removeMovieButton"
+                                        style={{
+                                            height: "30px",
+                                            width: "75px",
+                                            backgroundColor: "orange",
+                                            marginTop: "10px"
+                                        }}
+                                        onClick={() => removeMovie(movie)}
+                                    >
+                                        Remove
+                                    </button>
                                 </div>
                             ))}
                         </Stack>

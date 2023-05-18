@@ -6,6 +6,17 @@ import { Stack } from "react-bootstrap";
 import { superMovies } from "../App";
 import { useState } from "react";
 
+const defaultMovie = {
+    title: "DEFAULT MOVIE",
+    released: 0,
+    runtime: 0,
+    watched: false,
+    description: "Please CLICK any Movie",
+    rating: 0,
+    poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+    genre: ["None"]
+};
+
 export function SuperList({
     superMovies,
     setSuperMovies,
@@ -13,26 +24,13 @@ export function SuperList({
     user
 }: superMovies): JSX.Element {
     function removeMovie(movie: Movie) {
-        console.log(movie.title);
         const superCopy = [...superMovies];
         const updatedMovies = superCopy.filter((m) => m.title !== movie.title);
         setSuperMovies(updatedMovies);
         setCilMovies(updatedMovies);
-        console.log("First Movie in Super List: " + superMovies[0].title);
-        console.log("First Movie in Updated Movies: " + updatedMovies[0].title);
     }
 
-    const [movieDisplay, setMovieDisplay] = useState<Movie>({
-        title: "Interstellar",
-        released: 2014,
-        runtime: 169,
-        watched: false,
-        description:
-            "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
-        rating: 0,
-        poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
-        genre: ["Adventure", "Drama", "Sci-Fi"]
-    });
+    const [movieDisplay, setMovieDisplay] = useState<Movie>(defaultMovie);
 
     const [title, setTitle] = useState<string>("");
     const [released, setReleased] = useState<number>(0);
@@ -67,6 +65,9 @@ export function SuperList({
     });
 
     function addMovie() {
+        if (isNaN(released) || isNaN(runtime) || isNaN(rating)) {
+            return;
+        }
         setSuperMovies([...superMovies, newMovie]);
         setCilMovies([...superMovies, newMovie]);
         setNewMovie({
@@ -82,6 +83,9 @@ export function SuperList({
     }
 
     function createNewMovie() {
+        if (isNaN(released) || isNaN(runtime) || isNaN(rating)) {
+            return;
+        }
         const newMovie = {
             title: title,
             released: released,
@@ -117,6 +121,9 @@ export function SuperList({
     }
 
     function replaceMovieEdit() {
+        if (isNaN(released) || isNaN(runtime) || isNaN(rating)) {
+            return;
+        }
         const editedMovie = {
             title,
             released,
@@ -149,13 +156,14 @@ export function SuperList({
                             color: "gainsboro"
                         }}
                     >
-                        {user.name}
+                        {user.name}: Control the composition of the Central Item
+                        List (create/delete/edit movies)
                     </h2>
-                    <h2 style={{ color: "gainsboro" }}>
-                        Create New Movies OR click any movie poster{" "}
-                        <span style={{ color: "orange" }}>First</span> and edit
+                    <h3 style={{ color: "lightcyan" }}>
+                        Click any movie poster{" "}
+                        <span style={{ color: "orange" }}>First</span> to edit
                         the movie on the right.
-                    </h2>
+                    </h3>
                     <div
                         style={{
                             display: "flex",
@@ -191,7 +199,7 @@ export function SuperList({
                                         style={{
                                             height: "30px",
                                             width: "75px",
-                                            backgroundColor: "lightsalmon",
+                                            backgroundColor: "lightyellow",
                                             marginTop: "10px"
                                         }}
                                         onClick={() => removeMovie(movie)}
@@ -258,7 +266,7 @@ export function SuperList({
                                     style={{
                                         marginBottom: "5px",
                                         width: "75px",
-                                        marginLeft: "15px"
+                                        marginLeft: "50px"
                                     }}
                                 />
                             </div>
@@ -267,7 +275,7 @@ export function SuperList({
                                 style={{
                                     display: "flex",
                                     flexDirection: "row",
-                                    justifyContent: "center",
+                                    justifyContent: "left",
                                     marginBottom: "10px"
                                 }}
                             >
@@ -281,7 +289,7 @@ export function SuperList({
                                     }
                                     style={{
                                         marginBottom: "5px",
-                                        marginLeft: "10px"
+                                        marginLeft: "25px"
                                     }}
                                 />
                             </div>
@@ -309,7 +317,7 @@ export function SuperList({
                                     style={{
                                         marginBottom: "5px",
                                         width: "75px",
-                                        marginLeft: "15px"
+                                        marginLeft: "65px"
                                     }}
                                 />
                             </div>
@@ -327,18 +335,25 @@ export function SuperList({
                                     justifyContent: "center"
                                 }}
                             >
-                                <button
-                                    role="createNewMovie"
-                                    onClick={() => createNewMovie()}
+                                <div
+                                    style={{
+                                        display: "flex",
+                                        flexDirection: "column"
+                                    }}
                                 >
-                                    Create New Movie
-                                </button>
-                                <button
-                                    role="addNewMovie"
-                                    onClick={() => addMovie()}
-                                >
-                                    Add Movie
-                                </button>
+                                    <button
+                                        role="createNewMovie"
+                                        onClick={() => createNewMovie()}
+                                    >
+                                        Create New Movie
+                                    </button>
+                                    <button
+                                        role="addNewMovie"
+                                        onClick={() => addMovie()}
+                                    >
+                                        Add To CIL
+                                    </button>
+                                </div>
                             </div>
                         </div>
                         <div ////////////////////////////////////////////////////////////////////////////////////////////////////////MOVIE DISPLAY STARTS

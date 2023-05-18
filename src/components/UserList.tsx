@@ -7,6 +7,17 @@ import { Movie } from "../interfaces/movie";
 import { ShowMovieDetails } from "./moviePoster";
 import { userMovies } from "../App";
 
+const defaultMovie = {
+    title: "DEFAULT MOVIE",
+    released: 0,
+    runtime: 0,
+    watched: false,
+    description: "Please CLICK any Movie",
+    rating: 0,
+    poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+    genre: ["None"]
+};
+
 export function UserList({
     userMovies,
     setUserMovies,
@@ -14,23 +25,19 @@ export function UserList({
     setUserListPairs,
     userListPairs
 }: userMovies): JSX.Element {
-    const [movieDisplay, setMovieDisplay] = useState<Movie>({
-        title: "Interstellar",
-        released: 2014,
-        runtime: 169,
-        watched: false,
-        description:
-            "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
-        rating: 0,
-        poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
-        genre: ["Adventure", "Drama", "Sci-Fi"]
-    });
+    const [movieDisplay, setMovieDisplay] = useState<Movie>(defaultMovie);
 
     function updateMovieDisplay(movie: Movie) {
         setMovieDisplay(movie);
         setWatched(movie.watched);
         setRating(movie.rating);
         setGenre(movie.genre);
+    }
+
+    function removeMovie(movie: Movie) {
+        const userCopy = [...userMovies];
+        const updatedMovies = userCopy.filter((m) => m.title !== movie.title);
+        setUserMovies(updatedMovies);
     }
 
     const [rating, setRating] = useState<number>(movieDisplay.rating);
@@ -173,14 +180,14 @@ export function UserList({
                                 color: "gainsboro"
                             }}
                         >
-                            {user.name}
+                            {user.name}: Create your own movie list.
                         </h2>
                         <h2
-                            style={{ color: "gainsboro", marginBottom: "20px" }}
+                            style={{ color: "lightcyan", marginBottom: "20px" }}
                         >
-                            Drag movies and click their posters{" "}
-                            <span style={{ color: "tomato" }}>First</span> to
-                            edit them on the right.
+                            Drag movies, click any movie poster{" "}
+                            <span style={{ color: "orange" }}>before</span>{" "}
+                            viewing and editing the movie on the right.
                         </h2>
                         <div
                             style={{
@@ -193,53 +200,64 @@ export function UserList({
                             <button
                                 onClick={sortRuntimeA}
                                 className="sortButton"
+                                style={{ height: "50px" }}
                             >
                                 Sort by Runtime: Low-High
                             </button>
                             <button
                                 onClick={sortRuntimeD}
                                 className="sortButton"
+                                style={{ height: "50px" }}
                             >
                                 Sort by Runtime: High-Low
                             </button>
                             <button
                                 onClick={sortAlphabeticalTitleA}
                                 className="sortButton"
+                                style={{ height: "50px" }}
                             >
                                 Sort by Title: A-Z
                             </button>
                             <button
                                 onClick={sortAlphabeticalTitleR}
                                 className="sortButton"
+                                style={{ height: "50px" }}
                             >
                                 Sort by Title: Z-A
                             </button>
                             <button
                                 onClick={sortReleaseDateA}
                                 className="sortButton"
+                                style={{ height: "50px" }}
                             >
-                                Sort by Release Date: Old-New
+                                Sort: Oldest to Newest
                             </button>
                             <button
                                 onClick={sortReleaseDateD}
                                 className="sortButton"
+                                style={{ height: "50px" }}
                             >
-                                Sort by Release Date: New-Old
+                                Sort: Newest to Oldest
                             </button>
                             <button
                                 onClick={sortRatingA}
                                 className="sortButton"
+                                style={{ height: "50px" }}
                             >
                                 Sort by Rating: Low-High
                             </button>
                             <button
                                 onClick={sortRatingD}
                                 className="sortButton"
+                                style={{ height: "50px" }}
                             >
                                 Sort by Rating: High-Low
                             </button>
                             <button
-                                style={{ backgroundColor: "#f44336" }}
+                                style={{
+                                    backgroundColor: "#f44336",
+                                    height: "50px"
+                                }}
                                 onClick={() => setUserMovies([])}
                                 className="sortButton"
                             >
@@ -253,7 +271,7 @@ export function UserList({
                             style={{
                                 backgroundColor: isOver ? "lime" : "lightpink",
                                 width: "1300px",
-                                height: "200px",
+                                height: "250px",
                                 border: "2px dashed black",
                                 display: "flex",
                                 flexDirection: "row",
@@ -279,6 +297,19 @@ export function UserList({
                                         <ShowMovieDetails
                                             movie={movie}
                                         ></ShowMovieDetails>
+                                        <button
+                                            role="removeMovieButton"
+                                            style={{
+                                                height: "30px",
+                                                width: "75px",
+                                                backgroundColor: "lemonchiffon",
+                                                marginTop: "10px",
+                                                marginLeft: "25px"
+                                            }}
+                                            onClick={() => removeMovie(movie)}
+                                        >
+                                            Remove
+                                        </button>
                                     </div>
                                 );
                             })}
