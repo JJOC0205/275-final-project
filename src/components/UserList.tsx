@@ -182,13 +182,13 @@ export function UserList({
                         >
                             {user.name}: Create your own movie list.
                         </h2>
-                        <h2
+                        <h3
                             style={{ color: "lightcyan", marginBottom: "20px" }}
                         >
-                            Drag movies, click any movie poster{" "}
+                            Drag movies and click any movie poster{" "}
                             <span style={{ color: "orange" }}>before</span>{" "}
                             viewing and editing the movie on the right.
-                        </h2>
+                        </h3>
                         <div
                             style={{
                                 display: "flex",
@@ -388,8 +388,8 @@ export function UserList({
                                 style={{
                                     display: "flex",
                                     flexDirection: "row",
-                                    justifyContent: "center",
-                                    marginBottom: "5px"
+                                    justifyContent: "left",
+                                    marginLeft: "100px"
                                 }}
                             >
                                 <h5>Check if Watched: </h5>
@@ -421,7 +421,7 @@ export function UserList({
                                     placeholder="Enter Rating"
                                     style={{
                                         marginBottom: "5px",
-                                        width: "300px",
+                                        width: "200px",
                                         marginLeft: "20px"
                                     }}
                                 />

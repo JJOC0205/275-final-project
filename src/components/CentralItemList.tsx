@@ -60,6 +60,9 @@ export function CentralItemList({ cilMovies }: cilMovies): JSX.Element {
 
     return (
         <>
+            <h2 style={{ marginBottom: "25px", color: "gainsboro" }}>
+                Click on a Movie to have its details displayed on the right.
+            </h2>
             <div style={{ display: "flex", flexDirection: "row" }}>
                 <div
                     style={{

@@ -117,19 +117,12 @@ function App(): JSX.Element {
                         />
                     )}
                 </div>
-                <h2 style={{ marginBottom: "25px", color: "gainsboro" }}>
-                    Click on a Movie to have its details displayed on the right.
-                </h2>
                 {currUser.role !== "super" && (
                     <CentralItemList
                         cilMovies={cilMovies}
                         setCilMovies={setCilMovies}
                     />
                 )}
-                {/* <CentralItemList
-                    cilMovies={cilMovies}
-                    setCilMovies={setCilMovies}
-                ></CentralItemList> */}
                 {userListPairs.map((userListPair: UserListPair) =>
                     currUser.name === userListPair.username ? (
                         <UserList
