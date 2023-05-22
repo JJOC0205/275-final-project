@@ -54,6 +54,7 @@ export function SuperAddUser({
                     />
                     <input
                         type="number"
+                        value={id}
                         placeholder="Enter New User ID"
                         onChange={(e) => setId(parseInt(e.target.value))}
                         style={{ marginBottom: "5px", marginRight: "5px" }}
@@ -71,6 +72,7 @@ export function SuperAddUser({
                         style={{ marginBottom: "5px", marginRight: "5px" }}
                     />
                     <input
+                        value={id}
                         type="number"
                         placeholder="Enter ID"
                         onChange={(e) => setId(parseInt(e.target.value))}
@@ -89,11 +91,13 @@ export function SuperAddUser({
             </div>
             <div
                 style={{
-                    width: "300px",
+                    width: "350px",
                     marginLeft: "75px",
                     height: "175px",
                     border: "1px dashed grey",
-                    overflow: "auto"
+                    overflow: "auto",
+                    backgroundColor: "mintcream",
+                    padding: "25px"
                 }}
             >
                 <h2>Current Users:</h2>

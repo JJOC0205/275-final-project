@@ -153,7 +153,8 @@ export function SuperList({
                         style={{
                             textAlign: "left",
                             marginLeft: "50px",
-                            color: "gainsboro"
+                            color: "gainsboro",
+                            marginBottom: "20px"
                         }}
                     >
                         {user.name}: Control the composition of the Central Item
@@ -178,7 +179,7 @@ export function SuperList({
                                 marginLeft: "30px",
                                 marginRight: "30px",
                                 backgroundColor: "lightskyblue",
-                                padding: "10px",
+                                padding: "25px",
                                 overflow: "auto",
                                 width: "975px",
                                 height: "300px"

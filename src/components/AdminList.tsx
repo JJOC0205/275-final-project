@@ -139,17 +139,18 @@ export function AdminList({
                         style={{
                             textAlign: "left",
                             marginLeft: "225px",
-                            color: "gainsboro"
+                            color: "gainsboro",
+                            marginBottom: "20px"
                         }}
                     >
                         {user.name}: Edit CIL movies by changing their
                         attributes.
                     </h2>
-                    <h2 style={{ color: "lightcyan", marginBottom: "20px" }}>
+                    <h3 style={{ color: "lightcyan", marginBottom: "20px" }}>
                         Drag movies, click any movie poster{" "}
                         <span style={{ color: "orange" }}>before</span> viewing
                         and editing the movie on the right.
-                    </h2>
+                    </h3>
                     <div
                         style={{
                             display: "flex",
