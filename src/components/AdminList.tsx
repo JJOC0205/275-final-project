@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "./UserList.css";
 import { Movie } from "../interfaces/movie";
-import testMovies from "../data/movies.json";
+// import testMovies from "../data/movies.json";
 import { ShowMovieDetails } from "./moviePoster";
 import { Stack } from "react-bootstrap";
 import { MovieTypes } from "../interfaces/MovieTypes";
@@ -32,13 +32,17 @@ export function AdminList({
         const movieExists = adminMovies.some(
             (movie) => movie.title === newMovie.title
         );
+        // if (!movieExists) {
+        //     const movieFilter = testMovies.filter(
+        //         (movie) => newMovie.title === movie.title
+        //     );
+        //     newMovie.poster = movieFilter[0].poster;
+        //     setAdminMovies([...adminMovies, newMovie]);
+        // }
         if (!movieExists) {
-            const movieFilter = testMovies.filter(
-                (movie) => newMovie.title === movie.title
-            );
-            newMovie.poster = movieFilter[0].poster;
             setAdminMovies([...adminMovies, newMovie]);
         }
+        console.log(adminMovies.length);
     }
 
     function removeMovie(movie: Movie) {
